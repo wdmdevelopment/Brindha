@@ -35,13 +35,13 @@ public class Patient {
 	private String name;
 
 	@Column(name = "AdmitStatus")
-	private char status;
+	private char admitStatus;
 
 	@Column(name = "Age")
 	private int age;
 
 	@OneToOne
-	@JoinColumn(name="Address", referencedColumnName = "ID")
+	@JoinColumn(name = "Address", referencedColumnName = "ID")
 	private Address patientAddress;
 
 	public long getPatientId() {
@@ -60,11 +60,11 @@ public class Patient {
 		this.patientPhNo = patientPhNo;
 	}
 
-	public Set<Doctor> getdoctorList() {
+	public Set<Doctor> getDoctorList() {
 		return doctorList;
 	}
 
-	public void setdoctorList(Set<Doctor> doctorList) {
+	public void setDoctorList(Set<Doctor> doctorList) {
 		this.doctorList = doctorList;
 	}
 
@@ -76,12 +76,12 @@ public class Patient {
 		this.name = name;
 	}
 
-	public char getStatus() {
-		return status;
+	public char getAdmitStatus() {
+		return admitStatus;
 	}
 
-	public void setStatus(char status) {
-		this.status = status;
+	public void setAdmitStatus(char admitStatus) {
+		this.admitStatus = admitStatus;
 	}
 
 	public int getAge() {
@@ -101,24 +101,26 @@ public class Patient {
 	}
 
 	public Patient() {
+
 	}
 
-	public Patient(long patientId, String patientPhNo, Set<Doctor> doctorList, String name, char status, int age,
+	public Patient(long patientId, String patientPhNo, Set<Doctor> doctorList, String name, char admitStatus, int age,
 			Address patientAddress) {
 		super();
 		this.patientId = patientId;
 		this.patientPhNo = patientPhNo;
 		this.doctorList = doctorList;
 		this.name = name;
-		this.status = status;
+		this.admitStatus = admitStatus;
 		this.age = age;
 		this.patientAddress = patientAddress;
 	}
 
 	@Override
 	public String toString() {
-		return "Patient [patientId=" + patientId + ", patientPhNo=" + patientPhNo + ", doctorList=" + doctorList + ", name="
-				+ name + ", status=" + status + ", age=" + age + ", patientAddress=" + patientAddress + "]";
+		return "Patient [patientId=" + patientId + ", patientPhNo=" + patientPhNo + ", doctorList=" + doctorList
+				+ ", name=" + name + ", admitStatus=" + admitStatus + ", age=" + age + ", patientAddress="
+				+ patientAddress + "]";
 	}
 
 }

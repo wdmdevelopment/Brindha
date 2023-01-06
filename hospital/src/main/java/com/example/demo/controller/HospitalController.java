@@ -2,6 +2,8 @@ package com.example.demo.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,30 +22,38 @@ public class HospitalController {
 	@Autowired
 	private HospitalService hospitalService;
 
-	@GetMapping("/allHos")
+	@GetMapping("/hospital")
 	public List<Hospital> getAllHospital() {
 		return hospitalService.getAllHospital();
 	}
 
-	@GetMapping("/allHos/{id}")
+	@GetMapping("/hospitalId/{id}")
 	public Hospital getAllHospitalById(@PathVariable("id") long id) {
 		return hospitalService.getOneHospital(id);
 	}
+	
+//	@PostMapping("/hospitalCrea")
+//		public ResponseEntity<Hospital> saveHos(@RequestBody Hospital hos){
+//		if(hos.getAddress() != null) {
+//			throw new NotFoundException("A new user cannot already have an ID");
+//		}
+//		return ResponseEntity.ok(hospitalService.saveHos(hos));
+//	}
 
-	@PostMapping("/create")
-	public void saveHos(@RequestBody Hospital hos) {
+	@PostMapping("/hospitalCreate")
+	public void saveHos(@Valid @RequestBody Hospital hos) {
 		hospitalService.saveHos(hos);
 
 	}
 
-	@PutMapping("/edit/{id}")
+	@PutMapping("/hospitalEdit/{id}")
 	public Hospital updateHos(@RequestBody Hospital hos) {
 
 		return hospitalService.updateHos(hos);
 
 	}
 
-	@DeleteMapping("/delete/{id}")
+	@DeleteMapping("/HospitalDelete/{id}")
 	public void deleteHos(@PathVariable("id") long id) {
 
 		hospitalService.deleteHos(id);

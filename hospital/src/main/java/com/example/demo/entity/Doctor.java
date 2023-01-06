@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -13,8 +14,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -27,13 +30,14 @@ public class Doctor {
 	private long doctorId;
 
 	@Column(name = "Name")
+	@Size(min = 4)
 	private String doctorName;
 
 	@Column(name = "Specialist")
 	private String doctorSpecialist;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "hospital")
+	@JoinColumn(name = "hospital_id")
 	@JsonIgnoreProperties("doctors")
 	private Hospital hospital;
 
@@ -42,10 +46,12 @@ public class Doctor {
 			@JoinColumn(name = "patient_Id") })
 	private Set<Patient> patientList = new HashSet<>();
 
-	
 	@OneToOne
 	@JoinColumn(name = "Address", referencedColumnName = "ID")
 	private Address doctorAddress;
+
+	@OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)
+	private List<Appointment> appointment;
 
 	public long getDoctorId() {
 		return doctorId;
@@ -63,6 +69,14 @@ public class Doctor {
 		this.doctorName = doctorName;
 	}
 
+	public String getDoctorSpecialist() {
+		return doctorSpecialist;
+	}
+
+	public void setDoctorSpecialist(String doctorSpecialist) {
+		this.doctorSpecialist = doctorSpecialist;
+	}
+
 	public Hospital getHospital() {
 		return hospital;
 	}
@@ -71,20 +85,12 @@ public class Doctor {
 		this.hospital = hospital;
 	}
 
-	public Set<Patient> getpatientList() {
+	public Set<Patient> getPatientList() {
 		return patientList;
 	}
 
-	public void setpatientList(Set<Patient> patientList) {
+	public void setPatientList(Set<Patient> patientList) {
 		this.patientList = patientList;
-	}
-
-	public String getDoctorSpecialist() {
-		return doctorSpecialist;
-	}
-
-	public void setDoctorSpecialist(String doctorSpecialist) {
-		this.doctorSpecialist = doctorSpecialist;
 	}
 
 	public Address getDoctorAddress() {
@@ -95,12 +101,19 @@ public class Doctor {
 		this.doctorAddress = doctorAddress;
 	}
 
-	public Doctor() {
-
+	public List<Appointment> getAppointment() {
+		return appointment;
 	}
 
-	public Doctor(long doctorId, String doctorName, String doctorSpecialist, Hospital hospital,
-			Set<Patient> patientList, Address doctorAddress) {
+	public void setAppointment(List<Appointment> appointment) {
+		this.appointment = appointment;
+	}
+
+	public Doctor() {
+	}
+
+	public Doctor(long doctorId, @Size(min = 4) String doctorName, String doctorSpecialist, Hospital hospital,
+			Set<Patient> patientList, Address doctorAddress, List<Appointment> appointment) {
 		super();
 		this.doctorId = doctorId;
 		this.doctorName = doctorName;
@@ -108,12 +121,14 @@ public class Doctor {
 		this.hospital = hospital;
 		this.patientList = patientList;
 		this.doctorAddress = doctorAddress;
+		this.appointment = appointment;
 	}
 
 	@Override
 	public String toString() {
 		return "Doctor [doctorId=" + doctorId + ", doctorName=" + doctorName + ", doctorSpecialist=" + doctorSpecialist
-				+ ", hospital=" + hospital + ", patientList=" + patientList + ", doctorAddress=" + doctorAddress + "]";
+				+ ", hospital=" + hospital + ", patientList=" + patientList + ", doctorAddress=" + doctorAddress
+				+ ", appointment=" + appointment + "]";
 	}
 
 }

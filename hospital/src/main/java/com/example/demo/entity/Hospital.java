@@ -35,6 +35,12 @@ public class Hospital {
 	@OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
 	private List<Doctor> doctors;
 
+	@OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
+	private List<Service> service;
+
+	@OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
+	private List<Appointment> appointment;
+
 	public long getHospitalId() {
 		return hospitalId;
 	}
@@ -67,31 +73,50 @@ public class Hospital {
 		this.contactNum = contactNum;
 	}
 
-	public List<Doctor> getdoctors() {
+	public List<Doctor> getDoctors() {
 		return doctors;
 	}
 
-	public void setdoctors(List<Doctor> doctors) {
+	public void setDoctors(List<Doctor> doctors) {
 		this.doctors = doctors;
 	}
 
-	public Hospital() {
-
+	public List<Service> getService() {
+		return service;
 	}
 
-	public Hospital(long hospitalId, String hospitalName, Address address, String contactNum, List<Doctor> doctors) {
+	public void setService(List<Service> service) {
+		this.service = service;
+	}
+
+	public List<Appointment> getAppointment() {
+		return appointment;
+	}
+
+	public void setAppointment(List<Appointment> appointment) {
+		this.appointment = appointment;
+	}
+
+	public Hospital() {
+	}
+
+	public Hospital(long hospitalId, String hospitalName, Address address, String contactNum, List<Doctor> doctors,
+			List<Service> service, List<Appointment> appointment) {
 		super();
 		this.hospitalId = hospitalId;
 		this.hospitalName = hospitalName;
 		this.address = address;
 		this.contactNum = contactNum;
 		this.doctors = doctors;
+		this.service = service;
+		this.appointment = appointment;
 	}
 
 	@Override
 	public String toString() {
 		return "Hospital [hospitalId=" + hospitalId + ", hospitalName=" + hospitalName + ", address=" + address
-				+ ", contactNum=" + contactNum + ", doctors=" + doctors + "]";
+				+ ", contactNum=" + contactNum + ", doctors=" + doctors + ", service=" + service + ", appointment="
+				+ appointment + "]";
 	}
 
 }

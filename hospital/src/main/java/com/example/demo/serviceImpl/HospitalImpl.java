@@ -28,7 +28,7 @@ public class HospitalImpl implements HospitalService {
 	public void saveHos(Hospital hos) {
 
 		try {
-			if (hos.getHospitalName().trim().isEmpty()) {
+			if (hos.getHospitalName().isEmpty()) {
 			}
 			hospitalRepo.save(hos);
 		} catch (Exception e) {

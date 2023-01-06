@@ -67,23 +67,4 @@ public class RequestPatient {
 	public void setPatientAddress(Address patientAddress) {
 		this.patientAddress = patientAddress;
 	}
-
-	public RequestPatient() {
-	}
-
-	public RequestPatient(String patientPhNo, Set<Doctor> doctorList, String name, char status, int age,
-			Address patientAddress) {
-		super();
-		this.patientPhNo = patientPhNo;
-		this.doctorList = doctorList;
-		this.name = name;
-		this.status = status;
-		this.age = age;
-		this.patientAddress = patientAddress;
-	}
-
-	public String toString() {
-		return "RequestPatient [patientPhNo=" + patientPhNo + ", doctorList=" + doctorList + ", name="
-				+ name + ", status=" + status + ", age=" + age + ", patientAddress=" + patientAddress + "]";
-	}
 }

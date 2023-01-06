@@ -16,9 +16,16 @@ public class ExcepHandlerAdvice extends ResponseEntityExceptionHandler {
 		
 		EmptyInputExcep message = new EmptyInputExcep(null);
 		
-		message.setErrorMessage("PAGE_NOT_FOUND_LOG_CATEGORY");
+		message.setErrorMessage("Data_Not_Found");
 		
 		ResponseEntity<Object> error = new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
 		return error;
 	}
+	
+//	@ExceptionHandler
+//	public ResponseEntity<Object> handleMethodArgumentNotValid( 
+//			MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request){
+//		ErrorResponse error = new ErrorResponse9(new Date(), ex.getMessage(), ex.getBindingResult().toString());
+//		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+//	}
 }

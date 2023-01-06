@@ -6,7 +6,6 @@ import com.example.demo.entity.Address;
 import com.example.demo.entity.Doctor;
 
 public class RequestHospital {
-	
 
 	private String hospitalName;
 
@@ -48,20 +47,4 @@ public class RequestHospital {
 		this.doctors = doctors;
 	}
 
-	public RequestHospital() {
-
-	}
-
-	public RequestHospital(long hospitalId, String hospitalName, Address address, String contactNum, List<Doctor> doctors) {
-		super();
-		this.hospitalName = hospitalName;
-		this.address = address;
-		this.contactNum = contactNum;
-		this.doctors = doctors;
-	}
-
-	public String toString() {
-		return "RequestHospital [hospitalName=" + hospitalName + ", address=" + address
-				+ ", contactNum=" + contactNum + ", doctors=" + doctors + "]";
-	}
 }

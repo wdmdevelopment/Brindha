@@ -51,9 +51,4 @@ public class RequestAddress {
 		public void setPincode(String pincode) {
 			this.pincode = pincode;
 		}
-
-		public String toString() {
-			return "RequestAddress [district=" + district + ", city=" + city + ", state=" + state + ", country=" + country
-					+ ", pincode=" + pincode + "]";
-		}
-	}
+}
