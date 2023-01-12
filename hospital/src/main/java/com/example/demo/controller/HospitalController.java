@@ -2,17 +2,21 @@ package com.example.demo.controller;
 
 import java.util.List;
 
-import javax.validation.Valid;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.dto.RequestHospital;
 import com.example.demo.entity.Hospital;
 import com.example.demo.service.HospitalService;
 
@@ -22,51 +26,43 @@ public class HospitalController {
 	@Autowired
 	private HospitalService hospitalService;
 
+	private static final Logger logger = LoggerFactory.getLogger(HospitalController.class);
+
 	@GetMapping("/hospital")
 	public List<Hospital> getAllHospital() {
 		return hospitalService.getAllHospital();
 	}
 
-	@GetMapping("/hospitalId/{id}")
-	public Hospital getAllHospitalById(@PathVariable("id") long id) {
-		return hospitalService.getOneHospital(id);
-	}
-	
-//	@PostMapping("/hospitalCrea")
-//		public ResponseEntity<Hospital> saveHos(@RequestBody Hospital hos){
-//		if(hos.getAddress() != null) {
-//			throw new NotFoundException("A new user cannot already have an ID");
-//		}
-//		return ResponseEntity.ok(hospitalService.saveHos(hos));
-//	}
+	@GetMapping("/hospital/{id}")
+	public ResponseEntity<Hospital> getOneHospitalById(@PathVariable("id") long id) {
+		logger.info("Get hospital by id " + getOneHospitalById(id));
 
-	@PostMapping("/hospitalCreate")
-	public void saveHos(@Valid @RequestBody Hospital hos) {
-		hospitalService.saveHos(hos);
-
+		Hospital hos = hospitalService.getOneHospitalById(id);
+		if (hos == null) {
+			return ResponseEntity.notFound().build();
+		} else {
+			return ResponseEntity.ok().body(hos);
+		}
 	}
 
-	@PutMapping("/hospitalEdit/{id}")
-	public Hospital updateHos(@RequestBody Hospital hos) {
+	@PostMapping("/hospital/admin")
 
-		return hospitalService.updateHos(hos);
+	public ResponseEntity<Hospital> saveHos(@RequestBody RequestHospital reqHos, @RequestParam("admin") long admin) {
+		logger.info("Hospital saved");
+		return new ResponseEntity<>(hospitalService.saveHos(reqHos, admin), HttpStatus.OK);
 
 	}
 
-	@DeleteMapping("/HospitalDelete/{id}")
+	@PutMapping("/hospital/{id}")
+	public ResponseEntity<Hospital> updateHos(@RequestBody Hospital hospital) {
+		logger.info("Updated hospital " + updateHos(hospital));
+		return new ResponseEntity<>(hospitalService.updateHos(hospital), HttpStatus.OK);
+
+	}
+
+	@DeleteMapping("/hospital/{id}")
 	public void deleteHos(@PathVariable("id") long id) {
-
 		hospitalService.deleteHos(id);
 
-	}
-
-	@GetMapping("/name")
-	public List<Hospital> doctorName() {
-		return hospitalService.getDoctorName();
-	}
-
-	@GetMapping("/distName")
-	public List<Hospital> distinctName() {
-		return hospitalService.getHospitalName();
 	}
 }

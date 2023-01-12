@@ -2,24 +2,13 @@ package com.example.demo.dto;
 
 import java.time.LocalDate;
 
-
-
-public class RequestHospital {
+public class RequestUser {
 
 	private String hospitalName;
-	
 	private String userName;
-	
 	private LocalDate dob;
-	
 	private int age;
-
 	private String contactNum;
-
-	private String city;
-	
-	private String facilityName;
-	
 	private String role;
 
 	public String getHospitalName() {
@@ -28,14 +17,6 @@ public class RequestHospital {
 
 	public void setHospitalName(String hospitalName) {
 		this.hospitalName = hospitalName;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
 	}
 
 	public LocalDate getDob() {
@@ -62,22 +43,6 @@ public class RequestHospital {
 		this.contactNum = contactNum;
 	}
 
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getFacilityName() {
-		return facilityName;
-	}
-
-	public void setFacilityName(String facilityName) {
-		this.facilityName = facilityName;
-	}
-
 	public String getRole() {
 		return role;
 	}
@@ -86,5 +51,12 @@ public class RequestHospital {
 		this.role = role;
 	}
 
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 
 }

@@ -1,47 +1,79 @@
 package com.example.demo.dto;
 
-import java.util.HashSet;
-import java.util.Set;
 
-import com.example.demo.entity.Address;
-import com.example.demo.entity.Hospital;
-import com.example.demo.entity.Patient;
+import java.time.LocalDate;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+
 
 public class RequestDoctor {
+	@NotNull(message = "Name should not be null")
+	private String userName;
 
-	private String doctorName;
+	private String hospitalName;
 
+	private String city;
+	
+	@NotBlank
 	private String doctorSpecialist;
-
-	private Hospital hospital;
-
-	private Set<Patient> patientList = new HashSet<>();
-
-	private Address doctorAddress;
-
-	public String getDoctorName() {
-		return doctorName;
+	
+	private LocalDate dob;
+	
+	private int age;
+	
+	private String contactNum;
+	
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setDoctorName(String doctorName) {
-		this.doctorName = doctorName;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
-	public Hospital getHospital() {
-		return hospital;
+	public String getHospitalName() {
+		return hospitalName;
 	}
 
-	public void setHospital(Hospital hospital) {
-		this.hospital = hospital;
+	public void setHospitalName(String hospitalName) {
+		this.hospitalName = hospitalName;
 	}
 
-	public Set<Patient> getpatientList() {
-		return patientList;
+	public String getCity() {
+		return city;
 	}
 
-	public void setpatientList(Set<Patient> patientList) {
-		this.patientList = patientList;
+	public void setCity(String city) {
+		this.city = city;
 	}
+
+
+	public LocalDate getDob() {
+		return dob;
+	}
+
+	public void setDob(LocalDate dob) {
+		this.dob = dob;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getContactNum() {
+		return contactNum;
+	}
+
+	public void setContactNum(String contactNum) {
+		this.contactNum = contactNum;
+	}
+
 
 	public String getDoctorSpecialist() {
 		return doctorSpecialist;
@@ -51,12 +83,7 @@ public class RequestDoctor {
 		this.doctorSpecialist = doctorSpecialist;
 	}
 
-	public Address getDoctorAddress() {
-		return doctorAddress;
-	}
-
-	public void setDoctorAddress(Address doctorAddress) {
-		this.doctorAddress = doctorAddress;
-	}
-
+	
+	
+	
 }

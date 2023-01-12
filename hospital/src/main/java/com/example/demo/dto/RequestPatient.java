@@ -1,24 +1,25 @@
 package com.example.demo.dto;
 
-import java.util.HashSet;
-import java.util.Set;
 
-import com.example.demo.entity.Address;
-import com.example.demo.entity.Doctor;
+import javax.validation.constraints.NotBlank;
+
 
 public class RequestPatient {
 
 	private String patientPhNo;
 
-	private Set<Doctor> doctorList = new HashSet<>();
-
+	@NotBlank
 	private String name;
 
-	private char status;
+	private char admitStatus;
 
+	private String doctorName;
+	
 	private int age;
-
-	private Address patientAddress;
+	
+	private String contactNum;
+	
+	private String doctorSpecialist;
 
 	public String getPatientPhNo() {
 		return patientPhNo;
@@ -26,14 +27,6 @@ public class RequestPatient {
 
 	public void setPatientPhNo(String patientPhNo) {
 		this.patientPhNo = patientPhNo;
-	}
-
-	public Set<Doctor> getdoctorList() {
-		return doctorList;
-	}
-
-	public void setdoctorList(Set<Doctor> doctorList) {
-		this.doctorList = doctorList;
 	}
 
 	public String getName() {
@@ -44,12 +37,20 @@ public class RequestPatient {
 		this.name = name;
 	}
 
-	public char getStatus() {
-		return status;
+	public char getAdmitStatus() {
+		return admitStatus;
 	}
 
-	public void setStatus(char status) {
-		this.status = status;
+	public void setAdmitStatus(char admitStatus) {
+		this.admitStatus = admitStatus;
+	}
+
+	public String getDoctorName() {
+		return doctorName;
+	}
+
+	public void setDoctorName(String doctorName) {
+		this.doctorName = doctorName;
 	}
 
 	public int getAge() {
@@ -60,11 +61,21 @@ public class RequestPatient {
 		this.age = age;
 	}
 
-	public Address getPatientAddress() {
-		return patientAddress;
+	public String getContactNum() {
+		return contactNum;
 	}
 
-	public void setPatientAddress(Address patientAddress) {
-		this.patientAddress = patientAddress;
+	public void setContactNum(String contactNum) {
+		this.contactNum = contactNum;
 	}
+
+	public String getDoctorSpecialist() {
+		return doctorSpecialist;
+	}
+
+	public void setDoctorSpecialist(String doctorSpecialist) {
+		this.doctorSpecialist = doctorSpecialist;
+	}
+	
+	
 }

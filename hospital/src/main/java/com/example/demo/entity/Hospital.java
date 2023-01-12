@@ -25,6 +25,9 @@ public class Hospital {
 	@Column(name = "Hospital_Name")
 	private String hospitalName;
 
+	@OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
+	private List<User> user;
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "Address")
 	private Address address;
@@ -35,11 +38,9 @@ public class Hospital {
 	@OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
 	private List<Doctor> doctors;
 
-	@OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
-	private List<Service> service;
-
-	@OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
-	private List<Appointment> appointment;
+	@OneToOne
+	@JoinColumn(name = "Facility", referencedColumnName = "ID")
+	private Facility facilityList;
 
 	public long getHospitalId() {
 		return hospitalId;
@@ -55,6 +56,14 @@ public class Hospital {
 
 	public void setHospitalName(String hospitalName) {
 		this.hospitalName = hospitalName;
+	}
+
+	public List<User> getUser() {
+		return user;
+	}
+
+	public void setUser(List<User> user) {
+		this.user = user;
 	}
 
 	public Address getAddress() {
@@ -81,42 +90,36 @@ public class Hospital {
 		this.doctors = doctors;
 	}
 
-	public List<Service> getService() {
-		return service;
+	public Facility getFacilityList() {
+		return facilityList;
 	}
 
-	public void setService(List<Service> service) {
-		this.service = service;
-	}
-
-	public List<Appointment> getAppointment() {
-		return appointment;
-	}
-
-	public void setAppointment(List<Appointment> appointment) {
-		this.appointment = appointment;
+	public void setFacilityList(Facility facilityList) {
+		this.facilityList = facilityList;
 	}
 
 	public Hospital() {
+
 	}
 
-	public Hospital(long hospitalId, String hospitalName, Address address, String contactNum, List<Doctor> doctors,
-			List<Service> service, List<Appointment> appointment) {
+	public Hospital(long hospitalId, String hospitalName, List<User> user, Address address, String contactNum,
+			List<Doctor> doctors, Facility facilityList) {
 		super();
 		this.hospitalId = hospitalId;
 		this.hospitalName = hospitalName;
+		this.user = user;
 		this.address = address;
 		this.contactNum = contactNum;
 		this.doctors = doctors;
-		this.service = service;
-		this.appointment = appointment;
+		this.facilityList = facilityList;
 	}
 
 	@Override
 	public String toString() {
-		return "Hospital [hospitalId=" + hospitalId + ", hospitalName=" + hospitalName + ", address=" + address
-				+ ", contactNum=" + contactNum + ", doctors=" + doctors + ", service=" + service + ", appointment="
-				+ appointment + "]";
+		return "Hospital [hospitalId=" + hospitalId + ", hospitalName=" + hospitalName + ", user=" + user + ", address="
+				+ address + ", contactNum=" + contactNum + ", doctors=" + doctors + ", facilityList=" + facilityList
+				+ "]";
 	}
+	
 
 }

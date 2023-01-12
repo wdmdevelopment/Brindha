@@ -1,7 +1,6 @@
 package com.example.demo.entity;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,25 +23,20 @@ public class Patient {
 	@Column(name = "ID")
 	private long patientId;
 
-	@Column(name = "Contact_No")
-	private String patientPhNo;
-
 	@JsonIgnore
 	@ManyToMany(mappedBy = "patientList")
-	private Set<Doctor> doctorList = new HashSet<>();
-
-	@Column(name = "Name")
-	private String name;
+	private List<Doctor> doctorsList;
 
 	@Column(name = "AdmitStatus")
 	private char admitStatus;
 
-	@Column(name = "Age")
-	private int age;
-
 	@OneToOne
 	@JoinColumn(name = "Address", referencedColumnName = "ID")
 	private Address patientAddress;
+
+	@OneToOne
+	@JoinColumn(name = "User", referencedColumnName = "ID")
+	private User user;
 
 	public long getPatientId() {
 		return patientId;
@@ -52,28 +46,12 @@ public class Patient {
 		this.patientId = patientId;
 	}
 
-	public String getPatientPhNo() {
-		return patientPhNo;
+	public List<Doctor> getDoctorsList() {
+		return doctorsList;
 	}
 
-	public void setPatientPhNo(String patientPhNo) {
-		this.patientPhNo = patientPhNo;
-	}
-
-	public Set<Doctor> getDoctorList() {
-		return doctorList;
-	}
-
-	public void setDoctorList(Set<Doctor> doctorList) {
-		this.doctorList = doctorList;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void setDoctorsList(List<Doctor> doctorsList) {
+		this.doctorsList = doctorsList;
 	}
 
 	public char getAdmitStatus() {
@@ -84,14 +62,6 @@ public class Patient {
 		this.admitStatus = admitStatus;
 	}
 
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
 	public Address getPatientAddress() {
 		return patientAddress;
 	}
@@ -100,27 +70,32 @@ public class Patient {
 		this.patientAddress = patientAddress;
 	}
 
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	public Patient() {
 
 	}
 
-	public Patient(long patientId, String patientPhNo, Set<Doctor> doctorList, String name, char admitStatus, int age,
-			Address patientAddress) {
+	public Patient(long patientId,List<Doctor> doctorsList, char admitStatus,
+			Address patientAddress, User user) {
 		super();
 		this.patientId = patientId;
-		this.patientPhNo = patientPhNo;
-		this.doctorList = doctorList;
-		this.name = name;
+		this.doctorsList = doctorsList;
 		this.admitStatus = admitStatus;
-		this.age = age;
 		this.patientAddress = patientAddress;
+		this.user = user;
 	}
 
 	@Override
 	public String toString() {
-		return "Patient [patientId=" + patientId + ", patientPhNo=" + patientPhNo + ", doctorList=" + doctorList
-				+ ", name=" + name + ", admitStatus=" + admitStatus + ", age=" + age + ", patientAddress="
-				+ patientAddress + "]";
+		return "Patient [patientId=" + patientId + ", doctorsList=" + doctorsList
+				+ ", admitStatus=" + admitStatus + ", patientAddress=" + patientAddress + ", user=" + user + "]";
 	}
 
 }
