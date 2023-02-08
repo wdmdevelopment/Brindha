@@ -2,30 +2,34 @@ package com.example.demo.dto;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class RequestUser {
 
-	private String hospitalName;
-	private String userName;
-	private LocalDate dob;
+	private long hospitalId;
+
+	private String name;
+
 	private int age;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+	private LocalDate dob;
+
 	private String contactNum;
+
 	private String role;
 
-	public String getHospitalName() {
-		return hospitalName;
+	private String email;
+
+	private String password;
+
+	public String getName() {
+		return name;
 	}
 
-	public void setHospitalName(String hospitalName) {
-		this.hospitalName = hospitalName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public LocalDate getDob() {
-		return dob;
-	}
-
-	public void setDob(LocalDate dob) {
-		this.dob = dob;
-	}
 
 	public int getAge() {
 		return age;
@@ -33,14 +37,6 @@ public class RequestUser {
 
 	public void setAge(int age) {
 		this.age = age;
-	}
-
-	public String getContactNum() {
-		return contactNum;
-	}
-
-	public void setContactNum(String contactNum) {
-		this.contactNum = contactNum;
 	}
 
 	public String getRole() {
@@ -51,12 +47,44 @@ public class RequestUser {
 		this.role = role;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public long getHospitalId() {
+		return hospitalId;
+	}
+
+	public void setHospitalId(long hospitalId) {
+		this.hospitalId = hospitalId;
+	}
+
+	public LocalDate getDob() {
+		return dob;
+	}
+
+	public void setDob(LocalDate dob) {
+		this.dob = dob;
+	}
+
+	public String getContactNum() {
+		return contactNum;
+	}
+
+	public void setContactNum(String contactNum) {
+		this.contactNum = contactNum;
 	}
 
 }

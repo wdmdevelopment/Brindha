@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,7 +30,7 @@ public class Doctor {
 	@Column(name = "Specialist")
 	private String doctorSpecialist;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "hospital_id")
 	@JsonIgnoreProperties("doctors")
 	private Hospital hospital;
@@ -39,15 +40,15 @@ public class Doctor {
 			@JoinColumn(name = "patient_Id") })
 	private List<Patient> patientList;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "Address", referencedColumnName = "ID")
 	private Address doctorAddress;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "User", referencedColumnName = "ID")
 	private User user;
 
-	@OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "doctor", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Slot> slot;
 
 	public long getDoctorId() {

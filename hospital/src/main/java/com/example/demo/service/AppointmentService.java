@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.example.demo.dto.RequestAppUpdate;
 import com.example.demo.dto.RequestAppointment;
 import com.example.demo.entity.AppointmentBooking;
 
@@ -14,9 +15,10 @@ public interface AppointmentService {
 
 	public AppointmentBooking getOneAppointmentById(long id);
 	
-	public AppointmentBooking saveAppointment(RequestAppointment reqAppointment, long adminId);
+	public AppointmentBooking saveAppointment(RequestAppointment reqAppointment);
 	
-	public AppointmentBooking updateAppointment(AppointmentBooking appointment, Long id);
+	public AppointmentBooking updateAppointment(RequestAppUpdate reqApp, long appointId);
 	
 	public void deleteAppointment(long id);
+
 }

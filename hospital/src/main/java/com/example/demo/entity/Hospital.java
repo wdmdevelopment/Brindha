@@ -1,10 +1,12 @@
 package com.example.demo.entity;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,6 +14,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "Hospital")
@@ -25,7 +29,8 @@ public class Hospital {
 	@Column(name = "Hospital_Name")
 	private String hospitalName;
 
-	@OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "hospital", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JsonIgnore
 	private List<User> user;
 
 	@OneToOne(cascade = CascadeType.ALL)
@@ -35,10 +40,13 @@ public class Hospital {
 	@Column(name = "PhNo")
 	private String contactNum;
 
-	@OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "hospital", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Doctor> doctors;
 
-	@OneToOne
+	@OneToMany(mappedBy = "hospital", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private Set<ImgHospital> hospitalImg;
+
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "Facility", referencedColumnName = "ID")
 	private Facility facilityList;
 
@@ -56,6 +64,14 @@ public class Hospital {
 
 	public void setHospitalName(String hospitalName) {
 		this.hospitalName = hospitalName;
+	}
+
+	public Set<ImgHospital> getHospitalImg() {
+		return hospitalImg;
+	}
+
+	public void setHospitalImg(Set<ImgHospital> hospitalImg) {
+		this.hospitalImg = hospitalImg;
 	}
 
 	public List<User> getUser() {
@@ -103,7 +119,7 @@ public class Hospital {
 	}
 
 	public Hospital(long hospitalId, String hospitalName, List<User> user, Address address, String contactNum,
-			List<Doctor> doctors, Facility facilityList) {
+			List<Doctor> doctors, Set<ImgHospital> hospitalImg, Facility facilityList) {
 		super();
 		this.hospitalId = hospitalId;
 		this.hospitalName = hospitalName;
@@ -111,15 +127,11 @@ public class Hospital {
 		this.address = address;
 		this.contactNum = contactNum;
 		this.doctors = doctors;
+		this.hospitalImg = hospitalImg;
 		this.facilityList = facilityList;
 	}
-
-	@Override
-	public String toString() {
-		return "Hospital [hospitalId=" + hospitalId + ", hospitalName=" + hospitalName + ", user=" + user + ", address="
-				+ address + ", contactNum=" + contactNum + ", doctors=" + doctors + ", facilityList=" + facilityList
-				+ "]";
-	}
+	
+	
 	
 
 }

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Home Page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+
+	<link rel="stylesheet" href="../CSS/home.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="https://kit.fontawesome.com/54e0ebeaef.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top">
+
+		<div class="container-fluid" id="myHos">
+
+			<a class="navbar-brand" href="#">
+				<img src="../images/logo.jpg" alt="Logo" style="width:40px;" class="img-thumbnail">
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="mynavbar">
+
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="#" style="font-weight: bold">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" style="font-weight: bold" onclick = "hospital()">Hospital</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" style="font-weight: bold">Doctor</a>
+					</li>
+				</ul>
+				<form class="d-flex">
+					<input class="form-control me-2" type="text" placeholder="Search">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i
+							class="fa-solid fa-magnifying-glass"></i>
+					</button>
+				</form>
+				<a class="navbar-brand" href="#">
+
+					<a class="nav-link text-dark" href="login.html" style="font-weight: bold"><i
+							class="fa-solid fa-user-large"></i>
+						<span>Logout</span>
+
+
+
+					</a>
+			</div>
+		</div>
+
+	</nav>
+
+
+
+
+	<div class="back">
+
+
+		<div class="content">
+			<button class="btn btn-outline-warning float-end" type="button" data-bs-toggle="modal"
+				data-bs-target="#hospitalModal">+ Add Hospital</button>
+
+		</div>
+	</div>
+
+	</div>
+	<div class="modal fade" id="hospitalModal">
+		<div class="modal-dialog modal-dialog-scrollable">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title">Hospital Info</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body">
+
+					<form class="needs-validation" novalidate>
+						<div class="mb-3">
+
+							<label class="col-form-label" for="hospital"><i>Hospital Name</i></label>
+							<input type="text" id="name" class="form-control" required />
+
+						</div>
+						<div class="mb-3">
+							<label class="col-form-label" for="hospital"><i>Contact No</i></label>
+
+							<input type="text" id="mob" class="form-control" required />
+
+						</div>
+						<div class="mb-3">
+							<label class="col-form-label" for="hospital"><i>City</i></label>
+							<input type="text" id="city" class="form-control" />
+
+
+						</div>
+						<div class="mb-3">
+							<label class="col-form-label" for="hospital"><i>District</i></label>
+
+							<input type="text" id="district" class="form-control" />
+
+						</div>
+
+						<div class="mb-3">
+							<label class="col-form-label" for="hospital"><i>State</i></label>
+
+							<input type="text" id="state" class="form-control" required />
+
+						</div>
+
+						<div class="mb-3">
+							<label class="col-form-label" for="hospital"><i>Country</i></label>
+
+							<input type="text" id="country" class="form-control" required />
+
+						</div>
+
+						<div class="mb-3">
+							<label class="col-form-label" for="hospital"><i>Zip</i></label>
+
+							<input type="text" id="pincode" class="form-control" required />
+
+						</div>
+
+						<div class="mb-3">
+							<label class="col-form-label" for="hospital"><i>Facility</i></label>
+
+							<input type="text" id="facility" class="form-control" required>
+
+						</div>
+
+						<div class="mb-3">
+							<label class="col-form-label" for="image"><i>Choose Image</i></label>
+							<input type="file" id="myImg" name="filename" class="form-control" required>
+
+						</div>
+				</div>
+
+				<div class="alert alert-danger" role="alert">* Please fill the field before you submit.</div>
+				<div class="modal-footer">
+				<button type="button" class="btn btn-success" id="saveHos" data-dismiss="modal">Save</button>
+					<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<h1 class=" text-center text-center">Hospitals</h1>
+		
+  		<div class="container">
+		<div class="row" id="myHospital">
+			   
+			   
+				</div>
+        </div>
+
+	<script>
+
+
+
+		// -----------------POST Opertion----------------
+		$(document).ready(function () {
+			$("#saveHos").click(function () {
+
+				var url = "http://localhost:8080/hospital";
+
+
+				const formData = new FormData();
+		var file = $('#myImg').prop("files")[0];
+
+				var hospitalName = $("#name").val();
+				var contactNum = $("#mob").val();
+				var city = $("#city").val();
+				var district = $("#district").val();
+				var state = $("#state").val();
+				var country = $("#country").val();
+				var pincode = $("#pincode").val();
+				var facilityName = $("#facility").val();
+
+				formData.append('data', JSON.stringify({
+					'hospitalName': hospitalName,
+					'contactNum': contactNum,
+					'city': city,
+					'district': district,
+					'state': state,
+					'country': country,
+					'pincode': pincode,
+					'facilityName': facilityName,
+					'userId': localStorage.getItem('userId')
+
+				})),
+				formData.append('imagefile', file);
+				$.ajax({
+
+					type: "POST",
+					url: url,
+					data: formData,
+					contentType: false,
+					processData: false,
+					success: function(reqHosPost)
+				 {
+					$('#hospitalModal').modal('hide');
+					hospital();
+
+				 }, error: function (e) {
+					alert("Please fill all the fields")
+				 }
+
+				})
+				})
+
+			})
+				
+
+
+
+				
+		// ---------------------get OERATION------------------
+
+
+		var hospitalData="";
+		function hospital() {
+
+			$.ajax({
+				dataTypa: "JSON",
+				url: "http://localhost:8080/hospital",
+				type: "GET",
+
+				success: function (responseText) {
+
+
+					if (localStorage.getItem('role') == 'admin'){
+
+						var adminHospital = '<button type="button" class="btn btn-success mt-3 float-end" data-bs-toggle="modal" data-bs-target="#hospitalModal">Add Hospital</button>';
+					}
+
+					$.each(responseText, function (index, item) {
+
+
+						hospitalData += ' <div class="col-lg-4 col-md-4"><div class="card mb-3">' ;
+
+							$.each(item.hospitalImg, function (indeximg, itemimg) {
+						
+						hospitalData +=	'<img class="img-fluid"  style="object-fit: cover; height: max(17rem, 30vh);" src="data:image/png;base64,'+itemimg.imageData+'"/>';
+
+						});
+						
+						hospitalData += '<div class="card-body"><h2 class="card-title text-center">'+ item.hospitalName +' </h2><h5 class="card-text text-center">'+ "Contact: "+ item.contactNum +'</h5><p class="card-text text-center">' + "Locates At: "+ item.address.city+'</p><p class="card-text text-center">'+ item.address.district +'-'+ item.address.pincode +'</p><p class="card-text text-center">'+ item.address.state +', '+ item.address.country +'.</p>';
+
+							
+						
+							if(localStorage.getItem('role') == "admin"){
+
+
+								hospitalData +='<div class="d-grid gap-1 d-md-flex justify-content-md-end"><a onclick="editHospital('+item.productId+')" class="btn btn-primary btn-sm float-text-center card-link"><b>Edit</b></a> <a onclick="deleteHospital('+item.productId+')" class="btn btn-primary btn-sm float-text-center card-link "><b>Delete</b></a> <a onclick="editHospital('+item.productId+')"  class="btn btn-primary btn-sm float-text-center card-link" href="slot.html"><b> + Add Slots</b></a></div>';
+							}
+							else{
+								hospitalData +='<div class="d-grid gap-2 col-8 mx-auto"> <a class="btn btn-primary float-text-center"  href ="Appointment.html" style="border-radius:50px" type="button" id="hos">Make an Appointment</a></div>';
+						}
+						
+						hospitalData +='</div></div></div>';
+
+					});
+					$("#myHospital").empty();
+				$("#myHospital").append(hospitalData);
+				$(".adminHospital").append(adminHospital);	
+			}
+			
+		});
+}
+			
+	</script>
+
+</body>
+
+</html>

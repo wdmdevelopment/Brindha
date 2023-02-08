@@ -2,6 +2,7 @@ package com.example.demo.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +15,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@Entity
+@Entity(name = "Patient")
 @Table(name = "Patient")
 public class Patient {
 
@@ -28,13 +29,13 @@ public class Patient {
 	private List<Doctor> doctorsList;
 
 	@Column(name = "AdmitStatus")
-	private char admitStatus;
+	private char admitStatus;        //Y, N
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "Address", referencedColumnName = "ID")
 	private Address patientAddress;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "User", referencedColumnName = "ID")
 	private User user;
 

@@ -1,25 +1,52 @@
 package com.example.demo.dto;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 
-import javax.validation.constraints.NotBlank;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class RequestAppointment {
 
-	@NotBlank
-	private LocalDateTime slotStartTime;
+	private String name;
+
+	private long userId;
+	
+	private int age;
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
+	private LocalDate slotDate;
 
 	private double price;
 
-	private char admitStatus;
+	private String contactNum;
 
-	public LocalDateTime getSlotStartTime() {
-		return slotStartTime;
+	private String city;
+
+	private String district;
+
+	private String pincode;
+
+	public String getName() {
+		return name;
 	}
 
-	public void setSlotStartTime(LocalDateTime slotStartTime) {
-		this.slotStartTime = slotStartTime;
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public LocalDate getSlotDate() {
+		return slotDate;
+	}
+
+	public void setSlotDate(LocalDate slotDate) {
+		this.slotDate = slotDate;
 	}
 
 	public double getPrice() {
@@ -30,12 +57,45 @@ public class RequestAppointment {
 		this.price = price;
 	}
 
-	public char getAdmitStatus() {
-		return admitStatus;
+	public String getContactNum() {
+		return contactNum;
 	}
 
-	public void setAdmitStatus(char admitStatus) {
-		this.admitStatus = admitStatus;
+	public void setContactNum(String contactNum) {
+		this.contactNum = contactNum;
 	}
 
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getDistrict() {
+		return district;
+	}
+
+	public void setDistrict(String district) {
+		this.district = district;
+	}
+
+	public String getPincode() {
+		return pincode;
+	}
+
+	public void setPincode(String pincode) {
+		this.pincode = pincode;
+	}
+
+	public long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(long userId) {
+		this.userId = userId;
+	}
+
+	
 }

@@ -1,6 +1,6 @@
 package com.example.demo.serviceImpl;
 
-import java.util.ArrayList;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -8,13 +8,14 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.dto.RequestPatUpdate;
 import com.example.demo.dto.RequestPatient;
-import com.example.demo.entity.Doctor;
+import com.example.demo.entity.Address;
 import com.example.demo.entity.Patient;
 import com.example.demo.entity.User;
 import com.example.demo.exception.AdminOnlyException;
 import com.example.demo.exception.IdNotFoundException;
-import com.example.demo.exception.NoSuchPatientExistsException;
+import com.example.demo.repository.AddressRepository;
 import com.example.demo.repository.PatientRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.PatientService;
@@ -27,6 +28,9 @@ public class PatientImpl implements PatientService {
 
 	@Autowired
 	private UserRepository userRepo;
+	
+	@Autowired
+	private AddressRepository addressRepo;
 
 	public List<Patient> getAllPatient() {
 		return patientRepo.findAll();
@@ -45,37 +49,81 @@ public class PatientImpl implements PatientService {
 
 	public Patient savePat(RequestPatient reqPat, long adminId) {
 
-		User findById = userRepo.findById(adminId).orElseThrow(() -> new IdNotFoundException("Not Found" + adminId));
+		User findById = userRepo.findById(adminId).orElseThrow(() -> new IdNotFoundException("Not Found id " + adminId));
 		String getUserRole = findById.getRole();
 		if (getUserRole.equalsIgnoreCase("admin")) {
-
-			Doctor doctor1 = new Doctor();
-			doctor1.setDoctorSpecialist(reqPat.getDoctorSpecialist());
-
-			List<Doctor> doctor = new ArrayList<>();
-			doctor.add(doctor1);
+			
+			User user = new User();
+			user.setName(reqPat.getName());
+			user.setContactNum(reqPat.getContactNum());
+			user.setAge(reqPat.getAge());
+			user.setGender(reqPat.getGender());
+			user.setDob(reqPat.getDob());
+			user.setRole(reqPat.getRole());
+			user.setEmail(reqPat.getEmail());
+			user.setPassword(reqPat.getPassword());
+			
+			Address add = new Address();
+			add.setCity(reqPat.getCity());
+			add.setDistrict(reqPat.getDistrict());
+			add.setState(reqPat.getState());
+			add.setCountry(reqPat.getCountry());
+			add.setPincode(reqPat.getPincode());
 
 			Patient pat = new Patient();
 			pat.setAdmitStatus(reqPat.getAdmitStatus());
-			pat.setDoctorsList(doctor);
-
+			pat.setUser(user);
+			pat.setPatientAddress(add);
+			
+			
 			return patientRepo.save(pat);
 		} else {
 			throw new AdminOnlyException("Only Admins can add Patient");
 		}
 	}
 
-	public String updatePat(Patient pat) {
-		Patient existingPatient = patientRepo.findById(pat.getPatientId()).orElse(null);
-		if (existingPatient == null)
-			throw new NoSuchPatientExistsException("No Such Patient exists!!");
-		else {
-			patientRepo.save(existingPatient);
-			return "Patient updated Successfully";
+	public Patient updatePat(RequestPatUpdate reqPatUpdate, long patientId) {
+		
+		User findById = userRepo.findById(reqPatUpdate.getAdminId())
+				.orElseThrow(() -> new IdNotFoundException("Admin id not found " + patientId));
+		String getUserRole = findById.getRole();
+		if (getUserRole.equalsIgnoreCase("admin")) {
+			
+			Patient pat = patientRepo.findById(patientId)
+					.orElseThrow(() -> new IdNotFoundException("Patient id not found " + patientId));
+			
+			Address address = addressRepo.findById(reqPatUpdate.getAddressId())
+					.orElseThrow(() -> new IdNotFoundException("Address id not found " + patientId));
+			address.setCity(reqPatUpdate.getCity());
+			address.setDistrict(reqPatUpdate.getDistrict());
+			address.setCountry(reqPatUpdate.getCountry());
+			address.setPincode(reqPatUpdate.getPincode());
+			address.setState(reqPatUpdate.getState());
+			
+			User user = userRepo.findById(reqPatUpdate.getUserId())
+					.orElseThrow(() -> new IdNotFoundException("Address id not found " + patientId));
+			
+			user.setAge(reqPatUpdate.getAge());
+			user.setContactNum(reqPatUpdate.getContactNum());
+			user.setDob(reqPatUpdate.getDob());
+			user.setEmail(reqPatUpdate.getEmail());
+			user.setGender(reqPatUpdate.getGender());
+			user.setName(reqPatUpdate.getName());
+			user.setRole(reqPatUpdate.getRole());
+			user.setPassword(reqPatUpdate.getPassword());
+			
+			pat.setAdmitStatus(reqPatUpdate.getAdmitStatus());
+			pat.setPatientAddress(address);
+			pat.setUser(user);
+			
+			
+			return patientRepo.save(pat);
+		} else {
+			throw new AdminOnlyException("Only Admins can update patient");
 		}
-
 	}
-
+	
+	
 	public void deletePat(long id) {
 		Optional<Patient> pat = patientRepo.findById(id);
 		if (pat.isPresent()) {
@@ -85,4 +133,13 @@ public class PatientImpl implements PatientService {
 
 		}
 	}
+	
+
+	public List<User> patientAdmitStatus(String admitStatus) {
+
+		return patientRepo.getPatientByAdmitStatus(admitStatus);
+	}
+
+	
+
 }

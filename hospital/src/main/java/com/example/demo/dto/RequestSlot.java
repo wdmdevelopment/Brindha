@@ -1,35 +1,58 @@
 package com.example.demo.dto;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
-import javax.validation.constraints.NotBlank;
+import java.time.LocalTime;
+
+import javax.validation.constraints.NotNull;
+
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalTimeSerializer;
+
 
 public class RequestSlot {
-	@NotBlank
-	private LocalDateTime slotStartTime;
-	@NotBlank
-	private LocalDateTime slotEndTime;
 	
+	@NotNull
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
+	@JsonDeserialize(using = LocalTimeDeserializer.class)
+	@JsonSerialize(using = LocalTimeSerializer.class)
+	private LocalTime slotStartTime;
+	
+	@NotNull
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
+	private LocalTime slotEndTime;
+	
+	@NotNull
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
 	private LocalDate slotDate;
-	
+
 	private String status;
-	@NotBlank
+
+	private String facilityName;
+
+//	private String name;
+	
 	private double price;
 
-	public LocalDateTime getSlotStartTime() {
+	public @NotNull LocalTime getSlotStartTime() {
 		return slotStartTime;
 	}
 
-	public void setSlotStartTime(LocalDateTime slotStartTime) {
+	public void setSlotStartTime(@NotNull LocalTime slotStartTime) {
 		this.slotStartTime = slotStartTime;
 	}
 
-	public LocalDateTime getSlotEndTime() {
+	public LocalTime getSlotEndTime() {
 		return slotEndTime;
 	}
 
-	public void setSlotEndTime(LocalDateTime slotEndTime) {
+	public void setSlotEndTime(LocalTime slotEndTime) {
 		this.slotEndTime = slotEndTime;
 	}
 
@@ -49,6 +72,22 @@ public class RequestSlot {
 		this.status = status;
 	}
 
+	public String getFacilityName() {
+		return facilityName;
+	}
+
+	public void setFacilityName(String facilityName) {
+		this.facilityName = facilityName;
+	}
+
+//	public String getName() {
+//		return name;
+//	}
+//
+//	public void setName(String name) {
+//		this.name = name;
+//	}
+
 	public double getPrice() {
 		return price;
 	}
@@ -57,4 +96,5 @@ public class RequestSlot {
 		this.price = price;
 	}
 
+	
 }

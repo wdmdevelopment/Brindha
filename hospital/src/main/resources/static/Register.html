@@ -1,0 +1,111 @@
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit = no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+
+	<script src="https://kit.fontawesome.com/54e0ebeaef.js" crossorigin="anonymous"></script>
+	<title>Registration Form</title>
+	<style>
+		body {
+			color: rgb(245, 225, 44);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container bg-dark">
+		<div class="row d-flex justify-content-center align-items-center h-100">
+
+			<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+
+				<div class="card" style="border-radius: 1rem;">
+					<div class="card-body p-5">
+
+						<div class="form-label">
+							<i class="fa-solid fa-user"></i> <label class="form-label" for="Name">Name</label>
+							<input type="text" class="form-control form-control-lg" />
+
+						</div>
+						
+
+							<div class="form-label">
+								<i class="fa-solid fa-user-plus"></i> <label class="form-label" for="Role">Role</label>
+								<select class="custom-select" id="inputGroupSelect">
+									<option selected>Choose...</option>
+									<option value="1">Doctor</option>
+									<option value="3">Admin</option>
+									<option value="4">Patient</option>
+								</select>
+
+							</div>
+
+							<div class="form-label">
+								<i class="fa-solid fa-caret-up"></i><label class="form-label" for="Age">Age</label>
+								<input type="number" class="form-control form-control-lg">
+
+							</div>
+
+							<div class="form-label">
+								<i class="fa-solid fa-envelope"></i><label class="form-label" for="Email">Email</label>
+								<input type="email" class="form-control form-control-lg" />
+
+							</div>
+
+							<div class="form-label">
+								<i class="fa-solid fa-lock"></i> <label class="form-label"
+									for="Password">Password</label>
+								<input type="password" class="form-control form-control-lg" />
+
+							</div>
+							<p id="clickLink">Have an account? <a href="login.html"> Sign In!</a></p>
+
+							<center><button class="mt-mb-5 pb-lg-2 btn btn-info text-center rounded" type="button"
+									id="register">Register</button></center>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+
+			$(document).ready(function () {
+				$("#register").click(function () {
+					var Name = $('#name').val();
+
+					var Age = $('#age').val();
+
+					var Email = $('#email').val();
+					var Password = $('#password').val();
+
+
+					var details = {
+						'name': Name,
+						'age': Age,
+						'role': $('#inputGroupSelect').val(),
+						'email': Email,
+						'password': Password
+					};
+					console.log(details);
+					$.ajax({
+						url: "http://localhost:8080/user/add",
+						type: "POST",
+						data: JSON.stringify(details),
+						contentType: "application/json",
+						success: function (data) {
+							alert("Registered successfully")
+						}, error: function (e) {
+							console.log(e);
+						}
+					});
+				})
+			});
+		</script>
+
+</body>
+
+</html>

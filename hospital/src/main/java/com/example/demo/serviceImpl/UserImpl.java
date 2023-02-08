@@ -1,8 +1,7 @@
 package com.example.demo.serviceImpl;
 
-import java.util.ArrayList;
-
 import java.util.List;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +11,7 @@ import com.example.demo.dto.RequestUser;
 import com.example.demo.entity.Hospital;
 import com.example.demo.entity.User;
 import com.example.demo.exception.IdNotFoundException;
+import com.example.demo.repository.HospitalRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.UserService;
 
@@ -20,46 +20,80 @@ public class UserImpl implements UserService {
 
 	@Autowired
 	private UserRepository userRepo;
+	
+	@Autowired
+	private HospitalRepository hosRepo;
 
 	public List<User> getAllUser() {
 
 		return userRepo.findAll();
 	}
 
-	public User getUserById(long id) {
+	public RequestUser getUserById(long id) {
 
+		User user;
 		try {
-			User user = userRepo.findById(id).get();
-			return user;
-		} catch (Exception ex) {
-			ex.printStackTrace();
-			throw new IdNotFoundException("User id not found" + ex);
+			user = userRepo.findById(id).get();
+		} catch (Exception e) {
+			throw new IdNotFoundException(e.getMessage());
 		}
+
+		RequestUser reqUser = new RequestUser();
+
+		reqUser.setName(user.getName());
+		reqUser.setAge(user.getAge());
+		reqUser.setEmail(user.getEmail());
+		reqUser.setPassword(user.getPassword());
+		reqUser.setRole(user.getRole());
+
+		return reqUser;
 
 	}
 
 	public User saveUser(RequestUser reqUser) {
 
-		Hospital hos1 = new Hospital();
-		hos1.setHospitalName(reqUser.getHospitalName());
-
-		Hospital hos2 = new Hospital();
-		hos2.setContactNum(reqUser.getContactNum());
-
-		List<Hospital> hos = new ArrayList<Hospital>();
-		hos.add(hos1);
-		hos.add(hos2);
-
+		
 		User user = new User();
-		user.setAge(reqUser.getAge());
-		user.setDob(reqUser.getDob());
-		user.setHospital((Hospital) hos);
 
+		user.setName(reqUser.getName());
+		user.setAge(reqUser.getAge());
+		user.setEmail(reqUser.getEmail());
+		user.setPassword(reqUser.getPassword());
+		user.setRole(reqUser.getRole());
+		user.setContactNum(reqUser.getContactNum());
+		user.setDob(reqUser.getDob());
+		
+		
+		Hospital hos = hosRepo.findById(reqUser.getHospitalId())
+				.orElseThrow(() -> new IdNotFoundException("id not found"));
+		
+		
+		user.setHospital(hos);
+		
+		
 		return userRepo.save(user);
 	}
 
-	public User updateUser(User user) {
+	public User updateUser(long userId, RequestUser reqUser) {
 
+		
+		User user = userRepo.findById(userId).orElseThrow(()-> new IdNotFoundException("id not found"));
+
+		user.setName(reqUser.getName());
+		user.setAge(reqUser.getAge());
+		user.setEmail(reqUser.getEmail());
+		user.setPassword(reqUser.getPassword());
+		user.setRole(reqUser.getRole());
+		user.setContactNum(reqUser.getContactNum());
+		user.setDob(reqUser.getDob());
+		
+		Hospital hos = hosRepo.findById(reqUser.getHospitalId())
+				.orElseThrow(() -> new IdNotFoundException("id not found"));
+		
+		
+		user.setHospital(hos);
+		
+		
 		return userRepo.save(user);
 	}
 
@@ -74,4 +108,21 @@ public class UserImpl implements UserService {
 
 	}
 
+	public List<User> UserByRole(String role) {
+
+		return userRepo.getUserByRole(role);
+	}
+
+	public User login(String email, String password) {
+		User user = userRepo.findByEmailAndPassword(email, password);
+		
+		if(user.getEmail().contains(email) && user.getPassword().contains(password)) {
+			return user;
+		}else {
+			
+			throw new IdNotFoundException("Invalid Information");
+		}
+		
+		
+	}
 }

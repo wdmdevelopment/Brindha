@@ -35,7 +35,7 @@ public class FacilityController {
 
 	@GetMapping("/facility/{id}")
 	public ResponseEntity<Facility> getOneFacilityById(@PathVariable("id") long id) {
-		logger.info("Get facility by id " + getOneFacilityById(id));
+		logger.info("Get facility by id ");
 		Facility facility = facilityService.getOneFacilityById(id);
 		if (facility == null) {
 			return ResponseEntity.notFound().build();
@@ -53,7 +53,7 @@ public class FacilityController {
 
 	@PutMapping("/facility/{id}")
 	public Facility updateFacilities(@RequestBody RequestFacility reqFacility, long id) {
-		logger.info("Updated Facility details " + updateFacilities(reqFacility, id));
+		logger.info("Updated Facility details ");
 		return facilityService.updateFacilities(reqFacility, id);
 
 	}

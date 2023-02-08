@@ -41,7 +41,8 @@ public class FacilityImpl implements FacilityService {
 
 	public Facility saveFacilities(RequestFacility reqFacility, long adminId) {
 
-		User findById = userRepo.findById(adminId).orElseThrow(() -> new IdNotFoundException("Not Found" + adminId));
+		User findById = userRepo.findById(adminId)
+				.orElseThrow(() -> new IdNotFoundException("Not Found id " + adminId));
 		String getUserRole = findById.getRole();
 		if (getUserRole.equalsIgnoreCase("admin")) {
 
@@ -54,20 +55,31 @@ public class FacilityImpl implements FacilityService {
 		}
 	}
 
-	public Facility updateFacilities(RequestFacility reqFacility, long id) {
+	public Facility updateFacilities(RequestFacility reqFacility, long adminId) {
+		User findById = userRepo.findById(adminId)
+				.orElseThrow(() -> new IdNotFoundException("Not Found id " + adminId));
+		String getUserRole = findById.getRole();
+		if (getUserRole.equalsIgnoreCase("admin")) {
 
-		Facility facility = facilityRepo.findById(id).orElseThrow(() -> new IdNotFoundException(id + " Not Found"));
+			Facility facility = new Facility();
+			facility.setFacilityName(reqFacility.getFacilityName());
 
-		facility.setFacilityName(reqFacility.getFacilityName());
-
-		return facilityRepo.save(facility);
+			return facilityRepo.save(facility);
+		} else {
+			throw new AdminOnlyException("Only Admins can update Facilities");
+		}
 	}
 
-	public void deleteFacilities(long id) {
+	public void deleteFacilities(long adminId) {
+		User findById = userRepo.findById(adminId)
+				.orElseThrow(() -> new IdNotFoundException("Not Found id " + adminId));
+		String getUserRole = findById.getRole();
+		if (getUserRole.equalsIgnoreCase("admin")) {
 
-		facilityRepo.findById(id).orElseThrow(() -> new IdNotFoundException(id + " Not Found"));
+			facilityRepo.deleteById(adminId);
+		} else {
+			throw new AdminOnlyException("Only Admins can delete Facilities");
+		}
 
-		facilityRepo.deleteById(id);
 	}
-
 }

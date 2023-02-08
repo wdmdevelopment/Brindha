@@ -2,8 +2,6 @@ package com.example.demo.controller;
 
 import java.util.List;
 
-
-
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -17,14 +15,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.dto.RequestDocPost;
 import com.example.demo.dto.RequestDoctor;
 import com.example.demo.entity.Doctor;
 import com.example.demo.service.DoctorService;
 
 @RestController
+@RequestMapping("Doctor")
 public class DoctorController {
 
 	@Autowired(required = false)
@@ -41,30 +42,33 @@ public class DoctorController {
 	@GetMapping("/doctor/{id}")
 	public ResponseEntity<Doctor> getOneDoctorById(@PathVariable("id") long id) {
 		logger.info("Doctor details get by ID " + getOneDoctorById(id));
-		Doctor doc = doctorService.getOneDoctorById(id);
 
-		if (doc == null) {
-			return ResponseEntity.notFound().build();
-		} else {
-			return ResponseEntity.ok().body(doc);
-		}
+		return new ResponseEntity<>(doctorService.getOneDoctorById(id), HttpStatus.OK);
 	}
 
 	@PostMapping("/doctor")
-	public ResponseEntity<Doctor> saveDoctor(@Valid @RequestBody RequestDoctor reqDoctor, long adminId) {
+	public ResponseEntity<Doctor> saveDoctor(@Valid @RequestBody RequestDocPost reqDocPost, long adminId) {
 		logger.info("Doctor saved");
 
-		return new ResponseEntity<>(doctorService.saveDoctor(reqDoctor, adminId), HttpStatus.OK);
+		return new ResponseEntity<>(doctorService.saveDoctor(reqDocPost, adminId), HttpStatus.OK);
 
 	}
 
 	@PutMapping("/doctor/{id}")
-	public ResponseEntity<Doctor> updateDoctor(@RequestBody Doctor doctor, @PathVariable("id") long id) {
-		logger.info("Updated Doctor " + updateDoctor(doctor, id));
+	public ResponseEntity<Doctor> updateDoctor(@RequestBody RequestDoctor reqDoctor, @RequestParam("adminId") long adminId) {
+		logger.info("Updated Doctor ");
+		
+		
+		Doctor	doc = doctorService.updateDoctor(reqDoctor, adminId);
+		if(doc == null) {
+			return ResponseEntity.notFound().build();
+	} 
+		return ResponseEntity.ok().body(doc);
 
-		return new ResponseEntity<>(doctorService.updateDoctor(doctor, id), HttpStatus.OK);
 
 	}
+
+		
 
 	@DeleteMapping("/doctor/{id}")
 	public ResponseEntity<Void> deleteDoctor(@PathVariable("id") long id) {

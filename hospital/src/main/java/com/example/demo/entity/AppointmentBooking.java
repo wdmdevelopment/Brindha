@@ -30,6 +30,14 @@ public class AppointmentBooking {
 	@Column(name = "Status")
 	private String bookingStatus;
 
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name = "User", referencedColumnName = "ID")
+	private User user;
+
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name = "Address", referencedColumnName = "ID")
+	private Address address;
+
 	public long getAppointmentId() {
 		return appointmentId;
 	}
@@ -62,22 +70,41 @@ public class AppointmentBooking {
 		this.bookingStatus = bookingStatus;
 	}
 
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
 	public AppointmentBooking() {
 
 	}
 
-	public AppointmentBooking(long appointmentId, Slot slot, Patient patient, String bookingStatus) {
+	public AppointmentBooking(long appointmentId, Slot slot, Patient patient, String bookingStatus, User user,
+			Address address) {
 		super();
 		this.appointmentId = appointmentId;
 		this.slot = slot;
 		this.patient = patient;
 		this.bookingStatus = bookingStatus;
+		this.user = user;
+		this.address = address;
 	}
 
 	@Override
 	public String toString() {
 		return "AppointmentBooking [appointmentId=" + appointmentId + ", slot=" + slot + ", patient=" + patient
-				+ ", bookingStatus=" + bookingStatus + "]";
+				+ ", bookingStatus=" + bookingStatus + ", user=" + user + ", address=" + address + "]";
 	}
 
 }

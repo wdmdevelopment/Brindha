@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.example.demo.dto.RequestDocPost;
 import com.example.demo.dto.RequestDoctor;
 import com.example.demo.entity.Doctor;
 
@@ -15,9 +16,9 @@ public interface DoctorService {
 
 	public Doctor getOneDoctorById(long id);
 
-	public Doctor saveDoctor(RequestDoctor reqDoctor, long adminId);
+	public Doctor saveDoctor(RequestDocPost reqDocPost, long adminId);
 
-	public Doctor updateDoctor(Doctor doctor, long id);
+	public Doctor updateDoctor( RequestDoctor reqDoctor, long adminId) ;
 
 	public void deleteDoctor(long id);
 

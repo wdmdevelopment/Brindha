@@ -1,44 +1,56 @@
 package com.example.demo.dto;
 
 
-import java.time.LocalDate;
-
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 
-
 public class RequestDoctor {
-	@NotNull(message = "Name should not be null")
-	private String userName;
 
-	private String hospitalName;
+	@NotNull(message = "Name should not be null")
+	private String name;
+	
+	private long userId;
+	
+	private long addressId;
+	
+	private long doctorId;
+	
+	public long getDoctorId() {
+		return doctorId;
+	}
+
+	public void setDoctorId(long doctorId) {
+		this.doctorId = doctorId;
+	}
 
 	private String city;
-	
+
 	@NotBlank
 	private String doctorSpecialist;
-	
-	private LocalDate dob;
-	
+
 	private int age;
-	
+
 	private String contactNum;
 	
-	public String getUserName() {
-		return userName;
+	
+	
+	
+	
+	public long getUserId() {
+		return userId;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUserId(long userId) {
+		this.userId = userId;
 	}
 
-	public String getHospitalName() {
-		return hospitalName;
+	public String getName() {
+		return name;
 	}
 
-	public void setHospitalName(String hospitalName) {
-		this.hospitalName = hospitalName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getCity() {
@@ -49,15 +61,13 @@ public class RequestDoctor {
 		this.city = city;
 	}
 
-
-	public LocalDate getDob() {
-		return dob;
+	public long getAddressId() {
+		return addressId;
 	}
 
-	public void setDob(LocalDate dob) {
-		this.dob = dob;
+	public void setAddressId(long addressId) {
+		this.addressId = addressId;
 	}
-
 	public int getAge() {
 		return age;
 	}
@@ -74,7 +84,6 @@ public class RequestDoctor {
 		this.contactNum = contactNum;
 	}
 
-
 	public String getDoctorSpecialist() {
 		return doctorSpecialist;
 	}
@@ -83,7 +92,4 @@ public class RequestDoctor {
 		this.doctorSpecialist = doctorSpecialist;
 	}
 
-	
-	
-	
 }

@@ -7,10 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.RequestSlot;
+import com.example.demo.entity.Facility;
 import com.example.demo.entity.Slot;
 import com.example.demo.entity.User;
-import com.example.demo.exception.IdNotFoundException;
 import com.example.demo.exception.DoctorOnlyException;
+import com.example.demo.exception.IdNotFoundException;
 import com.example.demo.repository.SlotRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.SlotService;
@@ -28,29 +29,50 @@ public class SlotImpl implements SlotService {
 		return slotRepo.findAll();
 	}
 
-	public Slot getOneSlotById(long id){
+	public RequestSlot getOneSlotById(long id){
+		
+		Slot slot;
 		try {
-			Slot slot = slotRepo.findById(id).get();
-			return slot;
-		} catch (IdNotFoundException ex) {
+			slot = slotRepo.findById(id).get();
+		} catch (Exception ex) {
 			ex.printStackTrace();
 			throw new IdNotFoundException("Slot not found for id: " + id);
 		}
-
+		
+		RequestSlot reqSlot = new RequestSlot();
+		
+		slot.setSlotStartTime(slot.getSlotStartTime());
+		slot.setSlotEndTime(slot.getSlotEndTime());
+		slot.setStatus(slot.getStatus());
+		slot.setSlotDate(slot.getSlotDate());
+		slot.setPrice(slot.getPrice());
+		
+		
+		return reqSlot;
 	}
 
 	public Slot saveSlot(RequestSlot reqSlot, long doctorId) {
 
-		User findById = userRepo.findById(doctorId).orElseThrow(() -> new IdNotFoundException(doctorId + "Not Found"));
+		User findById = userRepo.findById(doctorId).orElseThrow(() -> new IdNotFoundException( "Not Found id " + doctorId));
 		String getUserRole = findById.getRole();
 		if (getUserRole.equalsIgnoreCase("doctor")) {
 
+			Facility fac = new Facility();
+			fac.setFacilityName(reqSlot.getFacilityName());
+			
+			
+//			Doctor doc = new Doctor();
+//			reqSlot.setName(doc.getUser().getName());
+//			
 			Slot slot = new Slot();
+			
 			slot.setSlotStartTime(reqSlot.getSlotStartTime());
 			slot.setSlotEndTime(reqSlot.getSlotEndTime());
 			slot.setStatus(reqSlot.getStatus());
 			slot.setSlotDate(reqSlot.getSlotDate());
 			slot.setPrice(reqSlot.getPrice());
+			slot.setFacility(fac);
+			
 
 			return slotRepo.save(slot);
 		} else {

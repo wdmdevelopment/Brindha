@@ -35,10 +35,10 @@ public class SlotController {
 	}
 
 	@GetMapping("/slot/{id}")
-	public ResponseEntity<Slot> getOneSlotById(@PathVariable("id") long id) throws Exception {
-		logger.info("Get slot by id " + getOneSlotById(id));
+	public ResponseEntity<RequestSlot> getOneSlotById(@PathVariable("id") long id) throws Exception {
+		logger.info("Get slot by id ");
 
-		Slot slot = slotService.getOneSlotById(id);
+		RequestSlot slot = slotService.getOneSlotById(id);
 		if (slot == null) {
 			return ResponseEntity.notFound().build();
 		} else {
@@ -55,7 +55,7 @@ public class SlotController {
 
 	@PutMapping("/slot/{id}")
 	public ResponseEntity<Slot> updateSlot(@RequestBody Slot slot) {
-		logger.info("Updated slot " + updateSlot(slot));
+		logger.info("Updated slot ");
 		return new ResponseEntity<>(slotService.updateSlot(slot), HttpStatus.OK);
 
 	}

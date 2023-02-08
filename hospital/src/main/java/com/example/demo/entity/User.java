@@ -11,10 +11,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
 
-@Entity
-@Table(name = "User")
+import com.fasterxml.jackson.annotation.JsonFormat;
+ 
+
+@Table(name = "userDetails")
+@Entity(name = "userDetails")
 public class User {
 
 	@Id
@@ -22,17 +24,16 @@ public class User {
 	private long userId;
 
 	@Column(name = "User_Name")
-	@Size(min = 6)
-	private String userName;
+	private String name;
 
 	@Column(name = "Role")
-	private String role;
+	private String role; // admin patient doctor
 
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "ID")
-	private Hospital hospital;
+	@Column(name = "Gender")
+	private String gender;
 
 	@Column(name = "DOB")
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
 	private LocalDate dob;
 
 	@Column(name = "Age")
@@ -47,6 +48,11 @@ public class User {
 	@Column(name = "Mobile_Num")
 	private String contactNum;
 
+	@ManyToOne
+	@JoinColumn(name = "ID")
+	 
+	private Hospital hospital;
+
 	public long getUserId() {
 		return userId;
 	}
@@ -55,20 +61,12 @@ public class User {
 		this.userId = userId;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getName() {
+		return name;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public Hospital getHospital() {
@@ -79,12 +77,20 @@ public class User {
 		this.hospital = hospital;
 	}
 
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
 	public LocalDate getDob() {
 		return dob;
 	}
 
-	public void setDob(LocalDate date) {
-		this.dob = date;
+	public void setDob(LocalDate dob) {
+		this.dob = dob;
 	}
 
 	public int getAge() {
@@ -119,22 +125,16 @@ public class User {
 		this.contactNum = contactNum;
 	}
 
-	public User() {
-
+	public String getGender() {
+		return gender;
 	}
 
-	public User(long userId, @Size(min = 6) String userName, String role, Hospital hospital, LocalDate dob, int age,
-			String email, String password, String contactNum) {
-		super();
-		this.userId = userId;
-		this.userName = userName;
-		this.role = role;
-		this.hospital = hospital;
-		this.dob = dob;
-		this.age = age;
-		this.email = email;
-		this.password = password;
-		this.contactNum = contactNum;
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public User() {
+
 	}
 
 }

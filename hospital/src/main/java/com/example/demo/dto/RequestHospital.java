@@ -1,26 +1,46 @@
 package com.example.demo.dto;
 
-import java.time.LocalDate;
-
-
 
 public class RequestHospital {
 
+	private long adminId;
+	
 	private String hospitalName;
-	
-	private String userName;
-	
-	private LocalDate dob;
-	
-	private int age;
 
 	private String contactNum;
 
 	private String city;
 	
+	private String district;
+	
+	private String state;
+	
+	private String country;
+	
+	private String pincode;
+
 	private String facilityName;
 	
-	private String role;
+	private long addressId;
+	
+	private long facilityId;
+	
+
+	public long getFacilityId() {
+		return facilityId;
+	}
+
+	public void setFacilityId(long facilityId) {
+		this.facilityId = facilityId;
+	}
+
+	public long getAddressId() {
+		return addressId;
+	}
+
+	public void setAddressId(long addressId) {
+		this.addressId = addressId;
+	}
 
 	public String getHospitalName() {
 		return hospitalName;
@@ -28,30 +48,6 @@ public class RequestHospital {
 
 	public void setHospitalName(String hospitalName) {
 		this.hospitalName = hospitalName;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public LocalDate getDob() {
-		return dob;
-	}
-
-	public void setDob(LocalDate dob) {
-		this.dob = dob;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
 	}
 
 	public String getContactNum() {
@@ -78,13 +74,46 @@ public class RequestHospital {
 		this.facilityName = facilityName;
 	}
 
-	public String getRole() {
-		return role;
+	public String getDistrict() {
+		return district;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setDistrict(String district) {
+		this.district = district;
 	}
 
+	public String getState() {
+		return state;
+	}
 
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getPincode() {
+		return pincode;
+	}
+
+	public void setPincode(String pincode) {
+		this.pincode = pincode;
+	}
+
+	public long getAdminId() {
+		return adminId;
+	}
+
+	public void setAdminId(long adminId) {
+		this.adminId = adminId;
+	}
+
+	
+	
 }
