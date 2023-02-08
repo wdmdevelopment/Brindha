@@ -1,25 +1,19 @@
 package com.example.demo.dto;
 
-import java.time.LocalDate;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 public class RequestUser {
-
-	private long hospitalId;
-
+	@NotNull
 	private String name;
-
+	@NotNull
 	private int age;
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-	private LocalDate dob;
-
-	private String contactNum;
-
+	@NotNull
 	private String role;
-
+	@NotNull
 	private String email;
-
+	@NotNull
+	@Size(min = 8, max = 20)
 	private String password;
 
 	public String getName() {
@@ -29,7 +23,6 @@ public class RequestUser {
 	public void setName(String name) {
 		this.name = name;
 	}
-
 
 	public int getAge() {
 		return age;
@@ -61,30 +54,6 @@ public class RequestUser {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public long getHospitalId() {
-		return hospitalId;
-	}
-
-	public void setHospitalId(long hospitalId) {
-		this.hospitalId = hospitalId;
-	}
-
-	public LocalDate getDob() {
-		return dob;
-	}
-
-	public void setDob(LocalDate dob) {
-		this.dob = dob;
-	}
-
-	public String getContactNum() {
-		return contactNum;
-	}
-
-	public void setContactNum(String contactNum) {
-		this.contactNum = contactNum;
 	}
 
 }

@@ -1,8 +1,6 @@
 package com.example.demo.entity;
 
-import java.time.LocalDate;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +10,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
  
 
 @Table(name = "userDetails")
@@ -29,13 +26,6 @@ public class User {
 	@Column(name = "Role")
 	private String role; // admin patient doctor
 
-	@Column(name = "Gender")
-	private String gender;
-
-	@Column(name = "DOB")
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
-	private LocalDate dob;
-
 	@Column(name = "Age")
 	private int age;
 
@@ -45,12 +35,8 @@ public class User {
 	@Column(name = "password")
 	private String password;
 
-	@Column(name = "Mobile_Num")
-	private String contactNum;
-
 	@ManyToOne
 	@JoinColumn(name = "ID")
-	 
 	private Hospital hospital;
 
 	public long getUserId() {
@@ -85,13 +71,6 @@ public class User {
 		this.role = role;
 	}
 
-	public LocalDate getDob() {
-		return dob;
-	}
-
-	public void setDob(LocalDate dob) {
-		this.dob = dob;
-	}
 
 	public int getAge() {
 		return age;
@@ -117,22 +96,7 @@ public class User {
 		this.password = password;
 	}
 
-	public String getContactNum() {
-		return contactNum;
-	}
-
-	public void setContactNum(String contactNum) {
-		this.contactNum = contactNum;
-	}
-
-	public String getGender() {
-		return gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
+	
 	public User() {
 
 	}

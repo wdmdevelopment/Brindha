@@ -22,7 +22,6 @@ public class UserImpl implements UserService {
 	private UserRepository userRepo;
 	
 	@Autowired
-	private HospitalRepository hosRepo;
 
 	public List<User> getAllUser() {
 
@@ -60,15 +59,7 @@ public class UserImpl implements UserService {
 		user.setEmail(reqUser.getEmail());
 		user.setPassword(reqUser.getPassword());
 		user.setRole(reqUser.getRole());
-		user.setContactNum(reqUser.getContactNum());
-		user.setDob(reqUser.getDob());
 		
-		
-		Hospital hos = hosRepo.findById(reqUser.getHospitalId())
-				.orElseThrow(() -> new IdNotFoundException("id not found"));
-		
-		
-		user.setHospital(hos);
 		
 		
 		return userRepo.save(user);
@@ -84,14 +75,7 @@ public class UserImpl implements UserService {
 		user.setEmail(reqUser.getEmail());
 		user.setPassword(reqUser.getPassword());
 		user.setRole(reqUser.getRole());
-		user.setContactNum(reqUser.getContactNum());
-		user.setDob(reqUser.getDob());
 		
-		Hospital hos = hosRepo.findById(reqUser.getHospitalId())
-				.orElseThrow(() -> new IdNotFoundException("id not found"));
-		
-		
-		user.setHospital(hos);
 		
 		
 		return userRepo.save(user);

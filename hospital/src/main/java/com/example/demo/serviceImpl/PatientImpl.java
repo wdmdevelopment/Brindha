@@ -55,10 +55,7 @@ public class PatientImpl implements PatientService {
 			
 			User user = new User();
 			user.setName(reqPat.getName());
-			user.setContactNum(reqPat.getContactNum());
 			user.setAge(reqPat.getAge());
-			user.setGender(reqPat.getGender());
-			user.setDob(reqPat.getDob());
 			user.setRole(reqPat.getRole());
 			user.setEmail(reqPat.getEmail());
 			user.setPassword(reqPat.getPassword());
@@ -104,10 +101,7 @@ public class PatientImpl implements PatientService {
 					.orElseThrow(() -> new IdNotFoundException("Address id not found " + patientId));
 			
 			user.setAge(reqPatUpdate.getAge());
-			user.setContactNum(reqPatUpdate.getContactNum());
-			user.setDob(reqPatUpdate.getDob());
 			user.setEmail(reqPatUpdate.getEmail());
-			user.setGender(reqPatUpdate.getGender());
 			user.setName(reqPatUpdate.getName());
 			user.setRole(reqPatUpdate.getRole());
 			user.setPassword(reqPatUpdate.getPassword());

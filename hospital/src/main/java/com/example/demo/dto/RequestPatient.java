@@ -1,11 +1,9 @@
 package com.example.demo.dto;
 
 
-import java.time.LocalDate;
 
 import javax.validation.constraints.NotBlank;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 public class RequestPatient {
@@ -18,16 +16,9 @@ public class RequestPatient {
 	private int age;
 	
 	private String role;
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
-	private LocalDate dob;
-	
 	private String email;
 	
 	private String password;
-	
-	private String contactNum;
-	
-	private String gender;
 	
 	private String city;
 
@@ -71,13 +62,6 @@ public class RequestPatient {
 		this.role = role;
 	}
 
-	public LocalDate getDob() {
-		return dob;
-	}
-
-	public void setDob(LocalDate dob) {
-		this.dob = dob;
-	}
 
 	public String getEmail() {
 		return email;
@@ -95,21 +79,8 @@ public class RequestPatient {
 		this.password = password;
 	}
 
-	public String getContactNum() {
-		return contactNum;
-	}
+	
 
-	public void setContactNum(String contactNum) {
-		this.contactNum = contactNum;
-	}
-
-	public String getGender() {
-		return gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
 
 	public String getCity() {
 		return city;

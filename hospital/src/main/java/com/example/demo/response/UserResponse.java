@@ -7,8 +7,6 @@ public class UserResponse {
 	
 	private String role;
 	
-	private String contactNum;
-	
 	private String email;
 	
 
@@ -28,14 +26,6 @@ public class UserResponse {
 		this.role = role;
 	}
 
-	public String getContactNum() {
-		return contactNum;
-	}
-
-	public void setContactNum(String contactNum) {
-		this.contactNum = contactNum;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -45,11 +35,10 @@ public class UserResponse {
 	}
 
 
-	public UserResponse(String userName, String role, String contactNum, String email) {
+	public UserResponse(String userName, String role, String email) {
 		super();
 		this.userName = userName;
 		this.role = role;
-		this.contactNum = contactNum;
 		this.email = email;
 	}
 	

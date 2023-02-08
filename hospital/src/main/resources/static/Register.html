@@ -38,7 +38,7 @@
 								<select class="custom-select" id="inputGroupSelect">
 									<option selected>Choose...</option>
 									<option value="Doctor">Doctor</option>
-									<option value="Admin">Admin</option>
+									<option value="admin">admin</option>
 									<option value="Patient">Patient</option>
 								</select>
 
@@ -99,6 +99,8 @@
 						contentType: "application/json",
 						success: function (data) {
 							alert("Registered successfully")
+							window.location = "index.html"
+							console.log(data);
 						}, error: function (e) {
 							console.log(JSON.stringify(e));
 						}

@@ -37,7 +37,7 @@
 						<a class="nav-link" href="#" style="font-weight: bold">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#" style="font-weight: bold" onclick = "hospital()">Hospital</a>
+						<a class="nav-link" href="#" style="font-weight: bold" id="myHospital" onclick="hospital()">Hospital</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#" style="font-weight: bold">Doctor</a>
@@ -51,7 +51,7 @@
 				</form>
 				<a class="navbar-brand" href="#">
 
-					<a class="nav-link text-dark" href="login.html" style="font-weight: bold"><i
+					<a class="nav-link text-dark" onclick="clearUser()" href="login.html" style="font-weight: bold"><i
 							class="fa-solid fa-user-large"></i>
 						<span>Logout</span>
 
@@ -149,22 +149,28 @@
 
 				<div class="alert alert-danger" role="alert">* Please fill the field before you submit.</div>
 				<div class="modal-footer">
-				<button type="button" class="btn btn-success" id="saveHos" data-dismiss="modal">Save</button>
+					<button type="button" class="btn btn-success" id="saveHos" data-dismiss="modal">Save</button>
 					<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-					
+
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<h1 class=" text-center text-center">Hospitals</h1>
-		
-  		<div class="container">
-		<div class="row" id="myHospital">
-			   
-			   
-				</div>
-        </div>
+	
+	
+	<script>
+	function clearUser() {
+
+			localStorage.removeItem("name");
+			localStorage.removeItem("age");
+			localStorage.removeItem("role");
+			localStorage.removeItem("email");
+			localStorage.removeItem("password");
+			localStorage.removeItem("userId");
+	
+		}
+	</script>
 
 	<script>
 
@@ -178,7 +184,7 @@
 
 
 				const formData = new FormData();
-		var file = $('#myImg').prop("files")[0];
+				var file = $('#myImg').prop("files")[0];
 
 				var hospitalName = $("#name").val();
 				var contactNum = $("#mob").val();
@@ -201,7 +207,7 @@
 					'userId': localStorage.getItem('userId')
 
 				})),
-				formData.append('imagefile', file);
+					formData.append('imagefile', file);
 				$.ajax({
 
 					type: "POST",
@@ -209,28 +215,27 @@
 					data: formData,
 					contentType: false,
 					processData: false,
-					success: function(reqHosPost)
-				 {
-					$('#hospitalModal').modal('hide');
-					hospital();
+					success: function (reqHosPost) {
+						$('#hospitalModal').modal('hide');
+						hospital();
 
-				 }, error: function (e) {
-					alert("Please fill all the fields")
-				 }
+					}, error: function (e) {
+						alert("Please fill all the fields")
+					}
 
 				})
-				})
-
 			})
-				
+
+		})
 
 
 
-				
+
+
 		// ---------------------get OERATION------------------
 
 
-		var hospitalData="";
+		var hospitalData = "";
 		function hospital() {
 
 			$.ajax({
@@ -241,7 +246,7 @@
 				success: function (responseText) {
 
 
-					if (localStorage.getItem('role') == 'admin'){
+					if (localStorage.getItem('role') == 'admin') {
 
 						var adminHospital = '<button type="button" class="btn btn-success mt-3 float-end" data-bs-toggle="modal" data-bs-target="#hospitalModal">Add Hospital</button>';
 					}
@@ -249,38 +254,38 @@
 					$.each(responseText, function (index, item) {
 
 
-						hospitalData += ' <div class="col-lg-4 col-md-4"><div class="card mb-3">' ;
+						hospitalData += ' <div class="col-lg-4 col-md-4"><div class="card mb-3">';
 
-							$.each(item.hospitalImg, function (indeximg, itemimg) {
-						
-						hospitalData +=	'<img class="img-fluid"  style="object-fit: cover; height: max(17rem, 30vh);" src="data:image/png;base64,'+itemimg.imageData+'"/>';
+						$.each(item.hospitalImg, function (indeximg, itemimg) {
+
+							hospitalData += '<img class="img-fluid"  style="object-fit: cover; height: max(17rem, 30vh);" src="data:image/png;base64,' + itemimg.imageData + '"/>';
 
 						});
-						
-						hospitalData += '<div class="card-body"><h2 class="card-title text-center">'+ item.hospitalName +' </h2><h5 class="card-text text-center">'+ "Contact: "+ item.contactNum +'</h5><p class="card-text text-center">' + "Locates At: "+ item.address.city+'</p><p class="card-text text-center">'+ item.address.district +'-'+ item.address.pincode +'</p><p class="card-text text-center">'+ item.address.state +', '+ item.address.country +'.</p>';
 
-							
-						
-							if(localStorage.getItem('role') == "admin"){
+						hospitalData += '<div class="card-body"><h2 class="card-title text-center">' + item.hospitalName + ' </h2><h5 class="card-text text-center">' + "Contact: " + item.contactNum + '</h5><p class="card-text text-center">' + "Locates At: " + item.address.city + '</p><p class="card-text text-center">' + item.address.district + '-' + item.address.pincode + '</p><p class="card-text text-center">' + item.address.state + ', ' + item.address.country + '.</p>';
 
 
-								hospitalData +='<div class="d-grid gap-1 d-md-flex justify-content-md-end"><a onclick="editHospital('+item.productId+')" class="btn btn-primary btn-sm float-text-center card-link"><b>Edit</b></a> <a onclick="deleteHospital('+item.productId+')" class="btn btn-primary btn-sm float-text-center card-link "><b>Delete</b></a> <a onclick="editHospital('+item.productId+')"  class="btn btn-primary btn-sm float-text-center card-link" href="slot.html"><b> + Add Slots</b></a></div>';
-							}
-							else{
-								hospitalData +='<div class="d-grid gap-2 col-8 mx-auto"> <a class="btn btn-primary float-text-center"  href ="Appointment.html" style="border-radius:50px" type="button" id="hos">Make an Appointment</a></div>';
+
+						if (localStorage.getItem('role') == "admin") {
+
+
+							hospitalData += '<div class="d-grid gap-1 d-md-flex justify-content-md-end"><a onclick="editHospital(' + item.productId + ')" class="btn btn-primary btn-sm float-text-center card-link"><b>Edit</b></a> <a onclick="deleteHospital(' + item.productId + ')" class="btn btn-primary btn-sm float-text-center card-link "><b>Delete</b></a> <a onclick="editHospital(' + item.productId + ')"  class="btn btn-primary btn-sm float-text-center card-link" href="slot.html"><b> + Add Slots</b></a></div>';
 						}
-						
-						hospitalData +='</div></div></div>';
+						else {
+							hospitalData += '<div class="d-grid gap-2 col-8 mx-auto"> <a class="btn btn-primary float-text-center"  href ="Appointment.html" style="border-radius:50px" type="button" id="hos">Make an Appointment</a></div>';
+						}
+
+						hospitalData += '</div></div></div>';
 
 					});
 					$("#myHospital").empty();
-				$("#myHospital").append(hospitalData);
-				$(".adminHospital").append(adminHospital);	
-			}
-			
-		});
-}
-			
+					$("#myHospital").append(hospitalData);
+					$(".adminHospital").append(adminHospital);
+				}
+
+			});
+		}
+
 	</script>
 
 </body>

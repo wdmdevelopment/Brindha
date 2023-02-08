@@ -41,7 +41,7 @@ public class UserController {
 		logger.info("Get all users ");
 		List<User> allUser = userService.getAllUser();
 
-		return allUser.stream().map(e -> new UserResponse(e.getName(), e.getRole(), e.getContactNum(), e.getEmail()))
+		return allUser.stream().map(e -> new UserResponse(e.getName(), e.getRole(), e.getEmail()))
 				.collect(Collectors.toList());
 
 	}

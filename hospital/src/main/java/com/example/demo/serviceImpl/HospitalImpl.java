@@ -136,7 +136,6 @@ public class HospitalImpl implements HospitalService {
 			hospital.setAddress(address);
 			hospital.setFacilityList(fac);
 			hospital.setHospitalName(reqHos.getHospitalName());
-			hospital.setContactNum(reqHos.getContactNum());
 			
 			return hospitalRepo.save(hospital);
 		} else {

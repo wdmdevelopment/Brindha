@@ -23,8 +23,6 @@ public class RequestAppUpdate {
 
 	private double price;
 
-	private String contactNum;
-
 	private String city;
 
 	private String district;
@@ -80,13 +78,6 @@ public class RequestAppUpdate {
 		this.price = price;
 	}
 
-	public String getContactNum() {
-		return contactNum;
-	}
-
-	public void setContactNum(String contactNum) {
-		this.contactNum = contactNum;
-	}
 
 	public String getCity() {
 		return city;

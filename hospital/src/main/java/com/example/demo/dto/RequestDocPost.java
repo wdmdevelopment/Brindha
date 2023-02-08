@@ -15,7 +15,6 @@ public class RequestDocPost {
 
 	private int age;
 
-	private String contactNum;
 
 	public String getName() {
 		return name;
@@ -49,13 +48,6 @@ public class RequestDocPost {
 		this.age = age;
 	}
 
-	public String getContactNum() {
-		return contactNum;
-	}
-
-	public void setContactNum(String contactNum) {
-		this.contactNum = contactNum;
-	}
 	
 	
 

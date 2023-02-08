@@ -100,7 +100,6 @@ public class DoctorImpl implements DoctorService {
 
 			user.setName(reqDoctor.getName());
 			user.setAge(reqDoctor.getAge());
-			user.setContactNum(reqDoctor.getContactNum());
 
 
 			return doctorRepo.save(doc);

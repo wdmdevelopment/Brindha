@@ -64,7 +64,6 @@ public class AppointmentImpl implements AppointmentService {
 			User user = new User();
 			user.setName(reqAppointment.getName());
 			user.setAge(reqAppointment.getAge());
-			user.setContactNum(reqAppointment.getContactNum());
 			
 			Address address = new Address();
 			address.setCity(reqAppointment.getCity());
@@ -109,12 +108,12 @@ public class AppointmentImpl implements AppointmentService {
 					.orElseThrow(() -> new IdNotFoundException("User id not found " + appointId));
 			user.setName(reqApp.getName());
 			user.setAge(reqApp.getAge());
-			user.setContactNum(reqApp.getContactNum());
 			
 			
 			app.setSlot(slot);
 			app.setUser(user);
 			app.setAddress(address);
+			
 
 			return appointmentRepo.save(app);
 		} else {
