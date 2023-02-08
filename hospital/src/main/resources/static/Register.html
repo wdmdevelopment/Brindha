@@ -28,7 +28,7 @@
 
 						<div class="form-label">
 							<i class="fa-solid fa-user"></i> <label class="form-label" for="Name">Name</label>
-							<input type="text" class="form-control form-control-lg" />
+							<input type="text" class="form-control form-control-lg" id="Name" />
 
 						</div>
 						
@@ -37,29 +37,29 @@
 								<i class="fa-solid fa-user-plus"></i> <label class="form-label" for="Role">Role</label>
 								<select class="custom-select" id="inputGroupSelect">
 									<option selected>Choose...</option>
-									<option value="1">Doctor</option>
-									<option value="3">Admin</option>
-									<option value="4">Patient</option>
+									<option value="Doctor">Doctor</option>
+									<option value="Admin">Admin</option>
+									<option value="Patient">Patient</option>
 								</select>
 
 							</div>
 
 							<div class="form-label">
 								<i class="fa-solid fa-caret-up"></i><label class="form-label" for="Age">Age</label>
-								<input type="number" class="form-control form-control-lg">
+								<input type="number" class="form-control form-control-lg" id="age">
 
 							</div>
 
 							<div class="form-label">
 								<i class="fa-solid fa-envelope"></i><label class="form-label" for="Email">Email</label>
-								<input type="email" class="form-control form-control-lg" />
+								<input type="email" class="form-control form-control-lg" id="email" />
 
 							</div>
 
 							<div class="form-label">
 								<i class="fa-solid fa-lock"></i> <label class="form-label"
 									for="Password">Password</label>
-								<input type="password" class="form-control form-control-lg" />
+								<input type="password" class="form-control form-control-lg" id="password"/>
 
 							</div>
 							<p id="clickLink">Have an account? <a href="login.html"> Sign In!</a></p>
@@ -73,9 +73,10 @@
 		</div>
 		<script>
 
+
 			$(document).ready(function () {
 				$("#register").click(function () {
-					var Name = $('#name').val();
+					var Name = $('#Name').val();
 
 					var Age = $('#age').val();
 
@@ -99,7 +100,7 @@
 						success: function (data) {
 							alert("Registered successfully")
 						}, error: function (e) {
-							console.log(e);
+							console.log(JSON.stringify(e));
 						}
 					});
 				})
