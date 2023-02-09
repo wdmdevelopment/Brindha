@@ -37,10 +37,10 @@
 						<a class="nav-link" href="#" style="font-weight: bold">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#" style="font-weight: bold" id="myHospital" onclick="hospital()">Hospital</a>
+						<a class="nav-link" href="#" style="font-weight: bold" onclick="hospital()">Hospital</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#" style="font-weight: bold">Doctor</a>
+						<a class="nav-link" href="#" style="font-weight: bold">Services</a>
 					</li>
 				</ul>
 				<form class="d-flex">
@@ -72,11 +72,16 @@
 		<div class="content">
 			<button class="btn btn-outline-warning float-end" type="button" data-bs-toggle="modal"
 				data-bs-target="#hospitalModal">+ Add Hospital</button>
+		</div>
+	
+		<div class="row" id="myHospital" style="padding: 15% 5% 10% 5%; background-image: linear-gradient(rgba(0, 0, 29, 0.8), rgba(0,0,50,0.8));">
+
 
 		</div>
+		
 	</div>
+	
 
-	</div>
 	<div class="modal fade" id="hospitalModal">
 		<div class="modal-dialog modal-dialog-scrollable">
 			<div class="modal-content">
@@ -157,7 +162,173 @@
 		</div>
 	</div>
 
+
+  <!-- view slots -->
+  <div class="modal fade" id="viewSlots" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-xl">
+	  <div class="modal-content">
 	
+		  <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+					<h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Add Slots</h1>
+                    <div class="col-sm-4">
+						<button type="button" class="btn btn-primary add-new"><i class="fa fa-plus"></i> Add New</button>
+                    </div>
+                </div>
+            </div>
+			<br>
+			<table class="table table-bordered border-primary">
+                <thead>
+                    <tr>
+                        <th>Facility Name</th>
+                        <th>Price</th>
+                        <th>Date</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Eye</td>
+                        <td>1234</td>
+                        <td>23-04-2023</td>
+                        <td>11:11:00</td>
+                        <td>11:11:00</td>
+                        <td>Open</td>
+						
+                        <td>
+                            <button class="btn btn-outline-warning" title="Add" data-toggle="tooltip" type="button">Edit</button>
+                            <button class="btn btn-outline-danger" title="Add" data-toggle="tooltip" type="button">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Eye</td>
+                        <td>1234</td>
+                        <td>23-04-2023</td>
+                        <td>11:11:00</td>
+                        <td>11:11:00</td>
+                        <td>Open</td>
+						<td>
+                            <button class="btn btn-outline-warning" title="Add" data-toggle="tooltip" type="button">Edit</button>
+                            <button class="btn btn-outline-danger" title="Add" data-toggle="tooltip" type="button">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Eye</td>
+                        <td>1234</td>
+                        <td>23-04-2023</td>
+                        <td>11:11:00</td>
+                        <td>11:11:00</td>
+                        <td>Open</td>
+						<td>
+                            <button class="btn btn-outline-warning" title="Add" data-toggle="tooltip" type="button">Edit</button>
+                            <button class="btn btn-outline-danger" title="Add" data-toggle="tooltip" type="button">Delete</button>
+                        </td>
+                    </tr>  
+                </tbody>
+            </table>
+			<button class="btn btn-success float-end btn-lg" id="saveSlot" type="button">Save</button>
+        </div>
+    </div> 
+	  </div>
+	</div>
+  </div>
+<script>
+
+$(document).ready(function(){
+	$('[data-toggle="tooltip"]').tooltip();
+	var actions = $("table td:last-child").html();
+	// Append table with add row form on add new button click
+    $(".add-new").click(function(){
+		$(this).attr("disabled", "disabled");
+		var index = $("table tbody tr:last-child").index();
+        var row = '<tr>' +
+            '<td><input type="text" class="form-control" name="fac" id="fac"></td>' +
+            '<td><input type="text" class="form-control" name="price" id="price"></td>' +
+            '<td><input type="date" class="form-control" name="date" id="date"></td>' +
+            '<td><input type="text" class="form-control" name="start" id="start"></td>' +
+            '<td><input type="text" class="form-control" name="end" id="end"></td>' +
+            '<td><input type="text" class="form-control" name="slotStatus" id="slotStatus"></td>' +
+			'<td>' + actions + '</td>' +
+        '</tr>';
+    	$("table").append(row);		
+		$("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
+
+// POST OPERATION --- SLOT
+
+$(document).ready(function () {
+			$("#saveSlot").click(function () {
+
+				var url = "http://localhost:8080/slot";
+
+				var facilityName = $("#fac").val();
+				var price = $("#price").val();
+				var slotDate = $("#date").val();
+				var slotStartTime = $("#start").val();
+				var slotEndTime = $("#end").val();
+				var status = $("#slotStatus").val();
+
+				var slot={
+					'facilityName': facilityName,
+					'price': price,
+					'slotDate': slotDate,
+					'slotStartTime': slotStartTime,
+					'slotEndTime': slotEndTime,
+					'status': status
+				};
+				console.log(slot);
+				$.ajax({
+
+					url: url,
+					type: "POST",
+					data: JSON.stringify(slot),
+					contentType: "application/json",
+					success: function(data){
+						alert("Slot saved!!!");
+						console.log(data);
+					}, error: function (e){
+						alert(JSON.stringify(e));  
+						console.log(e);
+					}
+				})
+				})
+			})
+
+	// Add row on add button click
+	$(document).on("click", ".add", function(){
+		var empty = false;
+		var input = $(this).parents("tr").find('input[type="text"]');
+        input.each(function(){
+			if(!$(this).val()){
+				$(this).addClass("error");
+				empty = true;
+			} else{
+                $(this).removeClass("error");
+            }
+		});
+		$(this).parents("tr").find(".error").first().focus();
+		if(!empty){
+			input.each(function(){
+				$(this).parent("td").html($(this).val());
+			});			
+			$(this).parents("tr").find(".add, .edit").toggle();
+			$(".add-new").removeAttr("disabled");
+		}		
+    });
+});
+</script>
+
+
+
+<!-- logout user clear -->
 	
 	<script>
 	function clearUser() {
@@ -262,14 +433,14 @@
 
 						});
 
-						hospitalData += '<div class="card-body"><h2 class="card-title text-center">' + item.hospitalName + ' </h2><h5 class="card-text text-center">' + "Contact: " + item.contactNum + '</h5><p class="card-text text-center">' + "Locates At: " + item.address.city + '</p><p class="card-text text-center">' + item.address.district + '-' + item.address.pincode + '</p><p class="card-text text-center">' + item.address.state + ', ' + item.address.country + '.</p>';
+						hospitalData += '<div class="card-body"><h2 class="card-title text-dark text-center">' + item.hospitalName + ' </h2><h5 class="card-text text-dark text-center">' + "Contact: " + item.contactNum + '</h5><p class="card-text text-dark text-center">' + "Locates At: " + item.address.city + '</p><p class="card-text text-dark text-center">' + item.address.district + '-' + item.address.pincode + '</p><p class="card-text text-dark text-center">' + item.address.state + ', ' + item.address.country + '.</p>';
 
 
 
 						if (localStorage.getItem('role') == "admin") {
 
 
-							hospitalData += '<div class="d-grid gap-1 d-md-flex justify-content-md-end"><a onclick="editHospital(' + item.productId + ')" class="btn btn-primary btn-sm float-text-center card-link"><b>Edit</b></a> <a onclick="deleteHospital(' + item.productId + ')" class="btn btn-primary btn-sm float-text-center card-link "><b>Delete</b></a> <a onclick="editHospital(' + item.productId + ')"  class="btn btn-primary btn-sm float-text-center card-link" href="slot.html"><b> + Add Slots</b></a></div>';
+							hospitalData += '<div class="d-grid gap-1 d-md-flex justify-content-md-end"><a onclick="editHospital(' + item.productId + ')" class="btn btn-primary btn-sm float-text-center card-link"><b>Edit</b></a> <a onclick="deleteHospital(' + item.productId + ')" class="btn btn-primary btn-sm float-text-center card-link "><b>Delete</b></a> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewSlots">+ Add Slot</button> </div>';
 						}
 						else {
 							hospitalData += '<div class="d-grid gap-2 col-8 mx-auto"> <a class="btn btn-primary float-text-center"  href ="Appointment.html" style="border-radius:50px" type="button" id="hos">Make an Appointment</a></div>';

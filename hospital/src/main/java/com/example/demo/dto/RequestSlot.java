@@ -26,6 +26,8 @@ public class RequestSlot {
 	
 	@NotNull
 	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
+	@JsonDeserialize(using = LocalTimeDeserializer.class)
+	@JsonSerialize(using = LocalTimeSerializer.class)
 	private LocalTime slotEndTime;
 	
 	@NotNull
@@ -36,8 +38,6 @@ public class RequestSlot {
 
 	private String facilityName;
 
-//	private String name;
-	
 	private double price;
 
 	public @NotNull LocalTime getSlotStartTime() {
