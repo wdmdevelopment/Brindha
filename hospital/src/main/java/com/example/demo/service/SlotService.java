@@ -16,7 +16,7 @@ public interface SlotService {
 	
 	public RequestSlot getOneSlotById(@PathVariable("id") long id) throws Exception;
 	
-	public Slot saveSlot(@RequestBody RequestSlot reqSlot, long doctorId);
+	public Slot saveSlot(@RequestBody RequestSlot reqSlot);
 	
 	public Slot updateSlot(@RequestBody Slot slot);
 	

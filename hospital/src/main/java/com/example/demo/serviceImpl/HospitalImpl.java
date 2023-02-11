@@ -147,4 +147,8 @@ public class HospitalImpl implements HospitalService {
 		hospitalRepo.deleteById(Id);
 	}
 
+	public List<Hospital> getHospitalByName(String name) {
+		return hospitalRepo.findByHospitalName(name);
+	}
+
 }

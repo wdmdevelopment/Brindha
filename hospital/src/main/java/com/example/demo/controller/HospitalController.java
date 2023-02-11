@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.io.IOException;
+
 import java.util.List;
 
 import javax.validation.Valid;
@@ -83,5 +84,16 @@ public class HospitalController {
 	public void deleteHos(@PathVariable("id") long id) {
 		hospitalService.deleteHos(id);
 
+	}
+	
+	@GetMapping("/searchByHospitalName")
+	public ResponseEntity<List<Hospital>> getHospitalByName(@RequestParam("hospitalName") String name){
+		logger.info("get by hospital name");
+		List<Hospital> hospital = hospitalService.getHospitalByName(name);
+		if(hospital == null){
+			return ResponseEntity.notFound().build();
+		}
+		return ResponseEntity.ok().body(hospital);
+		
 	}
 }

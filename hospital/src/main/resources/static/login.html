@@ -4,9 +4,10 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sign In and Sign Up Form</title>
-	<link rel="stylesheet" href="../CSS/login.css">
+	<link rel="stylesheet" href="./CSS/login.css">
 	<script src="https://kit.fontawesome.com/54e0ebeaef.js" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	
 </head>
 
 <body>
@@ -21,6 +22,7 @@
 
 						<i class="fa-solid fa-envelope"></i>
 						<input type="email" id="email" placeholder="Email">
+						<!-- <div class="error" style="color: red;" id="emailError"></div> -->
 					</div>
 					<br>
 
@@ -28,24 +30,52 @@
 
 						<i class="fa-solid fa-lock"></i>
 						<input type="password" id="password" placeholder="Password">
+						<!-- <div class="error" style="color: red;" id="passError"></div> -->
 					</div>
 					<p id="clickLink">Don't have an account? <a href="Register.html">Sign Up!</a></p>
 				</div>
-
 			</form>
+			
 			<div class="btn-field">
 
 				<button class="mt-mb-5 pb-lg-2 btn btn-info text-center rounded" type="button" id="submit">Sign
 					In</button>
 			</div>
+	
 		</div>
 	</div>
 
 	<script>
 		$(document).ready(function () {
-			$("#submit").click(function () {
-				var email = $("#email").val().trim();
-				var password = $("#password").val().trim();
+
+			$('#submit').click(function(e) {
+ 
+    var email = $('#email').val();
+    var password = $('#password').val();
+
+//     $(".error").remove();
+
+    
+//     if (email.length < 1) {
+//       $('#email').after('<span class="error">This field is required</span>');
+//     } else {
+//       var regEx = /^[A-Z0-9][A-Z0-9._%+-]{0,63}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/;
+//       var validEmail = regEx.test(email);
+//       if (!validEmail) {
+//         $('#emailError').text('Enter a valid email');
+//       }
+//     }
+//     if (password.length < 8) {
+//       $('#passError').text('Enter a valid password');
+//     }
+//   });
+
+
+
+
+			// $("#submit").click(function () {
+			// 	var email = $("#email").val().trim();
+			// 	var password = $("#password").val().trim();
 
 				if (email != "" && password != "") {
 					$.ajax({
@@ -69,7 +99,8 @@
 					});
 				}
 			});
-		});
+		})
+	
 	</script>
 
 </body>

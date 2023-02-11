@@ -25,6 +25,9 @@ public interface HospitalService {
 
 	public void deleteHos(long id);
 
+	public List<Hospital> getHospitalByName(String name);
+
+
 	
 
 

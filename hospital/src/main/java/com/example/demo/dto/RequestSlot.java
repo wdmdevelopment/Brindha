@@ -18,6 +18,8 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalTimeSerializer;
 
 public class RequestSlot {
 	
+	private long userId;
+	
 	@NotNull
 	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
 	@JsonDeserialize(using = LocalTimeDeserializer.class)
@@ -80,20 +82,20 @@ public class RequestSlot {
 		this.facilityName = facilityName;
 	}
 
-//	public String getName() {
-//		return name;
-//	}
-//
-//	public void setName(String name) {
-//		this.name = name;
-//	}
-
 	public double getPrice() {
 		return price;
 	}
 
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(long userId) {
+		this.userId = userId;
 	}
 
 	

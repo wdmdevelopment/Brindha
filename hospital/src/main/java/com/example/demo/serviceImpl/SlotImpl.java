@@ -51,11 +51,11 @@ public class SlotImpl implements SlotService {
 		return reqSlot;
 	}
 
-	public Slot saveSlot(RequestSlot reqSlot, long doctorId) {
+	public Slot saveSlot(RequestSlot reqSlot) {
 
-		User findById = userRepo.findById(doctorId).orElseThrow(() -> new IdNotFoundException( "Not Found id " + doctorId));
+		User findById = userRepo.findById(reqSlot.getUserId()).orElseThrow(() -> new IdNotFoundException( "Not Found id " + reqSlot.getUserId()));
 		String getUserRole = findById.getRole();
-		if (getUserRole.equalsIgnoreCase("doctor")) {
+		if (getUserRole.equalsIgnoreCase("admin")) {
 
 			Facility fac = new Facility();
 			fac.setFacilityName(reqSlot.getFacilityName());
@@ -76,7 +76,7 @@ public class SlotImpl implements SlotService {
 
 			return slotRepo.save(slot);
 		} else {
-			throw new DoctorOnlyException("Only Doctors can add slot");
+			throw new DoctorOnlyException("Only admin can add slot");
 		}
 	}
 

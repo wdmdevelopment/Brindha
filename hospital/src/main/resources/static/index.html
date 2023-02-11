@@ -9,18 +9,37 @@
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-
-	<link rel="stylesheet" href="../CSS/home.css">
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<script src="https://kit.fontawesome.com/54e0ebeaef.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="./CSS/home.css">
 
 </head>
 
 <body>
+<div id="navbar">
 
-	<nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top">
+</div>
+
+
+<script>
+	$(document).ready(function(){ 
+   
+	   if(localStorage.getItem('name') !== '' && localStorage.getItem('email') !== ""){
+		   $("#navbar").load("Navbar.html");
+		   hospital();
+	   }else{
+		location.replace("/")
+	   }
+
+
+
+
+	});
+	</script>
+
+
+	<!-- <nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top">
 
 		<div class="container-fluid" id="myHos">
 
@@ -44,24 +63,24 @@
 					</li>
 				</ul>
 				<form class="d-flex">
-					<input class="form-control me-2" type="text" placeholder="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i
-							class="fa-solid fa-magnifying-glass"></i>
-					</button>
+					<input class="form-control me-2" type="search" placeholder="Search" id="searchHospital" onkeyup="searchHos()">
+					
 				</form>
-				<a class="navbar-brand" href="#">
-
-					<a class="nav-link text-dark" onclick="clearUser()" href="login.html" style="font-weight: bold"><i
-							class="fa-solid fa-user-large"></i>
-						<span>Logout</span>
-
-
-
-					</a>
+				<div class="navbar-brand dropdown"  style="padding-left: 40px; padding-right: 20px;">
+					<button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+						class="fa-solid fa-user-large">
+						<span id="userName"></span></i>
+					</button>
+					<ul class="dropdown-menu" class="mx-auto">
+					  <li><a class="dropdown-item text-dark" href="login.html" style="width: 4px; padding-left: 20%;" onclick="clearUser()">Logout</a></li>
+					
+					</ul>
+				  </div>
+	
 			</div>
 		</div>
 
-	</nav>
+	</nav> -->
 
 
 
@@ -70,8 +89,8 @@
 
 
 		<div class="content">
-			<button class="btn btn-outline-warning float-end" type="button" data-bs-toggle="modal"
-				data-bs-target="#hospitalModal">+ Add Hospital</button>
+			<button class="admin btn btn-outline-warning float-end" type="button" data-bs-toggle="modal"
+				data-bs-target="#hospitalModal" style="display: none;">+ Add Hospital</button>
 		</div>
 	
 		<div class="row" id="myHospital" style="padding: 15% 5% 10% 5%; background-image: linear-gradient(rgba(0, 0, 29, 0.8), rgba(0,0,50,0.8));">
@@ -162,9 +181,49 @@
 		</div>
 	</div>
 
+	<!-- view Slots -->
 
-  <!-- view slots -->
-  <div class="modal fade" id="viewSlots" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="viewSlot" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-xl">
+		  <div class="modal-content">
+			 <div class="container">
+				  <div class="table-wrapper">
+					  <div class="table-title">
+						  <div class="row">
+							  <h1 class="modal-title fs-5 text-center" id="slot">Book your slot</h1>
+							  
+						  </div>
+					  </div>
+					  <br>
+					  <table class="table table-bordered border-light">
+						  <thead>
+							  <tr>
+								  <th>Facility Name</th>
+								  <th>Price</th>
+								  <th>Date</th>
+								  <th>Start Time</th>
+								  <th>End Time</th>
+								  <th>Status</th>
+								  <th>Actions</th>
+		  
+							  </tr>
+						  </thead>
+						  <tbody id="myHospital1">
+								
+						  </tbody>
+					  </table>
+					  
+				  </div>
+			  </div> 
+		 
+		  </div>
+		</div>
+	  </div> 
+
+
+
+  <!-- add slots -->
+  <div class="modal fade" id="addSlots" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-xl">
 	  <div class="modal-content">
 	
@@ -282,7 +341,8 @@ $(document).ready(function () {
 					'slotDate': slotDate,
 					'slotStartTime': slotStartTime,
 					'slotEndTime': slotEndTime,
-					'status': status
+					'status': status,
+					'userId': localStorage.getItem('userId')
 				};
 				console.log(slot);
 				$.ajax({
@@ -327,8 +387,8 @@ $(document).ready(function () {
 </script>
 
 
-
-<!-- logout user clear -->
+<!-- 
+logout user clear
 	
 	<script>
 	function clearUser() {
@@ -341,13 +401,13 @@ $(document).ready(function () {
 			localStorage.removeItem("userId");
 	
 		}
-	</script>
+	</script> -->
 
 	<script>
 
 
 
-		// -----------------POST Opertion----------------
+		// -----------------POST Opertion HOSPITAL----------------
 		$(document).ready(function () {
 			$("#saveHos").click(function () {
 
@@ -403,10 +463,11 @@ $(document).ready(function () {
 
 
 
-		// ---------------------get OERATION------------------
+		// ---------------------get OPERATION HOSPITAL------------------
 
 
 		var hospitalData = "";
+		 var adminHospital = "";
 		function hospital() {
 
 			$.ajax({
@@ -419,7 +480,7 @@ $(document).ready(function () {
 
 					if (localStorage.getItem('role') == 'admin') {
 
-						var adminHospital = '<button type="button" class="btn btn-success mt-3 float-end" data-bs-toggle="modal" data-bs-target="#hospitalModal">Add Hospital</button>';
+						adminHospital = '<button type="button" class="btn btn-outline-warning mt-3 float-end" data-bs-toggle="modal" data-bs-target="#hospitalModal">+ Add Hospital</button>';
 					}
 
 					$.each(responseText, function (index, item) {
@@ -440,21 +501,48 @@ $(document).ready(function () {
 						if (localStorage.getItem('role') == "admin") {
 
 
-							hospitalData += '<div class="d-grid gap-1 d-md-flex justify-content-md-end"><a onclick="editHospital(' + item.productId + ')" class="btn btn-primary btn-sm float-text-center card-link"><b>Edit</b></a> <a onclick="deleteHospital(' + item.productId + ')" class="btn btn-primary btn-sm float-text-center card-link "><b>Delete</b></a> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewSlots">+ Add Slot</button> </div>';
+							hospitalData += '<div class="d-grid gap-1 d-md-flex justify-content-md-end"><a onclick="editHospital(' + item.productId + ')" class="btn btn-primary btn-sm float-text-center card-link"><b>Edit</b></a> <a onclick="deleteHospital(' + item.productId + ')" class="btn btn-primary btn-sm float-text-center card-link "><b>Delete</b></a> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSlots">+ Add Slot</button> </div>';
 						}
 						else {
-							hospitalData += '<div class="d-grid gap-2 col-8 mx-auto"> <a class="btn btn-primary float-text-center"  href ="Appointment.html" style="border-radius:50px" type="button" id="hos">Make an Appointment</a></div>';
+							hospitalData += '<div class="d-grid gap-2 col-4 mx-auto"> <button type="button" class="btn btn-primary float-text-center" data-bs-toggle="modal" data-bs-target="#viewSlot" onclick="slotHospital()" style="border-radius:50px">Book Now</button></div>';
 						}
+
+						
 
 						hospitalData += '</div></div></div>';
 
 					});
 					$("#myHospital").empty();
-					$("#myHospital").append(hospitalData);
 					$(".adminHospital").append(adminHospital);
+					$("#myHospital").append(hospitalData);
+					
 				}
 
 			});
+		}
+
+		// ------------------  get operation for SLOT  ----------------------
+
+
+		function slotHospital(){
+			$.ajax({
+				dataTypa: "JSON",
+				url: "http://localhost:8080/slot",
+				type: "GET",
+				
+				success: function (responseText) {
+					console.log(responseText);
+					var slot ="";
+					$.each(responseText, function (index, item ) {
+						slot += "<tr><td>" + item.facility.facilityName + "</td><td>" + item.price + "</td><td>" + item.slotDate + "</td><td>" + item.slotStartTime + "</td><td>" + item.slotEndTime + "</td><td>" + item.status + "</td><td>" + item.status + "</td><td>BOOK</td></tr>";
+					});
+					$("#myHospital1").empty();					
+					$("#myHospital1").append(slot);
+				},
+				error: function (e){
+					console.log(JSON.stringify(e));
+					}
+				});
 		}
 
 	</script>
