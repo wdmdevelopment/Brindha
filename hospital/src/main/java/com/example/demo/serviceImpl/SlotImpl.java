@@ -8,10 +8,12 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.RequestSlot;
 import com.example.demo.entity.Facility;
+import com.example.demo.entity.Hospital;
 import com.example.demo.entity.Slot;
 import com.example.demo.entity.User;
 import com.example.demo.exception.DoctorOnlyException;
 import com.example.demo.exception.IdNotFoundException;
+import com.example.demo.repository.HospitalRepository;
 import com.example.demo.repository.SlotRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.SlotService;
@@ -24,6 +26,10 @@ public class SlotImpl implements SlotService {
 
 	@Autowired
 	private UserRepository userRepo;
+	
+	@Autowired
+	private HospitalRepository hospitalRepo;
+	
 
 	public List<Slot> getAllSlot() {
 		return slotRepo.findAll();
@@ -53,17 +59,20 @@ public class SlotImpl implements SlotService {
 
 	public Slot saveSlot(RequestSlot reqSlot) {
 
-		User findById = userRepo.findById(reqSlot.getUserId()).orElseThrow(() -> new IdNotFoundException( "Not Found id " + reqSlot.getUserId()));
+		User findById = userRepo.findById(reqSlot.getUserId())
+				.orElseThrow(() -> new IdNotFoundException("Not Found User id " + reqSlot.getUserId()));
 		String getUserRole = findById.getRole();
 		if (getUserRole.equalsIgnoreCase("admin")) {
 
 			Facility fac = new Facility();
 			fac.setFacilityName(reqSlot.getFacilityName());
-			
-			
-//			Doctor doc = new Doctor();
-//			reqSlot.setName(doc.getUser().getName());
-//			
+
+			Hospital hos = hospitalRepo.findById(reqSlot.getHospitalId())
+						.orElseThrow(() -> new IdNotFoundException("hospital id not found"));
+		
+			hos.setHospitalId(reqSlot.getHospitalId());
+
+		
 			Slot slot = new Slot();
 			
 			slot.setSlotStartTime(reqSlot.getSlotStartTime());
@@ -72,6 +81,7 @@ public class SlotImpl implements SlotService {
 			slot.setSlotDate(reqSlot.getSlotDate());
 			slot.setPrice(reqSlot.getPrice());
 			slot.setFacility(fac);
+			slot.setHospital(hos);
 			
 
 			return slotRepo.save(slot);
@@ -92,5 +102,9 @@ public class SlotImpl implements SlotService {
 			throw new IdNotFoundException("Given ID: " + id + "  not found with any user");
 
 		}
+	}
+
+	public List<Slot> findByHospitalId(long id) {
+		return slotRepo.findByHospital_HospitalId(id);
 	}
 }

@@ -58,23 +58,23 @@ public class AppointmentController {
 
 	}
 
-	@PutMapping("/appointment/{adminId}")
-	public ResponseEntity<AppointmentBooking> updateAppointment(@RequestBody RequestAppUpdate reqApp, @RequestParam("appointId") long appointId) {
-		logger.info("Updated Appointment details ");
-		
-		AppointmentBooking	app = appointmentService.updateAppointment(reqApp, appointId);
-		if(app == null) {
-			return ResponseEntity.notFound().build();
-	} 
-		return ResponseEntity.ok().body(app);
-
-
-	}
-
-	@DeleteMapping("/appointment/{id}")
-	public ResponseEntity<Void> deleteAppointment(@PathVariable("id") long id) {
-		logger.info("Deleting this appointment " );
-		appointmentService.deleteAppointment(id);
-		return new ResponseEntity<>(HttpStatus.OK);
-	}
+//	@PutMapping("/appointment/{adminId}")
+//	public ResponseEntity<AppointmentBooking> updateAppointment(@RequestBody RequestAppUpdate reqApp, @RequestParam("appointId") long appointId) {
+//		logger.info("Updated Appointment details ");
+//		
+//		AppointmentBooking	app = appointmentService.updateAppointment(reqApp, appointId);
+//		if(app == null) {
+//			return ResponseEntity.notFound().build();
+//	} 
+//		return ResponseEntity.ok().body(app);
+//
+//
+//	}
+//
+//	@DeleteMapping("/appointment/{id}")
+//	public ResponseEntity<Void> deleteAppointment(@PathVariable("id") long id) {
+//		logger.info("Deleting this appointment " );
+//		appointmentService.deleteAppointment(id);
+//		return new ResponseEntity<>(HttpStatus.OK);
+//	}
 }

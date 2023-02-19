@@ -9,9 +9,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 	
 </head>
-
 <body>
-	<div class="container">
+    <div class="container">
 		<div class="form-box">
 			<h1 id="title">Sign In</h1>
 			<form>
@@ -22,16 +21,19 @@
 
 						<i class="fa-solid fa-envelope"></i>
 						<input type="email" id="email" placeholder="Email">
-						<!-- <div class="error" style="color: red;" id="emailError"></div> -->
+						
 					</div>
+					<div class="error" style="color: red; padding-right: 50%; font-size: small;" id="emailError"></div>
 					<br>
 
 					<div class="input-field">
 
 						<i class="fa-solid fa-lock"></i>
 						<input type="password" id="password" placeholder="Password">
-						<!-- <div class="error" style="color: red;" id="passError"></div> -->
+						
 					</div>
+					<div class="error" style="color: red; padding-right: 50%; font-size: small;" id="passError"></div>
+					<br>
 					<p id="clickLink">Don't have an account? <a href="Register.html">Sign Up!</a></p>
 				</div>
 			</form>
@@ -45,42 +47,62 @@
 		</div>
 	</div>
 
-	<script>
-		$(document).ready(function () {
+    
+<script>
+    $(document).ready(function(){
+        $("#submit").click(function(){
 
-			$('#submit').click(function(e) {
+       	var emailRegex =/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+		var passwordRegex =/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+   
+     var email = jQuery.trim($("#email").val());
+     if(email == ''){
+     $('#emailError').text('This field is required');
+     return false;
+     }else {
+
+        $('#emailError').empty();
+            }
+
+     if(email != "") {
+     if(!emailRegex.test(email)){
+     $('#emailError').text('The e-mail address entered is invalid.');
+     return false;
+     }else {
+
+    $('#emailError').empty();
+    }
+     }
+
+
+     var password = jQuery.trim($("#password").val());
+     if(password == ''){
+     $('#passError').text('This field is required');
+     return false;
+     }else {
+
+        $('#passError').empty();
+    }
+     if(password != "") {
+     if(!passwordRegex.test(password)){
+     $('#passError').text('Your password is wrong.');
+     return false;
+     }else {
+
+        $('#passError').empty();
+    }
+     }
+
  
     var email = $('#email').val();
     var password = $('#password').val();
 
-//     $(".error").remove();
 
-    
-//     if (email.length < 1) {
-//       $('#email').after('<span class="error">This field is required</span>');
-//     } else {
-//       var regEx = /^[A-Z0-9][A-Z0-9._%+-]{0,63}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/;
-//       var validEmail = regEx.test(email);
-//       if (!validEmail) {
-//         $('#emailError').text('Enter a valid email');
-//       }
-//     }
-//     if (password.length < 8) {
-//       $('#passError').text('Enter a valid password');
-//     }
-//   });
-
-
-
-
-			// $("#submit").click(function () {
-			// 	var email = $("#email").val().trim();
-			// 	var password = $("#password").val().trim();
 
 				if (email != "" && password != "") {
 					$.ajax({
 						url: 'http://localhost:8080/login',
-						type: 'post',
+						type: "POST",
 						data: {email: email, password: password},
 						success: function (response) {
 							window.location = "index.html";
@@ -89,10 +111,9 @@
 							localStorage.setItem('age', response.age);
 							localStorage.setItem('role', response.role);
 							localStorage.setItem('email', response.email);
-							localStorage.setItem('email', response.password);
+							localStorage.setItem('password', response.password);
 							localStorage.setItem('userId', response.userId);
 
-							alert("Login Successfully.");
 						}, error: function (err) {
 							alert("You entered an invalid mailId && passWord.");
 						}

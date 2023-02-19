@@ -17,8 +17,8 @@ public interface AppointmentService {
 	
 	public AppointmentBooking saveAppointment(RequestAppointment reqAppointment);
 	
-	public AppointmentBooking updateAppointment(RequestAppUpdate reqApp, long appointId);
-	
-	public void deleteAppointment(long id);
+//	public AppointmentBooking updateAppointment(RequestAppUpdate reqApp, long appointId);
+//	
+//	public void deleteAppointment(long id);
 
 }

@@ -1,15 +1,22 @@
 package com.example.demo.entity;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+
 import javax.persistence.CascadeType;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "Appointment_Booking")
@@ -23,20 +30,38 @@ public class AppointmentBooking {
 	@JoinColumn(name = "Slot")
 	private Slot slot;
 
+//	@OneToMany(mappedBy = "AppointmentBooking", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//	@JoinColumn(name = "Hospital", referencedColumnName = "ID")
+//	private Hospital hospital;
+	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "Patient")
-	private Patient patient;
+	@JoinColumn(name = "Facility")
+	private Facility facility;
+	
+	@Column(name = "DateTime")
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+	private LocalDateTime bookTime;
+	
+//	@OneToOne(cascade = CascadeType.ALL)
+//	@JoinColumn(name = "Patient")
+//	private Patient patient;
 
-	@Column(name = "Status")
-	private String bookingStatus;
+//	@Column(name = "Status")
+//	private String bookingStatus;
 
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "User", referencedColumnName = "ID")
 	private User user;
 
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name = "Address", referencedColumnName = "ID")
-	private Address address;
+//	@OneToOne(cascade=CascadeType.ALL)
+//	@JoinColumn(name = "Address", referencedColumnName = "ID")
+//	private Address address;
+
+	
+	
+	public AppointmentBooking() {
+
+	}
 
 	public long getAppointmentId() {
 		return appointmentId;
@@ -54,20 +79,28 @@ public class AppointmentBooking {
 		this.slot = slot;
 	}
 
-	public Patient getPatient() {
-		return patient;
+//	public Hospital getHospital() {
+//		return hospital;
+//	}
+//
+//	public void setHospital(Hospital hospital) {
+//		this.hospital = hospital;
+//	}
+
+	public Facility getFacility() {
+		return facility;
 	}
 
-	public void setPatient(Patient patient) {
-		this.patient = patient;
+	public void setFacility(Facility facility) {
+		this.facility = facility;
 	}
 
-	public String getBookingStatus() {
-		return bookingStatus;
+	public LocalDateTime getBookTime() {
+		return bookTime;
 	}
 
-	public void setBookingStatus(String bookingStatus) {
-		this.bookingStatus = bookingStatus;
+	public void setBookTime(LocalDateTime bookTime) {
+		this.bookTime = bookTime;
 	}
 
 	public User getUser() {
@@ -78,33 +111,23 @@ public class AppointmentBooking {
 		this.user = user;
 	}
 
-	public Address getAddress() {
-		return address;
-	}
-
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-
-	public AppointmentBooking() {
-
-	}
-
-	public AppointmentBooking(long appointmentId, Slot slot, Patient patient, String bookingStatus, User user,
-			Address address) {
+	public AppointmentBooking(long appointmentId, Slot slot, Facility facility,
+			LocalDateTime bookTime, User user) {
 		super();
 		this.appointmentId = appointmentId;
 		this.slot = slot;
-		this.patient = patient;
-		this.bookingStatus = bookingStatus;
+//		this.hospital = hospital;
+		this.facility = facility;
+		this.bookTime = bookTime;
 		this.user = user;
-		this.address = address;
 	}
 
 	@Override
 	public String toString() {
-		return "AppointmentBooking [appointmentId=" + appointmentId + ", slot=" + slot + ", patient=" + patient
-				+ ", bookingStatus=" + bookingStatus + ", user=" + user + ", address=" + address + "]";
+		return "AppointmentBooking [appointmentId=" + appointmentId + ", slot=" + slot + ",, facility=" + facility + ", bookTime=" + bookTime + ", user=" + user + "]";
 	}
+
+	
+	
 
 }

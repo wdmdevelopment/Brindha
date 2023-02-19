@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.RequestSlot;
@@ -23,6 +24,7 @@ import com.example.demo.entity.Slot;
 import com.example.demo.service.SlotService;
 
 @RestController
+@RequestMapping("/slot")
 @CrossOrigin
 public class SlotController {
 
@@ -30,13 +32,13 @@ public class SlotController {
 	private SlotService slotService;
 	private static final Logger logger = LoggerFactory.getLogger(SlotController.class);
 
-	@GetMapping("/slot")
+	@GetMapping
 	public ResponseEntity<List<Slot>> getAllSlot() {
 		logger.info("Get all slots");
 		return new ResponseEntity<List<Slot>>(slotService.getAllSlot(), HttpStatus.OK);
 	}
 
-	@GetMapping("/slot/{id}")
+	@GetMapping("/{id}")
 	public ResponseEntity<RequestSlot> getOneSlotById(@PathVariable("id") long id) throws Exception {
 		logger.info("Get slot by id ");
 
@@ -47,24 +49,32 @@ public class SlotController {
 			return ResponseEntity.ok().body(slot);
 		}
 	}
+	@GetMapping("/getByHospitalId/{id}")
+	public ResponseEntity<List<Slot>> findByHospitalId(@PathVariable("id") long id) {
+		logger.info("Get slot by hospital id ");
+		List<Slot> slot = slotService.findByHospitalId(id);
+		return ResponseEntity.ok().body(slot);
+	}
+	
 
-	@PostMapping("/slot")
+	@PostMapping
 	public ResponseEntity<Slot> saveSlot(@RequestBody RequestSlot reqSlot) {
-		logger.info("Slot saved");
+		logger.info("save slot api hospitalid={}, facility={}",
+				reqSlot.getHospitalId(), reqSlot.getFacilityName());
 		return new ResponseEntity<>(slotService.saveSlot(reqSlot), HttpStatus.OK);
 
 	}
 
-	@PutMapping("/slot/{id}")
+	@PutMapping("/{id}")
 	public ResponseEntity<Slot> updateSlot(@RequestBody Slot slot) {
 		logger.info("Updated slot ");
 		return new ResponseEntity<>(slotService.updateSlot(slot), HttpStatus.OK);
 
 	}
 
-	@DeleteMapping("/slot/{id}")
+	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> deleteSlot(@PathVariable("id") long id) {
-		logger.info("Deleted slot " + deleteSlot(id));
+		logger.info("Deleted slot ");
 		slotService.deleteSlot(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 

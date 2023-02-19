@@ -40,11 +40,15 @@ public class Hospital {
 	@Column(name = "PhNo")
 	private String contactNum;
 
+//	@OneToMany(mappedBy = "hospital", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//	private List<Doctor> doctors;
+	
 	@OneToMany(mappedBy = "hospital", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Doctor> doctors;
+	private List<Slot> slot;	
 
-	@OneToMany(mappedBy = "hospital", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private Set<ImgHospital> hospitalImg;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "HoispitalImage", referencedColumnName = "imageId")
+	private ImgHospital hospitalImage;
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "Facility", referencedColumnName = "ID")
@@ -64,14 +68,6 @@ public class Hospital {
 
 	public void setHospitalName(String hospitalName) {
 		this.hospitalName = hospitalName;
-	}
-
-	public Set<ImgHospital> getHospitalImg() {
-		return hospitalImg;
-	}
-
-	public void setHospitalImg(Set<ImgHospital> hospitalImg) {
-		this.hospitalImg = hospitalImg;
 	}
 
 	public List<User> getUser() {
@@ -98,12 +94,20 @@ public class Hospital {
 		this.contactNum = contactNum;
 	}
 
-	public List<Doctor> getDoctors() {
-		return doctors;
+	public List<Slot> getSlot() {
+		return slot;
 	}
 
-	public void setDoctors(List<Doctor> doctors) {
-		this.doctors = doctors;
+	public void setSlot(List<Slot> slot) {
+		this.slot = slot;
+	}
+
+	public ImgHospital getHospitalImage() {
+		return hospitalImage;
+	}
+
+	public void setHospitalImage(ImgHospital hospitalImage) {
+		this.hospitalImage = hospitalImage;
 	}
 
 	public Facility getFacilityList() {
@@ -114,24 +118,20 @@ public class Hospital {
 		this.facilityList = facilityList;
 	}
 
-	public Hospital() {
-
-	}
-
 	public Hospital(long hospitalId, String hospitalName, List<User> user, Address address, String contactNum,
-			List<Doctor> doctors, Set<ImgHospital> hospitalImg, Facility facilityList) {
+			List<Slot> slot, ImgHospital hospitalImage, Facility facilityList) {
 		super();
 		this.hospitalId = hospitalId;
 		this.hospitalName = hospitalName;
 		this.user = user;
 		this.address = address;
 		this.contactNum = contactNum;
-		this.doctors = doctors;
-		this.hospitalImg = hospitalImg;
+		this.slot = slot;
+		this.hospitalImage = hospitalImage;
 		this.facilityList = facilityList;
 	}
-	
-	
-	
 
+	public Hospital(){
+		
+	}
 }

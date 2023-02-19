@@ -15,6 +15,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "Slot")
@@ -52,6 +53,7 @@ public class Slot {
 
 	@ManyToOne
 	@JoinColumn(name = "hospital_id")
+	@JsonIgnore
 	private Hospital hospital;
 
 	public long getSlotId() {

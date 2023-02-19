@@ -20,41 +20,68 @@
 			if(localStorage.getItem("name") !== ''){
 				$("#userName").empty();
 			$("#userName").append("<p>"+ localStorage.getItem("name")+"</p>");
+
 		   }else{
-			
+
 		   }
+
+
+        // service tab hidden
+
+        if(localStorage.getItem("role")==="admin"){
+            
+             $("#serviceTab").attr("style", "display:block");
+		}
+
+         // bookings tab hidden
+
+         if(localStorage.getItem("role")==="admin"){
+            
+            $("#bookTab").attr("style", "display:none");
+       }
+
+
+
 		 });
 		</script>
 </head>
 <body>
 
 
-<nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top">
+<nav class="navbar navbar-expand-sm navbar-dark fixed-top"  style="background-color: rgb(105, 25, 11);">
 
     <div class="container-fluid" id="myHos">
 
         <a class="navbar-brand" href="#">
-            <img src="../images/logo.jpg" alt="Logo" style="width:40px;" class="img-thumbnail">
+            <img src="./Images/logo.jpg" alt="Logo" style="width:50px;" class="img-thumbnail">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="mynavbar">
 
-            <ul class="navbar-nav me-auto">
+            <ul class="navbar-nav me-auto" style="padding-left: 100px;">
+                <!-- s -->
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="font-weight: bold">Home</a>
+                    <a class="nav-link" href=""><b>Hospital</b></a>
+                </li><li class="nav-item">
+                    <a class="nav-link" href="" id="bookTab" style="display: block;"><b>My Bookings</b></a>
                 </li>
+                <div class="dropdown">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="font-weight: bold" onclick="hospital()">Hospital</a>
+                    <a class="nav-link dropdown-toggle" href="" id="serviceTab" data-bs-toggle="dropdown" aria-expanded="false" style="display: none;"><b>Services</b></a>
+                    <ul class="dropdown-menu" aria-labelledby="serviceTab">
+                        <li><button class="dropdown-item" onclick="window.location.href = 'index.html';" type="button">Cardiology</button></li>
+                        <li><button class="dropdown-item" onclick="window.location.href = 'index.html';" type="button">Radiology </button></li>
+                        <li><button class="dropdown-item" onclick="window.location.href = 'index.html';" type="button">Diagnostic testing</button></li>
+                        <li><button class="dropdown-item" onclick="window.location.href = 'index.html';" type="button">Hematology</button></li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="font-weight: bold">Services</a>
-                </li>
+            </div>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" id="searchHospital" onkeyup="searchHos()">
-            </form>
+            <!-- <form class="d-flex"> -->
+                <input class="form-control me-2 border-end-0 border rounded-pill" type="search" placeholder="Search" id="searchHospital" onkeyup="searchHos()">
+            <!-- </form> -->
             <div class="navbar-brand dropdown"  style="padding-left: 40px; padding-right: 20px;">
                 <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
                     class="fa-solid fa-user-large">
@@ -71,12 +98,13 @@
 </nav>
 
 <script>
-    // user icon userName
+    // add hospital btn hidden
 
     if(localStorage.getItem("role")==="admin"){
     
     $(".admin").attr("style", "display:block");
-    }
+         
+}
 
 
     // clear user login details
@@ -85,6 +113,7 @@
         if (name == '') {
             alert('Login access required');
             window.location = "login.html";
+           
         }
 
     function clearUser() {
@@ -102,7 +131,8 @@ localStorage.removeItem("userId");
 
 
 function searchHos(){
-			var input="";
+
+			
 
 
 		$.ajax({
@@ -110,19 +140,28 @@ function searchHos(){
 			url: "http://localhost:8080/hospital/searchByHospitalName?hospitalName="+$("#searchHospital").val(),
 			type: "GET",
 			success: function(responseText){
+
+                var input="";
 				$("#myHospital").empty();
 
 				$.each(responseText, function(index,item){
-					input += ' <div class="col-lg-4 col-md-4"><div class="card mb-3">';
-						$.each(item.hospitalImg, function (indeximg, itemimg) {
-							input += '<img class="img-fluid"  style="object-fit: cover; height: max(17rem, 30vh);" src="data:image/png;base64,' + itemimg.imageData + '"/>';
-				});
-				input += '<div class="card-body"><h2 class="card-title text-dark text-center">' + item.hospitalName + ' </h2><h5 class="card-text text-dark text-center">' + "Contact: " + item.contactNum + '</h5><p class="card-text text-dark text-center">' + "Locates At: " + item.address.city + '</p><p class="card-text text-dark text-center">' + item.address.district + '-' + item.address.pincode + '</p><p class="card-text text-dark text-center">' + item.address.state + ', ' + item.address.country + '.</p>';
+
+                    if(item.hospitalImage === null){
+						
+				input += ' <div class="col-lg-3 col-md-3"><div class="card mb-3"> <img class="img-fluid"  style="object-fit: cover; height: max(17rem, 30vh);" src="data:image/png;base64,' + noImg + '"/> <div class="card-body"><h4 class="card-title text-dark text-center">' + item.hospitalName + ' </h4><h5 class="card-title text-dark text-center">' + item.facilityList.facilityName + ' </h5><p class="card-text text-dark text-center"><small>' + item.address.city + '</small></p><p class="card-text text-dark text-center"><small>' + item.address.district + '-' + item.address.pincode + '</small></p><p class="card-text text-dark text-center"><small>' + item.contactNum + '</small></p><p class="card-text text-dark text-center"><small>' + item.address.state + ', ' + item.address.country + '.</small></p>';
+                } else {
+                    input += ' <div class="col-lg-3 col-md-3"><div class="card mb-3"> <img class="img-fluid"  style="object-fit: cover; height: max(17rem, 30vh);" src="data:image/png;base64,' + item.hospitalImage.imageData + '"/> <div class="card-body"><h4 class="card-title text-dark text-center">' + item.hospitalName + ' </h4><h5 class="card-title text-dark text-center">' + item.facilityList.facilityName + ' </h5><p class="card-text text-dark text-center"><small>' + item.address.city + '</small></p><p class="card-text text-dark text-center"><small>' + item.address.district + '-' + item.address.pincode + '</small></p><p class="card-text text-dark text-center"><small>' + item.contactNum + '</small></p><p class="card-text text-dark text-center"><small>' + item.address.state + ', ' + item.address.country + '.</small></p>';
+
+                    }
+
 					if (localStorage.getItem('role') == "admin") {
-						input += '<div class="d-grid gap-1 d-md-flex justify-content-md-end"><a onclick="editHospital(' + item.productId + ')" class="btn btn-primary btn-sm float-text-center card-link"><b>Edit</b></a> <a onclick="deleteHospital(' + item.productId + ')" class="btn btn-primary btn-sm float-text-center card-link "><b>Delete</b></a> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSlots">+ Add Slot</button> </div>';
-			}else {
-				input += '<div class="d-grid gap-2 col-8 mx-auto"> <a class="btn btn-primary float-text-center"  href ="Appointment.html" style="border-radius:50px" type="button" id="hos">Make an Appointment</a></div>';			
-			}
+
+
+                        input += '<div class="d-grid gap-1 d-md-flex justify-content-md-end"><a onclick="editHospital(' + item.hospitalId + ')" class="btn btn-primary btn-sm float-text-center card-link"><b>Edit</b></a> <a onclick="deleteHospital(' + item.hospitalId + ')" class="btn btn-primary btn-sm float-text-center card-link "><b>Delete</b></a> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewSlot"  onclick="slotHospital(' + item.hospitalId + ')"><b>Slot</b></button> </div>';
+						}
+						else {
+							input += '<div class="d-grid gap-2 col-8 mx-auto"> <button type="button" class="btn btn-primary float-text-center" data-bs-toggle="modal" data-bs-target="#viewSlot" onclick="slotHospital(' + item.hospitalId + ')" style="border-radius:50px"><b>Book Your Slot</b></button></div>';
+						}
 			input += '</div></div></div> ';
 		});
 		$("#myHospital").append(input);
@@ -130,7 +169,14 @@ function searchHos(){
 	})
 }
 
-
+// dropdown work
+let dds = document.querySelectorAll('.dropdown-toggle')
+dds.forEach((dd)=>{
+    dd.addEventListener('click', function (e) {
+        var btn = this.nextElementSibling
+        btn.style.display = btn.style.display==='block'?'none':'block'
+    })
+})
 
 </script>
 

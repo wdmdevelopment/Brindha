@@ -21,13 +21,13 @@ public class RequestSlot {
 	private long userId;
 	
 	@NotNull
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "HH:mm")
 	@JsonDeserialize(using = LocalTimeDeserializer.class)
 	@JsonSerialize(using = LocalTimeSerializer.class)
 	private LocalTime slotStartTime;
 	
 	@NotNull
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "HH:mm")
 	@JsonDeserialize(using = LocalTimeDeserializer.class)
 	@JsonSerialize(using = LocalTimeSerializer.class)
 	private LocalTime slotEndTime;
@@ -42,6 +42,8 @@ public class RequestSlot {
 
 	private double price;
 
+	private long hospitalId;
+	
 	public @NotNull LocalTime getSlotStartTime() {
 		return slotStartTime;
 	}
@@ -96,6 +98,14 @@ public class RequestSlot {
 
 	public void setUserId(long userId) {
 		this.userId = userId;
+	}
+
+	public long getHospitalId() {
+		return hospitalId;
+	}
+
+	public void setHospitalId(long hospitalId) {
+		this.hospitalId = hospitalId;
 	}
 
 	
