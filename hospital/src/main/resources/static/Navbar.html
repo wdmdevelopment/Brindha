@@ -45,6 +45,11 @@
 		 });
 		</script>
 </head>
+<style>
+    .dropdown-toggle::after {
+            content: none;
+        }
+  </style>
 <body>
 
 
@@ -52,8 +57,8 @@
 
     <div class="container-fluid" id="myHos">
 
-        <a class="navbar-brand" href="#">
-            <img src="./Images/logo.jpg" alt="Logo" style="width:50px;" class="img-thumbnail">
+        <a class="navbar-brand" href="">
+            <img src="./Images/medi.png" alt="Logo" style="width:100px;" class="img-thumbnail">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
             <span class="navbar-toggler-icon"></span>
@@ -64,9 +69,9 @@
                 <!-- s -->
                 <li class="nav-item">
                     <a class="nav-link" href=""><b>Hospital</b></a>
-                </li><li class="nav-item">
+                <!-- </li><li class="nav-item">
                     <a class="nav-link" href="" id="bookTab" style="display: block;"><b>My Bookings</b></a>
-                </li>
+                </li> -->
                 <div class="dropdown">
                 <li class="nav-item">
                     <a class="nav-link dropdown-toggle" href="" id="serviceTab" data-bs-toggle="dropdown" aria-expanded="false" style="display: none;"><b>Services</b></a>
@@ -83,12 +88,12 @@
                 <input class="form-control me-2 border-end-0 border rounded-pill" type="search" placeholder="Search" id="searchHospital" onkeyup="searchHos()">
             <!-- </form> -->
             <div class="navbar-brand dropdown"  style="padding-left: 40px; padding-right: 20px;">
-                <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                    class="fa-solid fa-user-large">
-                    <span id="userName"></span></i>
+                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding-right: 20px; height: 60px; padding-top: 5px; background-color: rgb(164, 167, 6);"><i
+                    class="fa-solid fa-user-large"></i>
+                    <span id="userName"></span>
                 </button>
                 <ul class="dropdown-menu" class="mx-auto">
-                  <li><a class="dropdown-item text-dark" href="login.html" style="width: 4px; padding-left: 20%;" onclick="clearUser()">Logout</a></li>
+                  <li><button class="dropdown-item text-dark" type="button" href="login.html" style="padding-left: 20%;" onclick="clearUser()">Logout</button></li>
                 
                 </ul>
               </div>
@@ -157,10 +162,10 @@ function searchHos(){
 					if (localStorage.getItem('role') == "admin") {
 
 
-                        input += '<div class="d-grid gap-1 d-md-flex justify-content-md-end"><a onclick="editHospital(' + item.hospitalId + ')" class="btn btn-primary btn-sm float-text-center card-link"><b>Edit</b></a> <a onclick="deleteHospital(' + item.hospitalId + ')" class="btn btn-primary btn-sm float-text-center card-link "><b>Delete</b></a> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewSlot"  onclick="slotHospital(' + item.hospitalId + ')"><b>Slot</b></button> </div>';
+                        input += '<div class="d-grid gap-1 d-md-flex justify-content-md-end"><a onclick="editHospital(' + item.hospitalId + ')" class="btn btn-outline-warning card-link"><i class="fa-solid fa-pen"></i></a> <a onclick="deleteHospital(' + item.hospitalId + ')" class="btn btn-outline-danger card-link "><i class="fa-solid fa-trash-can-arrow-up"></i></a> <button type="button" class="btn btn-outline-success card-link" data-bs-toggle="modal" data-bs-target="#viewSlot"  onclick="slotHospital(' + item.hospitalId + ')"><b>Slot</b></button> </div>';
 						}
 						else {
-							input += '<div class="d-grid gap-2 col-8 mx-auto"> <button type="button" class="btn btn-primary float-text-center" data-bs-toggle="modal" data-bs-target="#viewSlot" onclick="slotHospital(' + item.hospitalId + ')" style="border-radius:50px"><b>Book Your Slot</b></button></div>';
+							input += '<div class="d-grid gap-2 col-8 mx-auto"> <button type="button" class="btn btn-outline-danger card-link float-text-center" data-bs-toggle="modal" data-bs-target="#viewSlot" onclick="slotHospital(' + item.hospitalId + ')" style="border-radius:50px"><b>Book Your Slot</b></button></div>';
 						}
 			input += '</div></div></div> ';
 		});

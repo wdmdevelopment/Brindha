@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 public class HospitalResponse {
 	
 	private long userId;	
-	private long hospitalId;
+	 
 	private String hospitalName;
 	private String contactNum;
 	private long addressId;
@@ -16,20 +16,18 @@ public class HospitalResponse {
 	private String pincode;
 	private long facilityId;
 	private String facilityName;
-	private byte[] data;
 	private long imageId;
+	private byte[] data;
+	
+	
+	
 	public long getUserId() {
 		return userId;
 	}
 	public void setUserId(long userId) {
 		this.userId = userId;
 	}
-	public long getHospitalId() {
-		return hospitalId;
-	}
-	public void setHospitalId(long hospitalId) {
-		this.hospitalId = hospitalId;
-	}
+	 
 	public String getHospitalName() {
 		return hospitalName;
 	}
@@ -102,25 +100,11 @@ public class HospitalResponse {
 	public void setImageId(long imageId) {
 		this.imageId = imageId;
 	}
-	public HospitalResponse(long userId, long hospitalId, String hospitalName, String contactNum, long addressId,
-			String city, String district, String state, String country, String pincode, long facilityId,
-			String facilityName, byte[] data, long imageId) {
-		super();
-		this.userId = userId;
-		this.hospitalId = hospitalId;
-		this.hospitalName = hospitalName;
-		this.contactNum = contactNum;
-		this.addressId = addressId;
-		this.city = city;
-		this.district = district;
-		this.state = state;
-		this.country = country;
-		this.pincode = pincode;
-		this.facilityId = facilityId;
-		this.facilityName = facilityName;
-		this.data = data;
-		this.imageId = imageId;
+	public HospitalResponse() {
+		
+		
 	}
+	 
 
 
 

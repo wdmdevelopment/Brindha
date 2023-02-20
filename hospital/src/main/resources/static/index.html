@@ -51,8 +51,8 @@ var noImg = "iVBORw0KGgoAAAANSUhEUgAACgAAAAZsCAIAAABKoEnaAAAAGXRFWHRTb2Z0d2FyZQB
 
 
 		<div class="content">
-			<button class="admin btn btn-outline-warning float-end" type="button" data-bs-toggle="modal"
-				data-bs-target="#hospitalModal" style="display: none;">+ Add Hospital</button>
+			<button class="admin btn btn-primary float-end" type="button" data-bs-toggle="modal"
+				data-bs-target="#hospitalModal" style="display: none; padding-left: 10px;">+ Add Hospital</button>
 		</div>
 	
 		<div class="row" id="myHospital" style="padding: 15% 5% 10% 5%;">
@@ -65,7 +65,7 @@ var noImg = "iVBORw0KGgoAAAANSUhEUgAACgAAAAZsCAIAAABKoEnaAAAAGXRFWHRTb2Z0d2FyZQB
 		<div class="modal-dialog modal-dialog-scrollable">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h1 class="modal-title">Hospital Info</h1>
+					<h1 class="modal-title text-center" style="color: brown;">Hospital Info</h1>
 					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 				</div>
 				<div class="modal-body">
@@ -137,7 +137,8 @@ var noImg = "iVBORw0KGgoAAAANSUhEUgAACgAAAAZsCAIAAABKoEnaAAAAGXRFWHRTb2Z0d2FyZQB
 
 				<div class="alert alert-danger" role="alert">* Please fill the field before you submit.</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-success" id="saveHos" data-dismiss="modal">Save</button>
+					<button hidden type="button" class="btn btn-success" id="saveHos" data-dismiss="modal">Save</button>
+					<button hidden type="button" class="btn btn-success" id="update" data-dismiss="modal" onclick="editHospital()">Update</button>
 					<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
 
 				</div>
@@ -154,16 +155,16 @@ var noImg = "iVBORw0KGgoAAAANSUhEUgAACgAAAAZsCAIAAABKoEnaAAAAGXRFWHRTb2Z0d2FyZQB
 				  <div class="table-wrapper">
 					  <div class="table-title">
 						  <div class="row">
-							  <h1 class="modal-title fs-5 text-center">VIEW SLOTS</h1>
+							  <h1 class="modal-title fs-5 text-center fw-bold" style="color: brown; text-decoration: underline;">VIEW  SLOTS</h1>
 						  </div>
 						  <div class="row2">
-							<button type="button" class="slotButton btn btn-outline-primary float-end" style="display: none;" onclick="addNewSlot();"  ><i class="fa fa-plus"></i> Add Slot</button>
+							<button type="button" class="slotButton btn btn-outline-primary float-end mb-2" style="display: none;" onclick="addNewSlot();"  ><i class="fa fa-plus"></i> Add Slot</button>
 							<br>
 						</div>
 					  </div>
 					
 					  <table class="table table-bordered border-light">
-						  <thead>
+						  <thead class="table-dark">
 							  <tr>
 								  <th>Facility Name</th>
 								  <th>Price</th>
@@ -174,7 +175,7 @@ var noImg = "iVBORw0KGgoAAAANSUhEUgAACgAAAAZsCAIAAABKoEnaAAAAGXRFWHRTb2Z0d2FyZQB
 		  
 							  </tr>
 						  </thead>
-						  <tbody id="myHospital1">
+						  <tbody id="myHospital1" class="table-secondary">
 								
 						  </tbody>
 					  </table>
@@ -264,6 +265,10 @@ var noImg = "iVBORw0KGgoAAAANSUhEUgAACgAAAAZsCAIAAABKoEnaAAAAGXRFWHRTb2Z0d2FyZQB
 
 		// -----------------POST Opertion HOSPITAL----------------
 		$(document).ready(function () {
+
+			document.getElementById('saveHos').hidden = false;
+			document.getElementById('update').hidden = true;
+
 			$("#saveHos").click(function () {
 
 				var url = "http://localhost:8080/hospital";
@@ -316,6 +321,7 @@ var noImg = "iVBORw0KGgoAAAANSUhEUgAACgAAAAZsCAIAAABKoEnaAAAAGXRFWHRTb2Z0d2FyZQB
 			})
 
 		})
+	
 
 // --------------------------- POST operation SLOT  ----------------------------
 $(document).ready(function () {
@@ -381,7 +387,7 @@ $(document).ready(function () {
 					 var adminHospital = "";
 					if (localStorage.getItem('role') == 'admin') {
 
-						adminHospital = '<button type="button" class="btn btn-outline-warning mt-3 float-end" data-bs-toggle="modal" data-bs-target="#hospitalModal">+ Add Hospital</button>';
+						adminHospital = '<button type="button" class="btn btn-outline-primary mt-3 float-end" data-bs-toggle="modal" data-bs-target="#hospitalModal">+ Add Hospital</button>';
 					}
 					$(".adminHospital").append(adminHospital);
 
@@ -399,10 +405,10 @@ $(document).ready(function () {
 						if (localStorage.getItem('role') == "admin") {
 
 
-							hospitalData += '<div class="d-grid gap-1 d-md-flex justify-content-md-end"><a onclick="editHospital(' + item.hospitalId + ')" class="btn btn-primary btn-sm float-text-center card-link"><b>Edit</b></a> <a onclick="deleteHospital(' + item.hospitalId + ')" class="btn btn-primary btn-sm float-text-center card-link "><b>Delete</b></a> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewSlot"  onclick="slotHospital(' + item.hospitalId + ')"><b>Slot</b></button> </div>';
+							hospitalData += '<div class="d-grid gap-1 d-md-flex justify-content-md-end"><a onclick="editHos(' + item.hospitalId + ')" class="btn btn-outline-warning card-link" data-bs-toggle="modal" data-bs-target="#hospitalModal"><i class="fa-solid fa-pen"></i></a> <a onclick="deleteHospital(' + item.hospitalId + ')" class="btn btn-outline-danger card-link "><i class="fa-solid fa-trash-can-arrow-up"></i></a> <button type="button" class="btn btn-outline-success card-link" data-bs-toggle="modal" data-bs-target="#viewSlot"  onclick="slotHospital(' + item.hospitalId + ')"><b>Slot</b></button> </div>';
 						}
 						else {
-							hospitalData += '<div class="d-grid gap-2 col-8 mx-auto"> <button type="button" class="btn btn-primary float-text-center" data-bs-toggle="modal" data-bs-target="#viewSlot" onclick="slotHospital(' + item.hospitalId + ')" style="border-radius:50px"><b>Book Your Slot</b></button></div>';
+							hospitalData += '<div class="d-grid gap-2 col-8 mx-auto"> <button type="button" class="btn btn-outline-danger card-link float-text-center" data-bs-toggle="modal" data-bs-target="#viewSlot" onclick="slotHospital(' + item.hospitalId + ')" style="border-radius:50px"><b>Book Your Slot</b></button></div>';
 						}
 
 						hospitalData += '</div></div></div>';
@@ -427,34 +433,49 @@ $(document).ready(function () {
 
 
 
-// var editId ='';
-// var imageId = '';
-// function editHos(hospitalId){
-// 	editId = hospitalId;
+var editId ='';
+var addressId = '';
+var facilityId = '';
+var imageId = '';
+function editHos(hospitalId){
+	editId = hospitalId;
+	document.getElementById('update')
 
-// 	$(".imageUpdate").empty();
+	$(".imageUpdate").empty();
 
-// 	var url = "http://localhost:8080/hospital/" + hospitalId;
+	document.getElementById('saveHos').hidden = true;
+	document.getElementById('update').hidden = false;
 
-// 	$.ajax({
-// 				dataType: "JSON",
-// 				url: url,
-// 				type: "GET",
+	var url = "http://localhost:8080/hospital/" + hospitalId;
 
-// 				success: function (response){
-// 					$("#name").val(response.hospitalName);
-// 					$("#mob").val(response.contactNum);
-// 					$("#city").val(response.city);
-// 					$("#district").val(response.district);
-// 					$("#state").val(response.state);
-// 					$("#pincode").val(response.pincode);
-// 					$("#facility").val(response.facilityName);
+	$.ajax({
+				dataType: "JSON",
+				url: url,
+				type: "GET",
+
+				success: function (response){
+					$("#name").val(response.hospitalName);
+					$("#mob").val(response.contactNum);
+					$("#city").val(response.address.city);
+					$("#district").val(response.address.district);
+					$("#state").val(response.address.state);
+					$("#country").val(response.address.country);
+					$("#pincode").val(response.address.pincode);
+
+
+					facilityId = response.facilityList.facilityId;		
+					$("#facility").val(response.facilityList.facilityName);
+				
+
+					$(".imageUpdate").append('<p>If you want to change this image</p><img class="hovr" src="data:image/png;base64,'+response.hospitalImage.imageData+'" style="width:100px; border: 1px solid #ddd; border-radius: 4px; padding: 5px; width: 100px;">');
+
+
+					addressId = response.address.addressId;
+					imageId = response.hospitalImage.imageId;
 					
-
-// 				}
-// 	})
-// }
-
+				}
+	})
+}
 
 
 				function editHospital(){
@@ -468,12 +489,15 @@ $(document).ready(function () {
 
 					'hospitalName': $("#name").val(),
 					'contactNum': $("#mob").val(),
+					'addressId': addressId,
 					'city': $("#city").val(),
 					'district': $("#district").val(),
 					'state': $("#state").val(),
 					'country': $("#country").val(),
 					'pincode': $("#pincode").val(),
+					'facilityId': facilityId,
 					'facilityName': $("#facility").val(),
+					'imageId': imageId,
 					'userId': localStorage.getItem('userId')
 
 				})),
@@ -481,7 +505,7 @@ $(document).ready(function () {
 					$.ajax({
 
 						type: "PUT",
-						url: "http://localhost:8080/hospital/" + hospitalId,
+						url: "http://localhost:8080/hospital/" + editId,
 						data: formData1,
 						contentType: false,
 						processData: false,
@@ -561,16 +585,16 @@ $(document).ready(function () {
 							console.log(item.slotId);
 						if (localStorage.getItem('role') == "admin") {
 							
-						slot += "<tr><td>" + item.facility.facilityName + "</td><td>" + item.price + "</td><td>" + item.slotDate + "</td><td>" + item.slotStartTime + "</td><td>" + item.slotEndTime + "</td><td> <button  class='btnSelect btn btn-outline-danger' onclick ='deleteSlot("+item.slotId+")'>Delete</button></td></tr>";
+						slot += "<tr><td>" + item.facility.facilityName + "</td><td>" + item.price + "</td><td>" + item.slotDate + "</td><td>" + item.slotStartTime + "</td><td>" + item.slotEndTime + "</td><td> <button  class='btnSelect btn btn-outline-danger' onclick ='deleteSlot("+item.slotId+")'><i class='fa-solid fa-trash-can-arrow-up'></i> Delete</button></td></tr>";
 						} else {
 
-							slot += "<tr><td>" + item.facility.facilityName + "</td><td>" + item.price + "</td><td>" + item.slotDate + "</td><td>" + item.slotStartTime + "</td><td>" + item.slotEndTime + "</td><td> <button class=\"btnSelect btn btn-outline-warning\" onclick = 'hideRow(" + item.slotId + ")'>Book</button></td></tr>";
+							slot += "<tr id='hide'><td>" + item.facility.facilityName + "</td><td>" + item.price + "</td><td>" + item.slotDate + "</td><td>" + item.slotStartTime + "</td><td>" + item.slotEndTime + "</td><td> <button class=\"btnSelect btn btn-outline-warning\" onclick = 'hideRow(" + item.slotId + ")'>Book</button></td></tr>";
 						}
 					});
 					}
 					
 				
-					$("#myHospital1").empty();					
+					// $("#myHospital1").empty();					
 					$("#myHospital1").append(slot);
 				},
 				error: function (e){
@@ -602,7 +626,8 @@ $.ajax({
 
 function hideRow(id){
 
-	document.getElementById('slotId').hidden= false;
+	document.getElementById('hide').hidden= true;
+	alert("Your slot booked successfully.")
 }
 
 	</script>

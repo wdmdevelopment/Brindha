@@ -119,8 +119,9 @@ public class HospitalImpl implements HospitalService {
 			if (getUserRole.equalsIgnoreCase("admin")) {
 
 				Hospital hos = hospitalRepo.findById(id).orElseThrow(() -> new IdNotFoundException("Id not found"));
-				hos.setHospitalName(hospital.getHospitalName());
-
+			
+				hos.setHospitalName(hospital.getHospitalName());				
+				hos.setContactNum(hospital.getContactNum());
 				
 				Address address = addressRepo.findById(hospital.getAddressId())
 						.orElseThrow(() -> new IdNotFoundException("Address id not found " + hospital.getAddressId()));
