@@ -440,3 +440,60 @@
 2023-02-20 12:49:30,879 INFO com.example.demo.controller.UserController [http-nio-8080-exec-5] login User
 2023-02-20 13:12:23,022 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-3] Get hospital by id 
 2023-02-20 13:12:24,804 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-1] Get hospital by id 
+2023-02-20 13:32:05,374 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-1] Get hospital by id 
+2023-02-20 13:32:06,839 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-8 housekeeper] HikariPool-8 - Thread starvation or clock leap detected (housekeeper delta=2m6s939ms89µs100ns).
+2023-02-20 13:32:17,283 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-2] Hospital updated
+2023-02-20 13:32:17,299 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-2] Resolved [com.example.demo.exception.AdminOnlyException: InvalidAddress id not found 0]
+2023-02-20 13:32:29,563 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-10] Hospital updated
+2023-02-20 13:32:29,578 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-10] Resolved [com.example.demo.exception.AdminOnlyException: InvalidAddress id not found 0]
+2023-02-20 13:34:50,774 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-3] Get hospital by id 
+2023-02-20 13:35:33,199 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-1] Get hospital by id 
+2023-02-20 13:35:49,609 INFO org.springdoc.api.AbstractOpenApiResource [http-nio-8080-exec-2] Init duration for springdoc-openapi is: 452 ms
+2023-02-20 13:36:46,600 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-10] Get hospital by id 
+2023-02-20 13:37:42,505 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] Get hospital by id 
+2023-02-20 13:37:45,604 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-2] Hospital updated
+2023-02-20 13:37:45,622 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-2] Resolved [com.example.demo.exception.AdminOnlyException: InvalidFacility id not found 0]
+2023-02-20 13:38:14,216 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-3] Get hospital by id 
+2023-02-20 13:39:14,246 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] Get hospital by id 
+2023-02-20 13:39:47,574 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-4] Hospital updated
+2023-02-20 13:39:47,591 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-4] Resolved [com.example.demo.exception.AdminOnlyException: InvalidFacility id not found 0]
+2023-02-20 13:41:29,974 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] Get hospital by id 
+2023-02-20 13:41:44,882 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-6] Hospital updated
+2023-02-20 13:42:29,604 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-6] Get hospital by id 
+2023-02-20 13:42:56,734 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-4] Hospital updated
+2023-02-20 13:43:30,126 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-10] Get hospital by id 
+2023-02-20 13:43:48,050 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-6] Hospital updated
+2023-02-20 14:19:13,855 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-8 housekeeper] HikariPool-8 - Thread starvation or clock leap detected (housekeeper delta=35m6s881ms873µs300ns).
+2023-02-20 14:19:53,145 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-8] Get hospital by id 
+2023-02-20 14:19:58,260 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] Hospital updated
+2023-02-20 14:22:04,301 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-8] Get hospital by id 
+2023-02-20 14:22:17,362 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] Hospital updated
+2023-02-20 14:23:23,341 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] Get hospital by id 
+2023-02-20 14:23:49,263 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-2] Hospital updated
+2023-02-20 14:24:29,717 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-6] Get slot by hospital id 
+2023-02-20 14:24:36,836 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-10] Get hospital by id 
+2023-02-20 14:24:41,771 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] Get hospital by id 
+2023-02-20 14:26:48,760 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-8] get by hospital name
+2023-02-20 14:26:49,405 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-9] get by hospital name
+2023-02-20 14:26:51,087 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-10] get by hospital name
+2023-02-20 14:26:51,526 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] get by hospital name
+2023-02-20 14:26:51,897 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] get by hospital name
+2023-02-20 14:26:55,000 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-6] get by hospital name
+2023-02-20 14:28:33,458 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-4] Get hospital by id 
+2023-02-20 14:28:42,187 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-2] Get slot by hospital id 
+2023-02-20 14:32:37,089 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-6] Get hospital by id 
+2023-02-20 14:32:45,082 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-10] Hospital updated
+2023-02-20 14:32:52,617 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-1] Get hospital by id 
+2023-02-20 14:32:59,815 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-6] Hospital updated
+2023-02-20 14:35:31,241 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-6] Save new hospital - reqHosPost = {"hospitalName":"Aarokiya hospital","contactNum":"8508009552","city":"ECR","district":"Chennai","state":"TN","country":"India","pincode":"636482","facilityName":"Optometry","userId":"1"} 
+2023-02-20 14:36:48,985 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-10] Get hospital by id 
+2023-02-20 14:36:56,437 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-4] Hospital updated
+2023-02-20 14:38:31,297 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-9] Get hospital by id 
+2023-02-20 14:38:37,639 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-3] Hospital updated
+2023-02-20 14:41:43,415 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-1] Get hospital by id 
+2023-02-20 14:41:48,062 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-2] get by hospital name
+2023-02-20 14:41:48,477 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] get by hospital name
+2023-02-20 14:41:50,320 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-9] Get hospital by id 
+2023-02-20 14:42:11,193 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-3] Hospital updated
+2023-02-20 14:42:29,544 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] Get hospital by id 
+2023-02-20 14:42:36,106 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-9] Hospital updated
