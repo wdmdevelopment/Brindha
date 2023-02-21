@@ -498,3 +498,107 @@
 2023-02-20 14:42:29,544 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] Get hospital by id 
 2023-02-20 14:42:36,106 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-9] Hospital updated
 2023-02-20 14:48:10,416 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-6] Get hospital by id 
+2023-02-20 15:40:03,874 INFO com.example.demo.controller.UserController [http-nio-8080-exec-2] User created
+2023-02-20 15:41:40,839 INFO com.example.demo.controller.UserController [http-nio-8080-exec-3] login User
+2023-02-20 15:46:25,235 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-1] Save new hospital - reqHosPost = {"hospitalName":"Appollo Hospital","contactNum":"8508009552","city":"Avinasi","district":"Covaii","state":"TN","country":"India","pincode":"636307","facilityName":"Nose","userId":"64"} 
+2023-02-20 15:46:37,034 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] Get hospital by id 
+2023-02-20 15:46:50,308 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-4] Get hospital by id 
+2023-02-20 15:54:41,434 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-3] Hospital updated
+2023-02-20 15:55:26,223 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-1] Get slot by hospital id 
+2023-02-20 15:58:07,170 INFO com.example.demo.controller.UserController [http-nio-8080-exec-2] login User
+2023-02-20 15:59:00,268 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-8] Get slot by hospital id 
+2023-02-20 15:59:04,513 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] Get slot by hospital id 
+2023-02-20 15:59:10,520 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Get slot by hospital id 
+2023-02-20 16:03:06,970 INFO com.example.demo.controller.UserController [http-nio-8080-exec-10] login User
+2023-02-20 16:03:51,807 INFO com.example.demo.controller.UserController [http-nio-8080-exec-2] login User
+2023-02-20 16:08:49,048 INFO com.example.demo.controller.UserController [http-nio-8080-exec-7] login User
+2023-02-20 16:38:22,770 INFO com.example.demo.controller.UserController [http-nio-8080-exec-6] User created
+2023-02-20 16:39:33,033 INFO com.example.demo.controller.UserController [http-nio-8080-exec-10] login User
+2023-02-20 16:40:34,311 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-8] Save new hospital - reqHosPost = {"hospitalName":"AIMS Hospital","contactNum":"7806359985","city":"Sankari","district":"Erode","state":"TN","country":"India","pincode":"638358","facilityName":"Cardiology","userId":"68"} 
+2023-02-20 16:40:57,790 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] Get hospital by id 
+2023-02-20 16:41:09,028 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-4] Hospital updated
+2023-02-20 16:41:26,798 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Get slot by hospital id 
+2023-02-20 16:41:59,861 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-6] save slot api hospitalid=65, facility=Radiology 
+2023-02-20 16:41:59,896 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] Get slot by hospital id 
+2023-02-20 16:42:09,058 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-2] Deleted slot 
+2023-02-20 16:42:09,076 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-7] Get slot by hospital id 
+2023-02-20 16:42:29,715 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-1] get by hospital name
+2023-02-20 16:42:30,352 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-10] get by hospital name
+2023-02-20 16:42:31,396 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-9] get by hospital name
+2023-02-20 16:42:32,337 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] get by hospital name
+2023-02-20 16:42:32,682 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-6] get by hospital name
+2023-02-20 16:42:32,978 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-3] get by hospital name
+2023-02-20 16:42:33,395 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-2] get by hospital name
+2023-02-20 16:42:50,398 INFO com.example.demo.controller.UserController [http-nio-8080-exec-1] login User
+2023-02-20 16:43:05,179 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-7] Get slot by hospital id 
+2023-02-20 16:43:12,029 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-4] Get slot by hospital id 
+2023-02-20 16:46:16,763 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-10] Get slot by hospital id 
+2023-02-20 16:46:21,238 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-9] Get slot by hospital id 
+2023-02-20 16:48:45,835 INFO com.example.demo.controller.UserController [http-nio-8080-exec-7] login User
+2023-02-20 16:48:45,850 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-7] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException: Cannot invoke "com.example.demo.entity.User.getEmail()" because "user" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.example.demo.entity.User.getEmail()" because "user" is null
+	at com.example.demo.serviceImpl.UserImpl.login(UserImpl.java:103)
+	at com.example.demo.controller.UserController.login(UserController.java:102)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:891)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1784)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-02-20 16:49:06,434 INFO com.example.demo.controller.UserController [http-nio-8080-exec-4] login User
+2023-02-20 16:49:38,402 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-2] Get slot by hospital id 
+2023-02-20 16:49:47,515 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-3] Get hospital by id 
+2023-02-20 18:09:01,400 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-8 housekeeper] HikariPool-8 - Thread starvation or clock leap detected (housekeeper delta=42m44s748ms894µs).
+2023-02-20 18:27:43,941 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(473)-127.0.0.1] Application shutdown requested.
+2023-02-20 18:27:43,962 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(473)-127.0.0.1] Pausing ProtocolHandler ["http-nio-8080"]
+2023-02-20 18:27:43,964 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(473)-127.0.0.1] Stopping service [Tomcat]
+2023-02-20 18:27:43,966 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(473)-127.0.0.1] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-02-20 18:27:43,970 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(473)-127.0.0.1] Stopping ProtocolHandler ["http-nio-8080"]
+2023-02-20 18:27:43,972 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(473)-127.0.0.1] Destroying ProtocolHandler ["http-nio-8080"]
+2023-02-20 18:27:43,976 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(473)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-20 18:27:43,978 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(473)-127.0.0.1] HikariPool-8 - Shutdown initiated...
+2023-02-20 18:27:43,984 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(473)-127.0.0.1] HikariPool-8 - Shutdown completed.
