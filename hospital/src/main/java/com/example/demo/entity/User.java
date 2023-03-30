@@ -1,6 +1,5 @@
 package com.example.demo.entity;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,8 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
- 
 
 @Table(name = "userDetails")
 @Entity(name = "userDetails")
@@ -21,7 +18,7 @@ public class User {
 	private long userId;
 
 	@Column(name = "User_Name")
-	private String name;
+	private String username;
 
 	@Column(name = "Role")
 	private String role; // admin patient doctor
@@ -47,12 +44,12 @@ public class User {
 		this.userId = userId;
 	}
 
-	public String getName() {
-		return name;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public Hospital getHospital() {
@@ -70,7 +67,6 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
-
 
 	public int getAge() {
 		return age;
@@ -96,9 +92,17 @@ public class User {
 		this.password = password;
 	}
 
-	
 	public User() {
 
+	}
+
+	public User(String username, String role, int age, String email, String password, Hospital hospital) {
+		this.username = username;
+		this.role = role;
+		this.age = age;
+		this.email = email;
+		this.password = password;
+		this.hospital = hospital;
 	}
 
 }

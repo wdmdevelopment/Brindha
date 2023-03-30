@@ -39,7 +39,7 @@ public class UserImpl implements UserService {
 
 		RequestUser reqUser = new RequestUser();
 
-		reqUser.setName(user.getName());
+		reqUser.setUsername(user.getUsername());
 		reqUser.setAge(user.getAge());
 		reqUser.setEmail(user.getEmail());
 		reqUser.setPassword(user.getPassword());
@@ -54,7 +54,7 @@ public class UserImpl implements UserService {
 		
 		User user = new User();
 
-		user.setName(reqUser.getName());
+		user.setUsername(reqUser.getUsername());
 		user.setAge(reqUser.getAge());
 		user.setEmail(reqUser.getEmail());
 		user.setPassword(reqUser.getPassword());
@@ -70,7 +70,7 @@ public class UserImpl implements UserService {
 		
 		User user = userRepo.findById(userId).orElseThrow(()-> new IdNotFoundException("id not found"));
 
-		user.setName(reqUser.getName());
+		user.setUsername(reqUser.getUsername());
 		user.setAge(reqUser.getAge());
 		user.setEmail(reqUser.getEmail());
 		user.setPassword(reqUser.getPassword());

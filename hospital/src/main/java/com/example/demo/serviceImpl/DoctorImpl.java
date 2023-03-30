@@ -56,7 +56,7 @@ public class DoctorImpl implements DoctorService {
 
 				User user = new User();
 
-				user.setName(reqDocPost.getName());
+				user.setUsername(reqDocPost.getName());
 				user.setAge(reqDocPost.getAge());
 
 				Address address = new Address();
@@ -98,7 +98,7 @@ public class DoctorImpl implements DoctorService {
 			User user = userRepo.findById(reqDoctor.getUserId())
 					.orElseThrow(() -> new IdNotFoundException("User id not found " + reqDoctor.getUserId()));
 
-			user.setName(reqDoctor.getName());
+			user.setUsername(reqDoctor.getName());
 			user.setAge(reqDoctor.getAge());
 
 

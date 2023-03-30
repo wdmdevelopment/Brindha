@@ -42,9 +42,12 @@ public class Hospital {
 
 //	@OneToMany(mappedBy = "hospital", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 //	private List<Doctor> doctors;
-	
-	@OneToMany(mappedBy = "hospital", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Slot> slot;	
+
+	@OneToMany(mappedBy = "hospital", 
+			orphanRemoval = true, cascade = CascadeType.ALL, 
+			fetch = FetchType.LAZY)
+	@JsonIgnore
+	private List<Slot> slot; 
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "HoispitalImage", referencedColumnName = "imageId")
@@ -131,7 +134,7 @@ public class Hospital {
 		this.facilityList = facilityList;
 	}
 
-	public Hospital(){
-		
+	public Hospital() {
+
 	}
 }

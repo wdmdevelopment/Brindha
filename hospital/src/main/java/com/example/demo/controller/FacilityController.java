@@ -13,13 +13,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.RequestFacility;
 import com.example.demo.entity.Facility;
+import com.example.demo.entity.Hospital;
 import com.example.demo.service.FacilityService;
 
 @RestController
+
 public class FacilityController {
 
 	@Autowired
@@ -62,6 +66,18 @@ public class FacilityController {
 	public void deleteFacilities(@PathVariable("id") long id) {
 
 		facilityService.deleteFacilities(id);
+
+	}
+	
+	
+	@GetMapping("/facility/searchByFacilityName")
+	public ResponseEntity<List<Facility>> getFacilityByName(@RequestParam("facilityName") String name) {
+		logger.info("get by facility name");
+		List<Facility> facility = facilityService.getFacilityByName(name);
+		if (facility == null) {
+			return ResponseEntity.notFound().build();
+		}
+		return ResponseEntity.ok().body(facility);
 
 	}
 

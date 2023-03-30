@@ -1,6 +1,6 @@
 package com.example.demo.entity;
 
-import java.time.LocalDate; 
+import java.time.LocalDate;
 import java.time.LocalTime;
 
 import javax.persistence.CascadeType;
@@ -26,15 +26,15 @@ public class Slot {
 	private long slotId;
 
 	@Column(name = "Start")
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
 	private LocalTime slotStartTime;
 
 	@Column(name = "End")
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
 	private LocalTime slotEndTime;
 
 	@Column(name = "Date")
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private LocalDate slotDate;
 
 	@Column(name = "Slot_Status")
@@ -55,6 +55,10 @@ public class Slot {
 	@JoinColumn(name = "hospital_id")
 	@JsonIgnore
 	private Hospital hospital;
+
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "User")
+	private User user;
 
 	public long getSlotId() {
 		return slotId;
@@ -128,21 +132,27 @@ public class Slot {
 		this.hospital = hospital;
 	}
 
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	public Slot() {
 
 	}
-
-
 
 	@Override
 	public String toString() {
 		return "Slot [slotId=" + slotId + ", slotStartTime=" + slotStartTime + ", slotEndTime=" + slotEndTime
 				+ ", slotDate=" + slotDate + ", status=" + status + ", price=" + price + ", facility=" + facility
-				+ ", doctor=" + doctor + ", hospital=" + hospital + "]";
+				+ ", doctor=" + doctor + ", hospital=" + hospital + ", user=" + user + "]";
 	}
 
 	public Slot(long slotId, LocalTime slotStartTime, LocalTime slotEndTime, LocalDate slotDate, String status,
-			double price, Facility facility, Doctor doctor, Hospital hospital) {
+			double price, Facility facility, Doctor doctor, Hospital hospital, User user) {
 		super();
 		this.slotId = slotId;
 		this.slotStartTime = slotStartTime;
@@ -153,8 +163,7 @@ public class Slot {
 		this.facility = facility;
 		this.doctor = doctor;
 		this.hospital = hospital;
+		this.user = user;
 	}
-
-
 
 }

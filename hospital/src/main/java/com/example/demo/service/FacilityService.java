@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.RequestFacility;
 import com.example.demo.entity.Facility;
+import com.example.demo.entity.Hospital;
 @Service
 public interface FacilityService {
 	public List<Facility> getAllFacility();
@@ -18,5 +19,5 @@ public interface FacilityService {
 	
 	public void deleteFacilities(long id);
 
-	
+	public List<Facility> getFacilityByName(String name);
 }

@@ -54,7 +54,7 @@ public class PatientImpl implements PatientService {
 		if (getUserRole.equalsIgnoreCase("admin")) {
 			
 			User user = new User();
-			user.setName(reqPat.getName());
+			user.setUsername(reqPat.getName());
 			user.setAge(reqPat.getAge());
 			user.setRole(reqPat.getRole());
 			user.setEmail(reqPat.getEmail());
@@ -102,7 +102,7 @@ public class PatientImpl implements PatientService {
 			
 			user.setAge(reqPatUpdate.getAge());
 			user.setEmail(reqPatUpdate.getEmail());
-			user.setName(reqPatUpdate.getName());
+			user.setUsername(reqPatUpdate.getName());
 			user.setRole(reqPatUpdate.getRole());
 			user.setPassword(reqPatUpdate.getPassword());
 			

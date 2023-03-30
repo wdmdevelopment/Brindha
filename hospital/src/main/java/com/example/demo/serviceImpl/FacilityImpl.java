@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.RequestFacility;
 import com.example.demo.entity.Facility;
+import com.example.demo.entity.Hospital;
 import com.example.demo.entity.User;
 import com.example.demo.exception.AdminOnlyException;
 import com.example.demo.exception.FacilityNotFoundException;
@@ -82,4 +83,9 @@ public class FacilityImpl implements FacilityService {
 		}
 
 	}
+	
+	public List<Facility> getFacilityByName(String name) {
+		return facilityRepo.findByFacilityName(name);
+	}
+
 }

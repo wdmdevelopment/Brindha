@@ -32,9 +32,10 @@ public class SlotImpl implements SlotService {
 	
 
 	public List<Slot> getAllSlot() {
-		return slotRepo.findAll();
+		
+		return slotRepo.findByStatus("open");
 	}
-
+	
 	public RequestSlot getOneSlotById(long id){
 		
 		Slot slot;
