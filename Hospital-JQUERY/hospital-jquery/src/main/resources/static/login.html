@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link type="image/x-icon" href="/Images/ds_logo.png" rel="icon">
+	<title>Sign In and Sign Up Form</title>
+	<link rel="stylesheet" href="./CSS/login.css">
+	<script src="https://kit.fontawesome.com/54e0ebeaef.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	
+</head>
+<body>
+    <div class="container">
+		<div class="form-box">
+			<h1 id="title">Sign In</h1>
+			<form>
+
+				<div class="input-group">
+
+					<div class="input-field">
+
+						<i class="fa-solid fa-envelope"></i>
+						<input type="email" id="email" placeholder="Email">
+						
+					</div>
+					<div class="error" style="color: red; padding-right: 50%; font-size: small;" id="emailError"></div>
+					<br>
+
+					<div class="input-field">
+
+						<i class="fa-solid fa-lock"></i>
+						<input type="password" id="password" placeholder="Password">
+						
+					</div>
+					<div class="error" style="color: red; padding-right: 50%; font-size: small;" id="passError"></div>
+					<br>
+					<p id="clickLink">Don't have an account? <a href="Register.html">Sign Up!</a></p>
+				</div>
+			</form>
+			
+			<div class="btn-field">
+
+				<button class="mt-mb-5 pb-lg-2 btn btn-info text-center rounded" type="button" id="submit">Sign
+					In</button>
+			</div>
+	
+		</div>
+	</div>
+
+    
+<script>
+    $(document).ready(function(){
+        $("#submit").click(function(){
+
+       	var emailRegex =/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+		var passwordRegex =/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+   
+     var email = jQuery.trim($("#email").val());
+     if(email == ''){
+     $('#emailError').text('This field is required');
+     return false;
+     }else {
+
+        $('#emailError').empty();
+            }
+
+     if(email != "") {
+     if(!emailRegex.test(email)){
+     $('#emailError').text('The e-mail address entered is invalid.');
+     return false;
+     }else {
+
+    $('#emailError').empty();
+    }
+     }
+
+
+     var password = jQuery.trim($("#password").val());
+     if(password == ''){
+     $('#passError').text('This field is required');
+     return false;
+     }else {
+
+        $('#passError').empty();
+    }
+     if(password != "") {
+     if(!passwordRegex.test(password)){
+     $('#passError').text('Your password is wrong.');
+     return false;
+     }else {
+
+        $('#passError').empty();
+    }
+     }
+
+ 
+    var email = $('#email').val();
+    var password = $('#password').val();
+
+
+
+				if (email != "" && password != "") {
+					$.ajax({
+						url: 'http://localhost:8080/login',
+						type: "POST",
+						data: {email: email, password: password},
+						success: function (response) {
+							window.location = "index.html";
+
+							localStorage.setItem('name', response.name);
+							localStorage.setItem('age', response.age);
+							localStorage.setItem('role', response.role);
+							localStorage.setItem('email', response.email);
+							localStorage.setItem('password', response.password);
+							localStorage.setItem('userId', response.userId);
+
+						}, error: function (err) {
+							alert("You entered an invalid mailId && passWord.");
+						}
+					});
+				}
+			});
+		})
+	
+	</script>
+
+</body>
+
+</html>

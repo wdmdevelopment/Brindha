@@ -1,0 +1,174 @@
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<link type="image/x-icon" href="/Images/ds_logo.png" rel="icon">
+	<meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit = no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+
+	<script src="https://kit.fontawesome.com/54e0ebeaef.js" crossorigin="anonymous"></script>
+	<title>Registration Form</title>
+	<style>
+		body {
+			color: rgb(168, 164, 164);
+		}
+	</style>
+</head>
+
+
+<body class="bg-info">
+	<div class="container">
+		<div class="row d-flex justify-content-center align-items-center h-100">
+
+			<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+
+				<div class="card" style="border-radius: 1rem;">
+					<div class="card-body p-5">
+
+						<div class="form-label">
+							<i class="fa-solid fa-user"></i> <label class="form-label" for="Name">Name</label>
+							<input type="text" class="form-control form-control-lg" id="name" />
+
+						</div>
+						<div class="error" style="color: red;" id="nameError"></div>
+						
+
+							<div class="form-label">
+								<i class="fa-solid fa-user-plus"></i> <label class="form-label" for="Role">Role</label>
+								<select class="custom-select" id="inputGroupSelect">
+									<!-- <option selected>Choose...</option> -->
+									<!-- <option value="Doctor">Doctor</option> -->
+									<option value="admin">admin</option>
+									<option value="Patient">Patient</option>
+								</select>
+
+							</div>
+							<div class="error" style="color: red;" id="roleError"></div>
+							<div class="form-label">
+								<i class="fa-solid fa-caret-up"></i><label class="form-label" for="Age">Age</label>
+								<input type="number" class="form-control form-control-lg" id="age">
+
+							</div>
+							<div class="error" style="color: red;" id="ageError"></div>
+
+							<div class="form-label">
+								<i class="fa-solid fa-envelope"></i><label class="form-label" for="Email">Email</label>
+								<input type="email" class="form-control form-control-lg" id="email" />
+
+							</div>
+							<div class="error" style="color: red;" id="mailError"></div>
+
+							<div class="form-label">
+								<i class="fa-solid fa-lock"></i> <label class="form-label"
+									for="Password">Password</label>
+								<input type="password" class="form-control form-control-lg" id="password"/>
+
+							</div>
+							<div class="error" style="color: red;" id="pwdError"></div>
+							<p id="clickLink">Have an account? <a href="login.html"> Sign In!</a></p>
+
+							<center><button class="mt-mb-5 pb-lg-2 btn btn-info text-center rounded" type="button"
+									id="register">Register</button></center>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+
+
+			$(document).ready(function () {
+				$("#register").click(function () {
+
+					var emailRegex =/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+					var passwordRegex =/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+
+					var Name = jQuery.trim($('#name').val());
+					var Age = jQuery.trim($('#age').val());
+					var Email = jQuery.trim($('#email').val());
+					var Password = jQuery.trim($('#password').val());
+
+							if (Name == '') {
+								$('#nameError').text('This field is required');
+								return false;
+							}else {
+								$('#nameError').empty();
+							}
+							if (Age == '') {
+								$('#ageError').text('This field is required');
+								return false;
+							}else {
+								$('#ageError').empty();
+							}
+							if (Email == '') {
+								$('#mailError').text('This field is required');
+								return false;
+							}else {
+								$('#mailError').empty();
+							}
+
+							if(email != "") {
+								if(!emailRegex.test(Email)){
+								$('#mailError').text('The e-mail address entered is invalid.');
+								return false;
+								}else {
+
+								$('#mailError').empty();
+								}
+								}
+
+							if (Password == '') {
+								$('#pwdError').text('This field is required');
+								return false;
+							}else {
+								$('#pwdError').empty();
+							}
+
+							if(Password != "") {
+								if(!passwordRegex.test(Password)){
+								$('#pwdError').text('Password should be min 8 & max 20 characters.');
+								return false;
+								}else {
+
+									$('#pwdError').empty();
+								}
+								}
+								var name=$('#name').val();
+								var role=$('#inputGroupSelect').val();
+								var age=$('#age').val();
+								var email=$('#email').val();
+								var password=$('#password').val();
+								
+
+					var details = {
+						'name': Name,
+						'age': Age,
+						'role': role,
+						'email': Email,
+						'password': Password
+					};
+					console.log(details);
+					$.ajax({
+						url: "http://localhost:8080/user/add",
+						type: "POST",
+						data: JSON.stringify(details),
+						contentType: "application/json",
+						success: function (data) {
+							alert("Registered successfully")
+							window.location = "login.html"
+							console.log(data);
+						}, error: function (e) {
+							console.log(JSON.stringify(e));
+						}
+					});
+				})
+			});
+		</script>
+
+</body>
+
+</html>
