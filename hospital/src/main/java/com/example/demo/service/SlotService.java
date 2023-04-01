@@ -23,4 +23,6 @@ public interface SlotService {
 	public void deleteSlot(@PathVariable("id") long id);
 
 	public List<Slot> findByHospitalId(long id);
+	
+	public List<Slot> findByHospitalIdStatus(long id);
 }

@@ -55,6 +55,14 @@ public class SlotController {
 	}
 	
 	
+	@GetMapping("/getByHospital-status/{id}")
+	public ResponseEntity<List<Slot>> findByHospitalIdStatus(@PathVariable("id") long id) {
+		logger.info("Get slot by hospital id ");
+		List<Slot> slot = slotService.findByHospitalIdStatus(id);
+		return ResponseEntity.ok().body(slot);
+	}
+	
+	
 	
 	@PostMapping
 	public ResponseEntity<Slot> saveSlot(@RequestBody RequestSlot reqSlot) {

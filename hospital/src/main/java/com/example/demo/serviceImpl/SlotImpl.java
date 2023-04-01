@@ -105,7 +105,18 @@ public class SlotImpl implements SlotService {
 		}
 	}
 
-	public List<Slot> findByHospitalId(long id) {
+	public List<Slot> findByHospitalIdStatus(long id) {
+		
+		return slotRepo.findByStatusAndHospital_HospitalId("open", id);
+		
+//		return slotRepo.findByHospital_HospitalId(id);
+	}
+	
+public List<Slot> findByHospitalId(long id) {
+		
+//		return slotRepo.findByStatusAndHospital_HospitalId("open", id);
+		
 		return slotRepo.findByHospital_HospitalId(id);
 	}
+	
 }

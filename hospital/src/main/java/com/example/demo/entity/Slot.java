@@ -53,7 +53,7 @@ public class Slot {
 
 	@ManyToOne
 	@JoinColumn(name = "hospital_id")
-	@JsonIgnore
+	
 	private Hospital hospital;
 
 	@OneToOne(cascade = CascadeType.ALL)

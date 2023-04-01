@@ -72,7 +72,7 @@ public class OtpController {
 	
 	private void sendOtpByEmail(String email, String otp) {
 		SimpleMailMessage message = new SimpleMailMessage();		
-		message.setFrom("keerthana29bro@gmail.com");
+		message.setFrom("prakashgeevi19998@gmail.com");
 		message.setTo(email);
 		message.setSubject("Verification code for RESET PASSWORD");
 		message.setText("Your 6-digit verification code is " + otp);

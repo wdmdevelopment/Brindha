@@ -12,6 +12,8 @@ public interface SlotRepository extends JpaRepository<Slot, Long>{
 public List<Slot> findByHospital_HospitalId(long id);
 
 	public List<Slot> findByStatus(String status);
+	
+	public List<Slot> findByStatusAndHospital_HospitalId(String status, long id);
 
 
 }
