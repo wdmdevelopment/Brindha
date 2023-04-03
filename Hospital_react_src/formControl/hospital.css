@@ -1,0 +1,27 @@
+.searchBar{
+    padding: 10px 40px;
+    border: 1px solid #E1BEE7;
+    border-radius: 5px;
+    width: 50%;
+    float: right;
+    margin-bottom: 100px;
+}
+/* .addBtn{
+    margin-top: 100%;
+} */
+
+.userSearchBar{
+    padding: 10px 40px;
+    border: 1px solid;
+    border-radius: 5px;
+    width: 50%;    
+    margin-bottom: 80px;
+    border-color: #E1BEE7; 
+}
+
+
+@media screen and (max-width: 780px) {
+    .addBtn{
+        margin-top: 180px;
+    }
+}
