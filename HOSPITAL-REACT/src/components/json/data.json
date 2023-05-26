@@ -1,0 +1,74 @@
+{
+  "categories": [
+    {
+      "_id": "abc123",
+      "category": "main-menu",
+      "title": "Hba1C Test",
+      "image": "./images/image1.png"
+    },
+    {
+      "_id": "abc123",
+      "category": "main-menu",
+      "title": "Aldolase Test",
+      "image": "./images/img2.jpg"
+    },
+    {
+      "_id": "abc123",
+      "category": "main-menu",
+      "title": "ASO Test",
+      "image": "./images/image2.png"
+    },
+    {
+      "_id": "abc123",
+      "category": "main-menu1",
+      "title": "General Surgery",
+      "image": "./images/surgery1.jpg"
+    },
+    {
+      "_id": "abc123",
+      "category": "main-menu1",
+      "title": "Ophthamology",
+      "image": "./images/surgery2.jpg"
+
+    },
+    {
+      "_id": "abc123",
+      "category": "main-menu1",
+      "title": "Cosmetic",
+      "image": "./images/surgery3.jpg"
+
+    },
+    {
+      "_id": "abc123",
+      "category": "main-menu2",
+      "title": "Basic Health Checkup",
+      "image": "./images/health1.jpg"
+    },
+    {
+      "_id": "abc123",
+      "category": "main-menu2",
+      "title": "Wellness Package",
+      "image": "./images/health2.jpg"
+    },
+    {
+      "_id": "abc123",
+      "category": "main-menu2",
+      "title": "Child Health Checkup",
+      "image": "./images/health3.jpg"
+    }
+  ],
+  "places": [
+    {
+      "_id": "abc123",
+      "image": "./images/hos1.png"
+    },
+    {
+      "_id": "abc123",
+      "image": "./images/hos2.jpg"
+    },
+    {
+      "_id": "abc123",
+      "image": "./images/hos2.webp"
+    }
+  ]
+}
