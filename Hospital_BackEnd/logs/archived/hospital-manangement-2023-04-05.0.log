@@ -1,0 +1,309 @@
+2023-04-05 09:39:53,651 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-04-05 09:39:53,654 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting HospitalApplication using Java 17.0.4.1 on DESKTOP-3U6BKIP with PID 8388 (C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital\target\classes started by admin in C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital)
+2023-04-05 09:39:53,657 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-04-05 09:39:53,773 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-05 09:39:53,775 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-05 09:39:55,545 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-05 09:39:55,697 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 138 ms. Found 11 JPA repository interfaces.
+2023-04-05 09:39:56,596 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-04-05 09:39:56,613 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-05 09:39:56,614 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-04-05 09:39:56,615 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-04-05 09:39:56,730 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-04-05 09:39:56,731 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2953 ms
+2023-04-05 09:39:56,939 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-05 09:39:57,026 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-04-05 09:39:57,281 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-05 09:39:57,425 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-04-05 09:39:57,432 WARN com.zaxxer.hikari.util.DriverDataSource [restartedMain] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-04-05 09:39:57,852 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-04-05 09:39:57,905 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-04-05 09:39:59,726 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-05 09:39:59,775 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-05 09:40:01,023 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [restartedMain] Autowired annotation should only be used on methods with parameters: public java.util.List com.example.demo.serviceImpl.UserImpl.getAllUser()
+2023-04-05 09:40:01,242 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'filterChain' defined in class path resource [com/example/demo/security/jwt/WebSecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'filterChain' threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	Syntax error on token ""/api/auth/**"", delete this token
+
+2023-04-05 09:40:01,247 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-05 09:40:01,251 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown initiated...
+2023-04-05 09:40:01,261 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown completed.
+2023-04-05 09:40:01,266 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Stopping service [Tomcat]
+2023-04-05 09:40:01,281 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [restartedMain] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-04-05 09:40:01,313 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'filterChain' defined in class path resource [com/example/demo/security/jwt/WebSecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'filterChain' threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	Syntax error on token ""/api/auth/**"", delete this token
+
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.example.demo.HospitalApplication.main(HospitalApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'filterChain' threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	Syntax error on token ""/api/auth/**"", delete this token
+
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 24 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	Syntax error on token ""/api/auth/**"", delete this token
+
+	at com.example.demo.security.jwt.WebSecurityConfig.filterChain(WebSecurityConfig.java:64)
+	at com.example.demo.security.jwt.WebSecurityConfig$$EnhancerBySpringCGLIB$$886f0980.CGLIB$filterChain$4(<generated>)
+	at com.example.demo.security.jwt.WebSecurityConfig$$EnhancerBySpringCGLIB$$886f0980$$FastClassBySpringCGLIB$$8fa53cef.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.example.demo.security.jwt.WebSecurityConfig$$EnhancerBySpringCGLIB$$886f0980.filterChain(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 25 common frames omitted
+2023-04-05 09:40:17,951 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-04-05 09:40:17,958 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting HospitalApplication using Java 17.0.4.1 on DESKTOP-3U6BKIP with PID 8960 (C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital\target\classes started by admin in C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital)
+2023-04-05 09:40:17,960 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-04-05 09:40:18,067 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-05 09:40:18,068 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-05 09:40:19,151 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-05 09:40:19,291 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 127 ms. Found 11 JPA repository interfaces.
+2023-04-05 09:40:20,173 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-04-05 09:40:20,191 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-05 09:40:20,191 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-04-05 09:40:20,192 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-04-05 09:40:20,311 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-04-05 09:40:20,312 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2243 ms
+2023-04-05 09:40:20,509 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-05 09:40:20,577 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-04-05 09:40:20,776 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-05 09:40:20,905 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-04-05 09:40:20,913 WARN com.zaxxer.hikari.util.DriverDataSource [restartedMain] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-04-05 09:40:21,303 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-04-05 09:40:21,342 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-04-05 09:40:22,654 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-05 09:40:22,670 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-05 09:40:23,634 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [restartedMain] Autowired annotation should only be used on methods with parameters: public java.util.List com.example.demo.serviceImpl.UserImpl.getAllUser()
+2023-04-05 09:40:23,827 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'filterChain' defined in class path resource [com/example/demo/security/jwt/WebSecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'filterChain' threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	Syntax error on token ""/api/auth/**"", delete this token
+
+2023-04-05 09:40:23,832 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-05 09:40:23,836 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown initiated...
+2023-04-05 09:40:23,851 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown completed.
+2023-04-05 09:40:23,854 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Stopping service [Tomcat]
+2023-04-05 09:40:23,869 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [restartedMain] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-04-05 09:40:23,899 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'filterChain' defined in class path resource [com/example/demo/security/jwt/WebSecurityConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'filterChain' threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	Syntax error on token ""/api/auth/**"", delete this token
+
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.example.demo.HospitalApplication.main(HospitalApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'filterChain' threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	Syntax error on token ""/api/auth/**"", delete this token
+
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 24 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	Syntax error on token ""/api/auth/**"", delete this token
+
+	at com.example.demo.security.jwt.WebSecurityConfig.filterChain(WebSecurityConfig.java:64)
+	at com.example.demo.security.jwt.WebSecurityConfig$$EnhancerBySpringCGLIB$$a8649440.CGLIB$filterChain$2(<generated>)
+	at com.example.demo.security.jwt.WebSecurityConfig$$EnhancerBySpringCGLIB$$a8649440$$FastClassBySpringCGLIB$$2ff8d98a.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.example.demo.security.jwt.WebSecurityConfig$$EnhancerBySpringCGLIB$$a8649440.filterChain(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 25 common frames omitted
+2023-04-05 09:41:08,738 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-04-05 09:41:08,741 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting HospitalApplication using Java 17.0.4.1 on DESKTOP-3U6BKIP with PID 736 (C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital\target\classes started by admin in C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital)
+2023-04-05 09:41:08,742 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-04-05 09:41:08,823 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-05 09:41:08,823 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-05 09:41:09,872 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-05 09:41:10,009 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 124 ms. Found 11 JPA repository interfaces.
+2023-04-05 09:41:10,822 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-04-05 09:41:10,835 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-05 09:41:10,836 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-04-05 09:41:10,837 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-04-05 09:41:10,962 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-04-05 09:41:10,963 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2139 ms
+2023-04-05 09:41:11,169 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-05 09:41:11,236 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-04-05 09:41:11,433 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-05 09:41:11,565 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-04-05 09:41:11,572 WARN com.zaxxer.hikari.util.DriverDataSource [restartedMain] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-04-05 09:41:11,952 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-04-05 09:41:11,995 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-04-05 09:41:13,327 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-05 09:41:13,343 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-05 09:41:14,335 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [restartedMain] Autowired annotation should only be used on methods with parameters: public java.util.List com.example.demo.serviceImpl.UserImpl.getAllUser()
+2023-04-05 09:41:14,719 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-05 09:41:14,769 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [restartedMain] Adding welcome page: class path resource [static/index.html]
+2023-04-05 09:41:15,604 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1be8c7c1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@804d35c, org.springframework.security.web.context.SecurityContextPersistenceFilter@38323181, org.springframework.security.web.header.HeaderWriterFilter@4e455508, org.springframework.web.filter.CorsFilter@29139bb2, org.springframework.security.web.authentication.logout.LogoutFilter@601e942f, com.example.demo.security.jwt.AuthTokenFilter@7478825d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@f422e68, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@21e8b341, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@777b82f, org.springframework.security.web.session.SessionManagementFilter@267138dc, org.springframework.security.web.access.ExceptionTranslationFilter@56ec84a5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4ebbb898]
+2023-04-05 09:41:16,100 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-04-05 09:41:16,136 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2023-04-05 09:41:16,169 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-05 09:41:16,186 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started HospitalApplication in 8.048 seconds (JVM running for 9.252)
+2023-04-05 09:41:28,389 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-05 09:41:28,389 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2023-04-05 09:41:28,392 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 2 ms
+2023-04-05 09:41:30,102 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-3] get by hospital name
+2023-04-05 09:42:13,261 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] get by hospital name
+2023-04-05 09:42:14,013 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-9] get by hospital name
+2023-04-05 09:42:17,051 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-10] get by hospital name
+2023-04-05 09:42:17,397 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-2] get by hospital name
+2023-04-05 09:42:20,052 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-4] Get slot by hospital id 
+2023-04-05 09:42:26,560 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-6] Get slot by hospital id 
+2023-04-05 09:42:30,974 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-8] Get hospital by id 
+2023-04-05 09:42:34,615 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-2] Get hospital by id 
+2023-04-05 09:42:45,679 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-4] Hospital updated
+2023-04-05 09:43:04,591 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-8] get by hospital name
+2023-04-05 09:43:06,351 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-10] Get user all Booking Slots
+2023-04-05 09:56:27,871 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-1] get by hospital name
+2023-04-05 10:24:30,888 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] get by hospital name
+2023-04-05 10:27:18,020 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] get by hospital name
+2023-04-05 10:28:39,000 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-9] get by hospital name
+2023-04-05 10:30:44,088 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-4] get by hospital name
+2023-04-05 10:33:43,263 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] get by hospital name
+2023-04-05 10:38:30,603 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-8] Get user all Booking Slots
+2023-04-05 10:38:34,421 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-9] get by hospital name
+2023-04-05 10:49:47,744 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-1] get by hospital name
+2023-04-05 10:50:09,803 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-4] Get user all Booking Slots
+2023-04-05 10:50:20,990 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-3] get by hospital name
+2023-04-05 10:57:02,036 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] get by hospital name
+2023-04-05 10:57:03,842 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-8] Get user all Booking Slots
+2023-04-05 10:57:33,198 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-9] get by hospital name
+2023-04-05 11:10:08,209 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-2] get by hospital name
+2023-04-05 11:26:53,434 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] get by hospital name
+2023-04-05 11:31:22,954 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-10] get by hospital name
+2023-04-05 11:32:19,059 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-1] get by hospital name
+2023-04-05 11:32:38,865 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-3] Get user all Booking Slots
+2023-04-05 11:32:40,137 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] get by hospital name
+2023-04-05 11:37:15,075 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] get by hospital name
+2023-04-05 11:37:54,251 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-8] get by hospital name
+2023-04-05 11:38:51,701 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-9] get by hospital name
+2023-04-05 11:39:16,486 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-10] Get user all Booking Slots
+2023-04-05 11:40:43,667 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-1] Get user all Booking Slots
+2023-04-05 11:40:51,923 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-4] Get user all Booking Slots
+2023-04-05 11:40:56,351 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-3] Get user all Booking Slots
+2023-04-05 11:41:12,977 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-5] Get user all Booking Slots
+2023-04-05 11:41:17,584 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-6] Get user all Booking Slots
+2023-04-05 11:41:22,711 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-7] Get user all Booking Slots
+2023-04-05 11:41:24,567 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-8] Get user all Booking Slots
+2023-04-05 11:41:32,435 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-9] Get user all Booking Slots
+2023-04-05 11:43:37,077 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-2] get by hospital name
+2023-04-05 11:43:37,907 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-1] Get user all Booking Slots
+2023-04-05 11:43:46,280 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-4] Get user all Booking Slots
+2023-04-05 11:44:09,678 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-3] Get user all Booking Slots
+2023-04-05 11:44:13,231 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-5] Get user all Booking Slots
+2023-04-05 11:44:30,791 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-6] get by hospital name
+2023-04-05 11:44:33,879 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-8] Get slot by hospital id 
+2023-04-05 11:44:35,834 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-10] Get slot by hospital id 
+2023-04-05 11:44:38,019 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-1] Get slot by hospital id 
+2023-04-05 11:44:40,393 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] Get slot by hospital id 
+2023-04-05 11:44:41,884 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-6] Get slot by hospital id 
+2023-04-05 11:44:44,183 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-8] Get slot by hospital id 
+2023-04-05 11:44:45,935 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-10] Get slot by hospital id 
+2023-04-05 11:44:48,627 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-2] Get slot by hospital id 
+2023-04-05 11:44:51,615 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-1] Get user all Booking Slots
+2023-04-05 11:44:55,574 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-4] get by hospital name
+2023-04-05 11:44:57,660 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] Get slot by hospital id 
+2023-04-05 11:45:00,236 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-6] Hospital slot Booked
+2023-04-05 11:45:00,427 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-7] Get slot by hospital id 
+2023-04-05 11:45:04,317 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-8] Get user all Booking Slots
+2023-04-05 11:45:19,451 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-9] Get user all Booking Slots
+2023-04-05 11:45:25,530 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-10] Get user all Booking Slots
+2023-04-05 11:45:34,938 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-2] Get user all Booking Slots
+2023-04-05 11:45:44,352 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-1] Get user all Booking Slots
+2023-04-05 11:48:38,782 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-3] Get user all Booking Slots
+2023-04-05 11:48:56,127 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-5] Get user all Booking Slots
+2023-04-05 11:49:16,088 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-6] Get user all Booking Slots
+2023-04-05 11:50:45,473 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-8] Get user all Booking Slots
+2023-04-05 11:51:48,166 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-10] Get user all Booking Slots
+2023-04-05 11:57:38,499 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-1] Get user all Booking Slots
+2023-04-05 11:59:45,131 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-3] Get user all Booking Slots
+2023-04-05 12:00:13,908 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-5] Get user all Booking Slots
+2023-04-05 12:00:43,917 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-6] Get user all Booking Slots
+2023-04-05 12:01:29,409 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-7] Get user all Booking Slots
+2023-04-05 12:01:59,991 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-8] Get user all Booking Slots
+2023-04-05 12:02:43,647 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-10] Get user all Booking Slots
+2023-04-05 12:05:40,650 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-1] Get user all Booking Slots
+2023-04-05 12:06:57,338 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-3] Get user all Booking Slots
+2023-04-05 12:08:28,673 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-6] Get user all Booking Slots
+2023-04-05 12:13:29,022 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-8] Get user all Booking Slots
+2023-04-05 12:14:16,676 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-9] Get user all Booking Slots
+2023-04-05 12:14:19,997 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-2] get by hospital name
+2023-04-05 12:14:45,908 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-4] Resolved [com.example.demo.exception.IdNotFoundException: Bad credentials]
+2023-04-05 12:14:49,903 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-3] Resolved [com.example.demo.exception.IdNotFoundException: Bad credentials]
+2023-04-05 12:14:57,249 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-6] get by hospital name
+2023-04-05 12:22:38,803 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-10] get by hospital name
+2023-04-05 14:23:24,434 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53m38s869ms845µs500ns).
+2023-04-05 17:46:01,870 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(436)-127.0.0.1] Application shutdown requested.
+2023-04-05 17:46:02,009 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(436)-127.0.0.1] Pausing ProtocolHandler ["http-nio-8080"]
+2023-04-05 17:46:02,011 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(436)-127.0.0.1] Stopping service [Tomcat]
+2023-04-05 17:46:02,029 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(436)-127.0.0.1] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-04-05 17:46:02,062 WARN org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(436)-127.0.0.1] The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.4.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.4.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.4.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.4.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.4.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.4.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.4.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.4.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.4.1/java.lang.Thread.run(Thread.java:833)
+2023-04-05 17:46:02,066 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(436)-127.0.0.1] Stopping ProtocolHandler ["http-nio-8080"]
+2023-04-05 17:46:02,095 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(436)-127.0.0.1] Destroying ProtocolHandler ["http-nio-8080"]
+2023-04-05 17:46:02,139 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(436)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-05 17:46:02,173 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(436)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2023-04-05 17:46:02,201 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(436)-127.0.0.1] HikariPool-1 - Shutdown completed.

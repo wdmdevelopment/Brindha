@@ -1,0 +1,124 @@
+2023-05-02 09:37:46,750 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-05-02 09:37:46,768 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting HospitalApplication using Java 17.0.4.1 on DESKTOP-3U6BKIP with PID 11332 (C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital\target\classes started by admin in C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital)
+2023-05-02 09:37:46,771 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-05-02 09:37:46,970 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-02 09:37:46,971 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-02 09:37:50,321 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-02 09:37:50,599 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 243 ms. Found 11 JPA repository interfaces.
+2023-05-02 09:37:52,274 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-05-02 09:37:52,306 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-02 09:37:52,308 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-05-02 09:37:52,309 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-05-02 09:37:52,487 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-05-02 09:37:52,487 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 5515 ms
+2023-05-02 09:37:52,810 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-02 09:37:52,966 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-05-02 09:37:53,449 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-05-02 09:37:53,769 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-05-02 09:37:53,786 WARN com.zaxxer.hikari.util.DriverDataSource [restartedMain] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-05-02 09:37:54,887 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-05-02 09:37:54,965 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-02 09:37:57,318 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-02 09:37:57,341 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02 09:37:59,131 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [restartedMain] Autowired annotation should only be used on methods with parameters: public java.util.List com.example.demo.serviceImpl.UserImpl.getAllUser()
+2023-05-02 09:37:59,798 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-02 09:37:59,857 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [restartedMain] Adding welcome page: class path resource [static/index.html]
+2023-05-02 09:38:01,387 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6abddf56, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@33a11cef, org.springframework.security.web.context.SecurityContextPersistenceFilter@562f4cde, org.springframework.security.web.header.HeaderWriterFilter@557e3f76, org.springframework.web.filter.CorsFilter@24ff40fb, org.springframework.security.web.authentication.logout.LogoutFilter@3c983eef, com.example.demo.security.jwt.AuthTokenFilter@ac822f2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a94b01e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@21888315, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@e0c767a, org.springframework.security.web.session.SessionManagementFilter@15fe6561, org.springframework.security.web.access.ExceptionTranslationFilter@7930324f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@c5ab3f5]
+2023-05-02 09:38:02,079 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-05-02 09:38:02,146 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2023-05-02 09:38:02,188 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-02 09:38:02,215 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started HospitalApplication in 16.415 seconds (JVM running for 18.388)
+2023-05-02 09:39:14,598 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-02 09:39:14,599 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-05-02 09:39:14,603 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 3 ms
+2023-05-02 09:39:16,739 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-4] get by hospital name
+2023-05-02 09:39:40,062 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] get by hospital name
+2023-05-02 09:40:07,489 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-6] Get slot by hospital id 
+2023-05-02 10:40:31,010 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m5s177ms187µs500ns).
+2023-05-02 10:45:45,742 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-8] get by hospital name
+2023-05-02 11:13:15,624 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-2] get by hospital name
+2023-05-02 11:13:18,918 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-4] Get user all Booking Slots
+2023-05-02 11:13:20,975 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] get by hospital name
+2023-05-02 12:23:53,810 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(184)-127.0.0.1] Application shutdown requested.
+2023-05-02 12:23:53,853 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(184)-127.0.0.1] Pausing ProtocolHandler ["http-nio-8080"]
+2023-05-02 12:23:53,854 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(184)-127.0.0.1] Stopping service [Tomcat]
+2023-05-02 12:23:53,862 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(184)-127.0.0.1] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-02 12:23:53,873 WARN org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(184)-127.0.0.1] The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.4.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.4.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.4.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.4.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.4.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.4.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.4.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.4.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.4.1/java.lang.Thread.run(Thread.java:833)
+2023-05-02 12:23:53,875 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(184)-127.0.0.1] Stopping ProtocolHandler ["http-nio-8080"]
+2023-05-02 12:23:53,881 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(184)-127.0.0.1] Destroying ProtocolHandler ["http-nio-8080"]
+2023-05-02 12:23:53,894 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(184)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02 12:23:53,909 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(184)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2023-05-02 12:23:53,917 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(184)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2023-05-02 16:45:47,408 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting HospitalApplication using Java 17.0.4.1 on DESKTOP-3U6BKIP with PID 4572 (C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital\target\classes started by admin in C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital)
+2023-05-02 16:45:47,412 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-05-02 16:45:47,416 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-05-02 16:45:47,542 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-02 16:45:47,542 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-02 16:45:49,821 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-05-02 16:45:49,983 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 145 ms. Found 11 JPA repository interfaces.
+2023-05-02 16:45:51,058 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-05-02 16:45:51,076 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-02 16:45:51,077 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-05-02 16:45:51,078 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-05-02 16:45:51,210 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-05-02 16:45:51,210 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 3667 ms
+2023-05-02 16:45:51,435 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-05-02 16:45:51,521 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-05-02 16:45:51,783 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-05-02 16:45:51,942 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-05-02 16:45:51,951 WARN com.zaxxer.hikari.util.DriverDataSource [restartedMain] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-05-02 16:45:52,395 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-05-02 16:45:52,442 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-02 16:45:54,045 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-05-02 16:45:54,061 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02 16:45:55,155 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [restartedMain] Autowired annotation should only be used on methods with parameters: public java.util.List com.example.demo.serviceImpl.UserImpl.getAllUser()
+2023-05-02 16:45:55,567 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-05-02 16:45:55,610 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [restartedMain] Adding welcome page: class path resource [static/index.html]
+2023-05-02 16:45:56,611 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@40faa82f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@56e791ab, org.springframework.security.web.context.SecurityContextPersistenceFilter@704a1d3f, org.springframework.security.web.header.HeaderWriterFilter@5eeb3766, org.springframework.web.filter.CorsFilter@10e02d15, org.springframework.security.web.authentication.logout.LogoutFilter@1f668239, com.example.demo.security.jwt.AuthTokenFilter@715f351b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@48633341, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54187f8e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2885d171, org.springframework.security.web.session.SessionManagementFilter@2253bf5f, org.springframework.security.web.access.ExceptionTranslationFilter@33ce94ec, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@679e32a1]
+2023-05-02 16:45:56,999 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-05-02 16:45:57,033 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2023-05-02 16:45:57,069 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-02 16:45:57,088 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started HospitalApplication in 10.464 seconds (JVM running for 12.077)
+2023-05-02 16:46:50,210 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-02 16:46:50,210 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-05-02 16:46:50,213 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 2 ms
+2023-05-02 16:46:51,901 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-4] get by hospital name
+2023-05-02 17:58:53,405 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] get by hospital name
+2023-05-02 18:02:16,270 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-9] get by hospital name
+2023-05-02 18:02:18,214 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-1] Get user all Booking Slots
+2023-05-02 18:02:18,745 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-2] get by hospital name
+2023-05-02 18:02:22,298 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-3] get by hospital name
+2023-05-02 18:02:23,318 INFO com.example.demo.controller.BookingController [http-nio-8080-exec-4] Get user all Booking Slots
+2023-05-02 18:02:23,994 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] get by hospital name
+2023-05-02 18:13:26,938 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-9] get by hospital name
+2023-05-02 18:18:10,979 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-2] get by hospital name
+2023-05-02 18:35:48,927 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-6] get by hospital name
+2023-05-02 18:36:38,149 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-8] get by hospital name
+2023-05-02 18:38:06,760 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(116)-127.0.0.1] Application shutdown requested.
+2023-05-02 18:38:06,902 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(116)-127.0.0.1] Pausing ProtocolHandler ["http-nio-8080"]
+2023-05-02 18:38:06,904 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(116)-127.0.0.1] Stopping service [Tomcat]
+2023-05-02 18:38:06,912 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(116)-127.0.0.1] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-02 18:38:06,939 WARN org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(116)-127.0.0.1] The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.4.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.4.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.4.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.4.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.4.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.4.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.4.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.4.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.4.1/java.lang.Thread.run(Thread.java:833)
+2023-05-02 18:38:06,944 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(116)-127.0.0.1] Stopping ProtocolHandler ["http-nio-8080"]
+2023-05-02 18:38:06,951 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(116)-127.0.0.1] Destroying ProtocolHandler ["http-nio-8080"]
+2023-05-02 18:38:06,967 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(116)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-02 18:38:06,992 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(116)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2023-05-02 18:38:06,998 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(116)-127.0.0.1] HikariPool-1 - Shutdown completed.

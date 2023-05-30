@@ -1,0 +1,407 @@
+2023-02-19 16:44:06,582 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-02-19 16:44:06,593 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting HospitalApplication using Java 17.0.4.1 on DESKTOP-3U6BKIP with PID 10896 (C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital\target\classes started by admin in C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital)
+2023-02-19 16:44:06,595 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-02-19 16:44:06,710 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-19 16:44:06,710 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-19 16:44:08,089 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-19 16:44:08,290 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 178 ms. Found 9 JPA repository interfaces.
+2023-02-19 16:44:09,413 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-02-19 16:44:09,432 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-19 16:44:09,433 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-02-19 16:44:09,434 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-02-19 16:44:09,593 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-02-19 16:44:09,594 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2883 ms
+2023-02-19 16:44:09,881 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-19 16:44:10,008 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-02-19 16:44:10,316 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-02-19 16:44:10,505 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-02-19 16:44:10,516 WARN com.zaxxer.hikari.util.DriverDataSource [restartedMain] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-02-19 16:44:11,032 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-02-19 16:44:11,088 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-02-19 16:44:11,421 ERROR org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Failed to initialize JPA EntityManagerFactory: Illegal attempt to map a non collection as a @OneToMany, @ManyToMany or @CollectionOfElements: com.example.demo.entity.AppointmentBooking.hospital
+2023-02-19 16:44:11,422 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Illegal attempt to map a non collection as a @OneToMany, @ManyToMany or @CollectionOfElements: com.example.demo.entity.AppointmentBooking.hospital
+2023-02-19 16:44:11,425 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown initiated...
+2023-02-19 16:44:11,439 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown completed.
+2023-02-19 16:44:11,445 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Stopping service [Tomcat]
+2023-02-19 16:44:11,467 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [restartedMain] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-02-19 16:44:11,516 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Illegal attempt to map a non collection as a @OneToMany, @ManyToMany or @CollectionOfElements: com.example.demo.entity.AppointmentBooking.hospital
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.example.demo.HospitalApplication.main(HospitalApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.hibernate.AnnotationException: Illegal attempt to map a non collection as a @OneToMany, @ManyToMany or @CollectionOfElements: com.example.demo.entity.AppointmentBooking.hospital
+	at org.hibernate.cfg.annotations.CollectionBinder.getCollectionBinder(CollectionBinder.java:325)
+	at org.hibernate.cfg.AnnotationBinder.processElementAnnotations(AnnotationBinder.java:1977)
+	at org.hibernate.cfg.AnnotationBinder.processIdPropertiesIfNotAlready(AnnotationBinder.java:968)
+	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:793)
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:225)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:239)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:282)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 21 common frames omitted
+2023-02-19 16:47:01,109 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-02-19 16:47:01,111 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting HospitalApplication using Java 17.0.4.1 on DESKTOP-3U6BKIP with PID 7768 (C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital\target\classes started by admin in C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital)
+2023-02-19 16:47:01,113 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-02-19 16:47:01,219 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-19 16:47:01,220 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-19 16:47:02,697 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-19 16:47:02,889 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 172 ms. Found 9 JPA repository interfaces.
+2023-02-19 16:47:03,711 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-02-19 16:47:03,725 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-19 16:47:03,726 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-02-19 16:47:03,727 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-02-19 16:47:03,848 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-02-19 16:47:03,849 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2627 ms
+2023-02-19 16:47:04,061 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-19 16:47:04,135 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-02-19 16:47:04,364 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-02-19 16:47:04,521 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-02-19 16:47:04,530 WARN com.zaxxer.hikari.util.DriverDataSource [restartedMain] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-02-19 16:47:04,980 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-02-19 16:47:05,031 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-02-19 16:47:05,313 ERROR org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Failed to initialize JPA EntityManagerFactory: Illegal attempt to map a non collection as a @OneToMany, @ManyToMany or @CollectionOfElements: com.example.demo.entity.AppointmentBooking.hospital
+2023-02-19 16:47:05,314 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Illegal attempt to map a non collection as a @OneToMany, @ManyToMany or @CollectionOfElements: com.example.demo.entity.AppointmentBooking.hospital
+2023-02-19 16:47:05,317 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown initiated...
+2023-02-19 16:47:05,331 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown completed.
+2023-02-19 16:47:05,335 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Stopping service [Tomcat]
+2023-02-19 16:47:05,358 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [restartedMain] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-02-19 16:47:05,388 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Illegal attempt to map a non collection as a @OneToMany, @ManyToMany or @CollectionOfElements: com.example.demo.entity.AppointmentBooking.hospital
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.example.demo.HospitalApplication.main(HospitalApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.hibernate.AnnotationException: Illegal attempt to map a non collection as a @OneToMany, @ManyToMany or @CollectionOfElements: com.example.demo.entity.AppointmentBooking.hospital
+	at org.hibernate.cfg.annotations.CollectionBinder.getCollectionBinder(CollectionBinder.java:325)
+	at org.hibernate.cfg.AnnotationBinder.processElementAnnotations(AnnotationBinder.java:1977)
+	at org.hibernate.cfg.AnnotationBinder.processIdPropertiesIfNotAlready(AnnotationBinder.java:968)
+	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:793)
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:225)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:239)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:282)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 21 common frames omitted
+2023-02-19 16:47:23,806 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-02-19 16:47:23,812 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting HospitalApplication using Java 17.0.4.1 on DESKTOP-3U6BKIP with PID 8388 (C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital\target\classes started by admin in C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital)
+2023-02-19 16:47:23,814 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-02-19 16:47:23,919 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-19 16:47:23,919 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-19 16:47:25,256 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-19 16:47:25,387 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 113 ms. Found 9 JPA repository interfaces.
+2023-02-19 16:47:26,218 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-02-19 16:47:26,234 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-19 16:47:26,235 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-02-19 16:47:26,235 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-02-19 16:47:26,358 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-02-19 16:47:26,359 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2438 ms
+2023-02-19 16:47:26,570 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-19 16:47:26,652 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-02-19 16:47:26,877 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-02-19 16:47:27,037 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-02-19 16:47:27,045 WARN com.zaxxer.hikari.util.DriverDataSource [restartedMain] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-02-19 16:47:27,469 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-02-19 16:47:27,514 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-02-19 16:47:27,800 ERROR org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Failed to initialize JPA EntityManagerFactory: Illegal attempt to map a non collection as a @OneToMany, @ManyToMany or @CollectionOfElements: com.example.demo.entity.AppointmentBooking.hospital
+2023-02-19 16:47:27,801 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Illegal attempt to map a non collection as a @OneToMany, @ManyToMany or @CollectionOfElements: com.example.demo.entity.AppointmentBooking.hospital
+2023-02-19 16:47:27,805 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown initiated...
+2023-02-19 16:47:27,823 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown completed.
+2023-02-19 16:47:27,829 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Stopping service [Tomcat]
+2023-02-19 16:47:27,854 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [restartedMain] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-02-19 16:47:27,889 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: Illegal attempt to map a non collection as a @OneToMany, @ManyToMany or @CollectionOfElements: com.example.demo.entity.AppointmentBooking.hospital
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.example.demo.HospitalApplication.main(HospitalApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.hibernate.AnnotationException: Illegal attempt to map a non collection as a @OneToMany, @ManyToMany or @CollectionOfElements: com.example.demo.entity.AppointmentBooking.hospital
+	at org.hibernate.cfg.annotations.CollectionBinder.getCollectionBinder(CollectionBinder.java:325)
+	at org.hibernate.cfg.AnnotationBinder.processElementAnnotations(AnnotationBinder.java:1977)
+	at org.hibernate.cfg.AnnotationBinder.processIdPropertiesIfNotAlready(AnnotationBinder.java:968)
+	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:793)
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:225)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:239)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:282)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 21 common frames omitted
+2023-02-19 16:49:48,840 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-02-19 16:49:48,853 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting HospitalApplication using Java 17.0.4.1 on DESKTOP-3U6BKIP with PID 7408 (C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital\target\classes started by admin in C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital)
+2023-02-19 16:49:48,854 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-02-19 16:49:48,940 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-19 16:49:48,940 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-19 16:49:50,096 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-19 16:49:50,237 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 125 ms. Found 9 JPA repository interfaces.
+2023-02-19 16:49:51,036 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-02-19 16:49:51,050 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-19 16:49:51,051 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-02-19 16:49:51,052 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-02-19 16:49:51,183 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-02-19 16:49:51,184 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2243 ms
+2023-02-19 16:49:51,391 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-19 16:49:51,465 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-02-19 16:49:51,691 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-02-19 16:49:51,868 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-02-19 16:49:51,876 WARN com.zaxxer.hikari.util.DriverDataSource [restartedMain] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-02-19 16:49:52,370 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-02-19 16:49:52,424 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-02-19 16:49:54,159 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-19 16:49:54,177 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-19 16:49:55,123 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [restartedMain] Autowired annotation should only be used on methods with parameters: public java.util.List com.example.demo.serviceImpl.UserImpl.getAllUser()
+2023-02-19 16:49:55,409 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-19 16:49:55,640 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [restartedMain] Adding welcome page: class path resource [static/index.html]
+2023-02-19 16:49:56,896 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-02-19 16:49:56,929 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2023-02-19 16:49:56,966 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-19 16:49:56,985 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started HospitalApplication in 8.812 seconds (JVM running for 10.014)
+2023-02-19 16:50:02,581 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-19 16:50:02,582 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-02-19 16:50:02,586 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 3 ms
+2023-02-19 16:50:46,793 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-6] get by hospital name
+2023-02-19 16:50:46,968 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] get by hospital name
+2023-02-19 16:50:48,967 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] get by hospital name
+2023-02-19 16:50:49,153 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-4] get by hospital name
+2023-02-19 16:50:49,371 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-8] get by hospital name
+2023-02-19 16:50:50,546 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-9] get by hospital name
+2023-02-19 16:50:50,740 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-10] get by hospital name
+2023-02-19 16:50:51,166 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-2] get by hospital name
+2023-02-19 16:50:52,137 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-3] get by hospital name
+2023-02-19 16:50:55,745 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-1] get by hospital name
+2023-02-19 16:50:56,301 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-6] get by hospital name
+2023-02-19 16:51:08,318 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-3] get by hospital name
+2023-02-19 16:52:21,894 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-9] get by hospital name
+2023-02-19 16:52:22,949 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-3] get by hospital name
+2023-02-19 16:52:23,241 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-1] get by hospital name
+2023-02-19 16:53:08,025 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-6] get by hospital name
+2023-02-19 16:53:09,104 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] get by hospital name
+2023-02-19 16:53:09,416 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] get by hospital name
+2023-02-19 16:53:10,207 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-4] get by hospital name
+2023-02-19 16:53:15,105 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-8] get by hospital name
+2023-02-19 16:53:15,802 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-10] get by hospital name
+2023-02-19 16:53:17,106 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-2] get by hospital name
+2023-02-19 16:53:19,052 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-3] get by hospital name
+2023-02-19 16:53:19,744 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-1] get by hospital name
+2023-02-19 16:53:20,005 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-6] get by hospital name
+2023-02-19 16:53:21,027 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] get by hospital name
+2023-02-19 16:53:21,762 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] get by hospital name
+2023-02-19 16:53:22,142 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-4] get by hospital name
+2023-02-19 16:53:22,639 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-8] get by hospital name
+2023-02-19 16:53:28,321 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-10] get by hospital name
+2023-02-19 16:53:28,526 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-2] get by hospital name
+2023-02-19 16:53:29,140 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-9] get by hospital name
+2023-02-19 16:53:30,245 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-3] get by hospital name
+2023-02-19 16:53:30,875 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-1] get by hospital name
+2023-02-19 16:53:30,988 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-6] get by hospital name
+2023-02-19 16:54:39,717 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-4] get by hospital name
+2023-02-19 16:54:46,803 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-8] get by hospital name
+2023-02-19 16:56:00,312 INFO org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener [File Watcher] Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2023-02-19 16:56:00,366 INFO org.apache.juli.logging.DirectJDKLog [Thread-5] Pausing ProtocolHandler ["http-nio-8080"]
+2023-02-19 16:56:00,369 INFO org.apache.juli.logging.DirectJDKLog [Thread-5] Stopping service [Tomcat]
+2023-02-19 16:56:00,373 INFO org.apache.juli.logging.DirectJDKLog [Thread-5] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-02-19 16:56:00,386 INFO org.apache.juli.logging.DirectJDKLog [Thread-5] Stopping ProtocolHandler ["http-nio-8080"]
+2023-02-19 16:56:00,393 INFO org.apache.juli.logging.DirectJDKLog [Thread-5] Destroying ProtocolHandler ["http-nio-8080"]
+2023-02-19 16:56:00,414 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [Thread-5] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-19 16:56:00,424 INFO com.zaxxer.hikari.HikariDataSource [Thread-5] HikariPool-1 - Shutdown initiated...
+2023-02-19 16:56:00,438 INFO com.zaxxer.hikari.HikariDataSource [Thread-5] HikariPool-1 - Shutdown completed.
+2023-02-19 16:56:00,568 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting HospitalApplication using Java 17.0.4.1 on DESKTOP-3U6BKIP with PID 7408 (C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital\target\classes started by admin in C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital)
+2023-02-19 16:56:00,569 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-02-19 16:56:00,890 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-19 16:56:00,944 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 53 ms. Found 9 JPA repository interfaces.
+2023-02-19 16:56:01,060 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-02-19 16:56:01,062 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-19 16:56:01,062 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-02-19 16:56:01,062 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-02-19 16:56:01,101 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-02-19 16:56:01,101 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 529 ms
+2023-02-19 16:56:01,152 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-19 16:56:01,160 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-2 - Starting...
+2023-02-19 16:56:01,161 WARN com.zaxxer.hikari.util.DriverDataSource [restartedMain] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-02-19 16:56:01,184 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-2 - Start completed.
+2023-02-19 16:56:01,184 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-02-19 16:56:01,679 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-19 16:56:01,680 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-19 16:56:02,148 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [restartedMain] Autowired annotation should only be used on methods with parameters: public java.util.List com.example.demo.serviceImpl.UserImpl.getAllUser()
+2023-02-19 16:56:02,216 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-19 16:56:02,294 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [restartedMain] Adding welcome page: class path resource [static/index.html]
+2023-02-19 16:56:03,157 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-02-19 16:56:03,183 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2023-02-19 16:56:03,188 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-19 16:56:03,202 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started HospitalApplication in 2.69 seconds (JVM running for 376.231)
+2023-02-19 16:56:03,206 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation unchanged
+2023-02-19 16:56:15,562 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-19 16:56:15,563 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-02-19 16:56:15,566 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 2 ms
+2023-02-19 17:02:48,472 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Get slot by hospital id 
+2023-02-19 17:39:41,211 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-10] get by hospital name
+2023-02-19 17:51:17,978 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-10] get by hospital name
+2023-02-19 17:51:30,738 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-2] get by hospital name
+2023-02-19 17:52:54,101 INFO com.example.demo.controller.UserController [http-nio-8080-exec-5] login User
+2023-02-19 18:03:22,914 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] get by hospital name
+2023-02-19 18:24:11,603 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] get by hospital name
+2023-02-19 18:28:00,509 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-10] get by hospital name
+2023-02-19 18:32:36,196 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] get by hospital name
+2023-02-19 18:52:48,858 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] get by hospital name
+2023-02-19 18:52:50,289 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-4] get by hospital name
+2023-02-19 19:04:58,329 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] Save new hospital - reqHosPost = {"hospitalName":"Dharan hospital","contactNum":"7806935736","city":"Bhavani","district":"Salem","state":"TN","country":"India","pincode":"636183","facilityName":"Heart","userId":"1"} 
+2023-02-19 19:05:02,890 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-10] Get slot by hospital id 
+2023-02-19 19:13:44,024 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-9] get by hospital name
+2023-02-19 19:13:44,433 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] get by hospital name
+2023-02-19 19:13:46,361 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-10] get by hospital name
+2023-02-19 19:13:47,532 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-2] get by hospital name
+2023-02-19 19:14:06,484 INFO com.example.demo.controller.UserController [http-nio-8080-exec-8] login User
+2023-02-19 19:14:09,226 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-4] Get slot by hospital id 
+2023-02-19 19:15:54,143 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] get by hospital name
+2023-02-19 19:16:04,080 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] get by hospital name
+2023-02-19 19:16:07,630 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-2] get by hospital name
+2023-02-19 19:16:08,814 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-6] Get slot by hospital id 
+2023-02-19 19:16:27,859 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] get by hospital name
+2023-02-19 19:16:29,315 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] Get slot by hospital id 
+2023-02-19 19:17:10,271 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Get slot by hospital id 
+2023-02-19 19:17:12,706 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-7] Get slot by hospital id 
+2023-02-19 19:17:18,707 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] Get slot by hospital id 
+2023-02-19 19:17:22,793 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-4] Get slot by hospital id 
+2023-02-19 19:17:24,810 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-8] Get slot by hospital id 
+2023-02-19 19:19:20,880 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-4] Get slot by hospital id 
+2023-02-19 19:22:11,615 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-4] Get slot by hospital id 
+2023-02-19 19:22:15,129 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-9] Get slot by hospital id 
+2023-02-19 19:23:02,282 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-7] Get slot by hospital id 
+2023-02-19 19:24:36,595 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-7] Get slot by hospital id 
+2023-02-19 19:24:42,730 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] Get slot by hospital id 
+2023-02-19 19:24:55,658 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-4] Get slot by hospital id 
+2023-02-19 19:25:01,937 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-9] Get slot by hospital id 
+2023-02-19 19:25:04,201 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-8] Get slot by hospital id 
+2023-02-19 19:29:51,923 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-9] Get slot by hospital id 
+2023-02-19 19:30:07,386 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] Get slot by hospital id 
+2023-02-19 19:30:48,225 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-4] Get slot by hospital id 
+2023-02-19 19:31:49,712 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Get slot by hospital id 
+2023-02-19 19:32:07,495 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-6] Get slot by hospital id 
+2023-02-19 19:32:24,594 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-8] Get slot by hospital id 
+2023-02-19 19:32:40,955 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-4] Get slot by hospital id 
+2023-02-19 19:33:51,730 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-4] Get slot by hospital id 
+2023-02-19 19:34:06,400 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Get slot by hospital id 
+2023-02-19 19:34:24,449 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-9] Get slot by hospital id 
+2023-02-19 19:34:47,857 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-7] Get slot by hospital id 
+2023-02-19 19:35:04,090 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-2] Get slot by hospital id 
+2023-02-19 19:35:19,833 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-6] Get slot by hospital id 
+2023-02-19 19:35:31,321 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-9] Get slot by hospital id 
+2023-02-19 19:36:17,234 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-9] Get slot by hospital id 
+2023-02-19 19:36:49,273 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-10] Get slot by hospital id 
+2023-02-19 19:38:38,338 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-2] get by hospital name
+2023-02-19 19:38:39,669 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] get by hospital name
+2023-02-19 19:38:43,792 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-9] get by hospital name
+2023-02-19 19:38:44,624 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-5] get by hospital name
+2023-02-19 19:38:45,070 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-10] get by hospital name
+2023-02-19 19:38:45,155 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-8] get by hospital name
+2023-02-19 19:38:50,862 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-1] get by hospital name
+2023-02-19 19:38:51,233 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-3] get by hospital name
+2023-02-19 19:38:53,375 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-6] get by hospital name
+2023-02-19 19:38:57,340 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-2] Get slot by hospital id 
+2023-02-19 19:38:59,680 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-7] Get slot by hospital id 
+2023-02-19 19:39:30,289 INFO com.example.demo.controller.UserController [http-nio-8080-exec-8] login User
+2023-02-19 19:41:00,205 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Get slot by hospital id 
+2023-02-19 19:41:02,519 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-10] Get slot by hospital id 
+2023-02-19 19:41:25,031 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-1] save slot api hospitalid=31, facility=Paediatric
+2023-02-19 19:41:25,080 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-7] Get slot by hospital id 
+2023-02-19 19:44:05,569 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-7] Get slot by hospital id 
+2023-02-19 19:44:16,368 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-10] Get slot by hospital id 
+2023-02-19 19:44:20,911 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-1] Get slot by hospital id 
+2023-02-19 19:44:30,516 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Deleted slot 
+2023-02-19 19:44:30,549 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-7] Get slot by hospital id 
+2023-02-19 19:44:58,145 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-10] Get slot by hospital id 
+2023-02-19 19:44:59,369 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-1] Get slot by hospital id 
+2023-02-19 19:48:28,513 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-10] Get slot by hospital id 
+2023-02-19 19:48:49,016 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-6] Get slot by hospital id 
+2023-02-19 19:49:04,647 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-9] Get slot by hospital id 
+2023-02-19 19:49:35,121 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-10] Save new hospital - reqHosPost = {"hospitalName":"Dharan hospital","contactNum":"8508009552","city":"Sankari","district":"Erode","state":"TN","country":"India","pincode":"638358","facilityName":"Nose","userId":"1"} 
+2023-02-19 20:02:57,902 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(195)-127.0.0.1] Application shutdown requested.
+2023-02-19 20:02:57,938 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(195)-127.0.0.1] Pausing ProtocolHandler ["http-nio-8080"]
+2023-02-19 20:02:57,940 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(195)-127.0.0.1] Stopping service [Tomcat]
+2023-02-19 20:02:57,944 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(195)-127.0.0.1] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-02-19 20:02:57,962 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(195)-127.0.0.1] Stopping ProtocolHandler ["http-nio-8080"]
+2023-02-19 20:02:57,965 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(195)-127.0.0.1] Destroying ProtocolHandler ["http-nio-8080"]
+2023-02-19 20:02:57,976 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(195)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-19 20:02:57,978 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(195)-127.0.0.1] HikariPool-2 - Shutdown initiated...
+2023-02-19 20:02:57,995 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(195)-127.0.0.1] HikariPool-2 - Shutdown completed.

@@ -1,0 +1,217 @@
+2023-03-23 09:30:21,678 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting HospitalApplication using Java 17.0.4.1 on DESKTOP-3U6BKIP with PID 7540 (C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital\target\classes started by admin in C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital)
+2023-03-23 09:30:21,685 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-03-23 09:30:21,728 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-03-23 09:30:21,825 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-03-23 09:30:21,826 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-03-23 09:30:24,922 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-23 09:30:25,388 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 442 ms. Found 9 JPA repository interfaces.
+2023-03-23 09:30:26,605 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-03-23 09:30:26,623 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2023-03-23 09:30:26,624 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-03-23 09:30:26,625 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-03-23 09:30:26,771 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-03-23 09:30:26,772 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 4945 ms
+2023-03-23 09:30:27,207 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-23 09:30:27,335 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-03-23 09:30:27,812 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-03-23 09:30:28,010 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-03-23 09:30:28,017 WARN com.zaxxer.hikari.util.DriverDataSource [restartedMain] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-03-23 09:30:28,614 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-03-23 09:30:28,688 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-03-23 09:30:30,255 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-23 09:30:30,267 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-23 09:30:31,241 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [restartedMain] Autowired annotation should only be used on methods with parameters: public java.util.List com.example.demo.serviceImpl.UserImpl.getAllUser()
+2023-03-23 09:30:31,735 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-03-23 09:30:31,787 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [restartedMain] Adding welcome page: class path resource [static/index.html]
+2023-03-23 09:30:32,674 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@48198795, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@b0cd0ff, org.springframework.security.web.context.SecurityContextPersistenceFilter@3480d1a9, org.springframework.security.web.header.HeaderWriterFilter@ce2b473, org.springframework.web.filter.CorsFilter@2fd844b5, org.springframework.security.web.authentication.logout.LogoutFilter@107201ba, com.example.demo.security.jwt.AuthTokenFilter@4b9b18df, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5ac6a6da, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3df6a3c8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1daa6b74, org.springframework.security.web.session.SessionManagementFilter@1cfd6aa1, org.springframework.security.web.access.ExceptionTranslationFilter@7058d466, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4b5110f1]
+2023-03-23 09:30:33,042 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-03-23 09:30:33,072 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2023-03-23 09:30:33,104 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2023-03-23 09:30:33,119 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started HospitalApplication in 13.147 seconds (JVM running for 16.417)
+2023-03-23 09:31:08,076 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-23 09:31:08,076 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-03-23 09:31:08,079 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 2 ms
+2023-03-23 09:31:55,397 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-6] Get slot by hospital id 
+2023-03-23 09:32:45,951 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-8] Get slot by hospital id 
+2023-03-23 09:32:56,067 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-10] Get slot by hospital id 
+2023-03-23 09:33:05,642 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-1] Get slot by hospital id 
+2023-03-23 09:37:23,000 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-4] Get slot by hospital id 
+2023-03-23 09:37:31,053 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Get slot by hospital id 
+2023-03-23 09:39:01,135 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-10] Get slot by hospital id 
+2023-03-23 09:39:26,540 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] Get slot by hospital id 
+2023-03-23 09:41:55,653 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-7] Get slot by hospital id 
+2023-03-23 09:45:51,161 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] Get slot by hospital id 
+2023-03-23 09:50:22,578 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-1] Get slot by hospital id 
+2023-03-23 09:59:59,634 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-8] Get slot by hospital id 
+2023-03-23 10:02:17,445 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] Get slot by hospital id 
+2023-03-23 10:02:23,589 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-4] Get slot by hospital id 
+2023-03-23 10:03:40,751 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-9] Get slot by hospital id 
+2023-03-23 10:10:22,903 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-8] Get slot by hospital id 
+2023-03-23 10:10:39,816 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] Get slot by hospital id 
+2023-03-23 10:10:52,685 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Get slot by hospital id 
+2023-03-23 10:10:58,930 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-6] Get slot by hospital id 
+2023-03-23 10:20:20,737 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting HospitalApplication using Java 17.0.4.1 on DESKTOP-3U6BKIP with PID 12992 (C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital\target\classes started by admin in C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.16.1.RELEASE\hospital)
+2023-03-23 10:20:20,740 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-03-23 10:20:20,850 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-03-23 10:20:20,913 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-03-23 10:20:20,915 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-03-23 10:20:28,004 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-23 10:20:28,293 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 260 ms. Found 9 JPA repository interfaces.
+2023-03-23 10:20:31,349 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-03-23 10:20:31,377 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2023-03-23 10:20:31,379 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-03-23 10:20:31,409 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.70]
+2023-03-23 10:20:32,175 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-03-23 10:20:32,177 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 11261 ms
+2023-03-23 10:20:33,387 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-23 10:20:34,011 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-03-23 10:20:35,967 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-03-23 10:20:37,021 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-03-23 10:20:37,066 WARN com.zaxxer.hikari.util.DriverDataSource [restartedMain] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2023-03-23 10:20:38,993 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-03-23 10:20:39,147 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-03-23 10:20:43,590 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-23 10:20:43,611 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-23 10:20:52,200 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [restartedMain] Autowired annotation should only be used on methods with parameters: public java.util.List com.example.demo.serviceImpl.UserImpl.getAllUser()
+2023-03-23 10:20:53,530 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-03-23 10:20:53,684 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [restartedMain] Adding welcome page: class path resource [static/index.html]
+2023-03-23 10:20:56,248 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@678aab6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@93521f1, org.springframework.security.web.context.SecurityContextPersistenceFilter@3aaee7e7, org.springframework.security.web.header.HeaderWriterFilter@73d940cd, org.springframework.web.filter.CorsFilter@7d4ae5da, org.springframework.security.web.authentication.logout.LogoutFilter@714dfd6e, com.example.demo.security.jwt.AuthTokenFilter@49a62bf8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4e3f457a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@372fc2f9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1cb5f8ec, org.springframework.security.web.session.SessionManagementFilter@1b08ceea, org.springframework.security.web.access.ExceptionTranslationFilter@2d332b3b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4dc85151]
+2023-03-23 10:20:57,512 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-03-23 10:20:57,579 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2023-03-23 10:20:57,646 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2023-03-23 10:20:57,723 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started HospitalApplication in 40.358 seconds (JVM running for 45.025)
+2023-03-23 10:21:59,892 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-23 10:21:59,892 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-03-23 10:21:59,897 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 4 ms
+2023-03-23 10:22:08,774 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-7] Get slot by hospital id 
+2023-03-23 10:22:46,000 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-10] Get slot by hospital id 
+2023-03-23 10:24:39,305 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-8] Get slot by hospital id 
+2023-03-23 10:25:06,568 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-2] Get slot by hospital id 
+2023-03-23 10:25:26,896 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-1] Get slot by hospital id 
+2023-03-23 10:28:16,284 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-1] save slot api hospitalid=39, facility=
+2023-03-23 10:28:17,165 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-4] save slot api hospitalid=39, facility=
+2023-03-23 10:28:19,716 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] save slot api hospitalid=39, facility=
+2023-03-23 10:35:19,702 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-10] Get slot by hospital id 
+2023-03-23 10:42:04,692 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-9] Get slot by hospital id 
+2023-03-23 10:42:15,397 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-10] Get slot by hospital id 
+2023-03-23 10:42:21,526 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-4] Get slot by hospital id 
+2023-03-23 10:42:41,271 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] save slot api hospitalid=0, facility=bbbb
+2023-03-23 10:42:41,290 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-3] Resolved [com.example.demo.exception.IdNotFoundException: hospital id not found]
+2023-03-23 10:43:25,396 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-6] Get slot by hospital id 
+2023-03-23 11:03:53,173 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-6] Get slot by hospital id 
+2023-03-23 11:05:02,487 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] Get slot by hospital id 
+2023-03-23 11:05:38,104 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-9] Get slot by hospital id 
+2023-03-23 11:07:36,597 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Get slot by hospital id 
+2023-03-23 11:08:07,924 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-8] Get slot by hospital id 
+2023-03-23 11:11:20,282 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-8] Get slot by hospital id 
+2023-03-23 11:11:35,851 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-1] Get slot by hospital id 
+2023-03-23 11:11:53,747 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] save slot api hospitalid=106, facility=
+2023-03-23 11:15:35,760 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-10] Get slot by hospital id 
+2023-03-23 11:15:38,637 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-1] Get slot by hospital id 
+2023-03-23 11:17:13,018 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] Get slot by hospital id 
+2023-03-23 11:23:25,130 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-6] Get slot by hospital id 
+2023-03-23 11:23:28,542 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-9] Get slot by hospital id 
+2023-03-23 11:23:30,570 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-8] Get slot by hospital id 
+2023-03-23 11:23:59,899 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-10] save slot api hospitalid=17, facility=bbbb
+2023-03-23 11:24:04,499 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-4] Get slot by hospital id 
+2023-03-23 11:24:08,876 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] Get slot by hospital id 
+2023-03-23 11:24:17,925 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Get slot by hospital id 
+2023-03-23 11:24:27,166 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-2] Get slot by hospital id 
+2023-03-23 11:25:03,523 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-6] Get slot by hospital id 
+2023-03-23 11:25:21,980 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-7] save slot api hospitalid=39, facility=cccc
+2023-03-23 11:25:27,468 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-9] Get slot by hospital id 
+2023-03-23 11:25:31,070 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-10] Get slot by hospital id 
+2023-03-23 11:25:34,174 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-1] Get slot by hospital id 
+2023-03-23 11:28:29,941 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] Get slot by hospital id 
+2023-03-23 11:29:24,403 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-10] Get slot by hospital id 
+2023-03-23 11:30:01,912 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-4] Get hospital by id 
+2023-03-23 11:30:05,115 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Get slot by hospital id 
+2023-03-23 11:30:22,135 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-2] save slot api hospitalid=0, facility=dddd
+2023-03-23 11:30:22,149 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-2] Resolved [com.example.demo.exception.IdNotFoundException: hospital id not found]
+2023-03-23 11:30:28,482 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-7] Get slot by hospital id 
+2023-03-23 11:30:31,707 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-9] Get slot by hospital id 
+2023-03-23 11:30:35,638 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-8] Get slot by hospital id 
+2023-03-23 11:30:37,836 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-10] Get slot by hospital id 
+2023-03-23 11:30:39,687 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-1] Get slot by hospital id 
+2023-03-23 11:30:42,211 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-4] Get slot by hospital id 
+2023-03-23 11:30:44,562 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] Get slot by hospital id 
+2023-03-23 11:31:25,483 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Get slot by hospital id 
+2023-03-23 11:31:36,116 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-2] save slot api hospitalid=0, facility=
+2023-03-23 11:31:36,127 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-2] Resolved [com.example.demo.exception.IdNotFoundException: hospital id not found]
+2023-03-23 11:31:52,632 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-6] save slot api hospitalid=0, facility=d
+2023-03-23 11:31:52,644 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-6] Resolved [com.example.demo.exception.IdNotFoundException: hospital id not found]
+2023-03-23 11:32:01,071 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-7] save slot api hospitalid=0, facility=d
+2023-03-23 11:32:01,081 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-7] Resolved [com.example.demo.exception.IdNotFoundException: hospital id not found]
+2023-03-23 11:33:20,345 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Get slot by hospital id 
+2023-03-23 11:33:35,637 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-2] save slot api hospitalid=0, facility=ikiolp
+2023-03-23 11:33:35,648 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-2] Resolved [com.example.demo.exception.IdNotFoundException: hospital id not found]
+2023-03-23 11:34:31,096 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Get slot by hospital id 
+2023-03-23 11:35:44,407 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-7] Get slot by hospital id 
+2023-03-23 11:35:52,460 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-9] Get slot by hospital id 
+2023-03-23 11:37:09,067 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Get slot by hospital id 
+2023-03-23 11:37:15,552 WARN org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver [http-nio-8080-exec-6] Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'long'; nested exception is java.lang.NumberFormatException: For input string: "undefined"]
+2023-03-23 11:39:32,278 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Get slot by hospital id 
+2023-03-23 11:39:51,407 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-2] save slot api hospitalid=17, facility=ddd
+2023-03-23 11:40:09,004 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-7] Get slot by hospital id 
+2023-03-23 11:40:12,160 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-9] Get slot by hospital id 
+2023-03-23 11:40:14,054 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-8] Get slot by hospital id 
+2023-03-23 11:40:20,231 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-10] Get slot by hospital id 
+2023-03-23 11:40:38,737 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-1] save slot api hospitalid=39, facility=dddd
+2023-03-23 11:40:43,593 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] Get slot by hospital id 
+2023-03-23 11:41:00,609 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Get slot by hospital id 
+2023-03-23 11:42:23,896 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-7] Save new hospital - reqHosPost = {"hospitalName":"abcd","contactNum":"8608181506","city":"Bhavani","district":"Erode","state":"Tn","country":"India","pincode":"635874","facilityName":"Cardio","userId":"82"} 
+2023-03-23 11:42:43,336 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-10] Get hospital by id 
+2023-03-23 11:42:59,994 INFO com.example.demo.controller.HospitalController [http-nio-8080-exec-4] Hospital updated
+2023-03-23 11:43:32,509 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-2] Get slot by hospital id 
+2023-03-23 11:44:37,147 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-9] Get slot by hospital id 
+2023-03-23 11:48:30,855 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Get slot by hospital id 
+2023-03-23 11:48:50,016 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-2] Get slot by hospital id 
+2023-03-23 11:55:31,118 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-1] Get slot by hospital id 
+2023-03-23 11:55:35,832 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-4] Get slot by hospital id 
+2023-03-23 11:55:40,542 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] Get slot by hospital id 
+2023-03-23 12:00:08,481 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-6] Get slot by hospital id 
+2023-03-23 12:00:15,528 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-9] Get slot by hospital id 
+2023-03-23 12:00:18,266 ERROR com.example.demo.security.jwt.AuthEntryPointJwt [http-nio-8080-exec-10] Unauthorized error: Full authentication is required to access this resource
+2023-03-23 12:00:21,934 ERROR com.example.demo.security.jwt.AuthEntryPointJwt [http-nio-8080-exec-1] Unauthorized error: Full authentication is required to access this resource
+2023-03-23 12:00:24,606 ERROR com.example.demo.security.jwt.AuthEntryPointJwt [http-nio-8080-exec-3] Unauthorized error: Full authentication is required to access this resource
+2023-03-23 12:00:26,927 ERROR com.example.demo.security.jwt.AuthEntryPointJwt [http-nio-8080-exec-2] Unauthorized error: Full authentication is required to access this resource
+2023-03-23 12:02:21,116 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] Get slot by hospital id 
+2023-03-23 12:02:25,411 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-2] Get slot by hospital id 
+2023-03-23 12:02:31,614 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-6] Get slot by hospital id 
+2023-03-23 12:02:34,112 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-9] Deleted slot 
+2023-03-23 12:02:46,612 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-10] Get slot by hospital id 
+2023-03-23 12:02:52,174 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-1] Get slot by hospital id 
+2023-03-23 12:03:14,555 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-4] Get slot by hospital id 
+2023-03-23 12:03:29,833 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Get slot by hospital id 
+2023-03-23 12:03:35,100 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-2] Get slot by hospital id 
+2023-03-23 12:03:41,360 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-6] Get slot by hospital id 
+2023-03-23 12:03:58,470 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-7] Get slot by hospital id 
+2023-03-23 12:04:25,834 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-8] Deleted slot 
+2023-03-23 12:04:36,421 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-4] Get slot by hospital id 
+2023-03-23 12:04:59,485 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-6] Get slot by hospital id 
+2023-03-23 12:13:13,902 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-3] Get slot by hospital id 
+2023-03-23 12:34:41,786 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-4] Get slot by hospital id 
+2023-03-23 12:55:07,056 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-8] Get slot by hospital id 
+2023-03-23 12:57:27,407 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-4] Get slot by hospital id 
+2023-03-23 14:04:46,676 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=50m57s938ms172µs200ns).
+2023-03-23 14:07:36,043 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-5] Get slot by hospital id 
+2023-03-23 14:16:29,802 INFO com.example.demo.controller.SlotController [http-nio-8080-exec-8] Get slot by hospital id 
+2023-03-23 16:35:17,744 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(327)-127.0.0.1] Application shutdown requested.
+2023-03-23 16:35:17,859 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(327)-127.0.0.1] Pausing ProtocolHandler ["http-nio-8080"]
+2023-03-23 16:35:17,860 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(327)-127.0.0.1] Stopping service [Tomcat]
+2023-03-23 16:35:17,870 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(327)-127.0.0.1] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-03-23 16:35:17,892 WARN org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(327)-127.0.0.1] The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.4.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.4.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.4.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.4.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.4.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.4.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.4.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.4.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.4.1/java.lang.Thread.run(Thread.java:833)
+2023-03-23 16:35:17,898 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(327)-127.0.0.1] Stopping ProtocolHandler ["http-nio-8080"]
+2023-03-23 16:35:17,909 INFO org.apache.juli.logging.DirectJDKLog [RMI TCP Connection(327)-127.0.0.1] Destroying ProtocolHandler ["http-nio-8080"]
+2023-03-23 16:35:17,933 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(327)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-03-23 16:35:17,962 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(327)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2023-03-23 16:35:17,978 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(327)-127.0.0.1] HikariPool-1 - Shutdown completed.

@@ -1,0 +1,26 @@
+body{
+    background-image: url("../Images/appoint.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title{
+	
+	text-align: center;
+	font-weight: bold;
+}
+input{
+    border-radius: unset !important;
+}
+button{
+    border-radius: unset !important;
+    float: right;
+    margin: 0.4rem;
+}
+.card{
+    border-radius: unset !important;
+    margin-top: 3rem;
+    box-shadow: 0px 10px 10px 10px #a9a1a1;
+}
+
+
